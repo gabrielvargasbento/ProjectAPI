@@ -10,7 +10,8 @@ import FirebaseAnalytics
 
 struct ListRepositoriesView: View {
     
-   @ObservedObject var repoViewModel = RepositoriesViewModel()
+    @ObservedObject var repoViewModel = RepositoriesViewModel()
+    let firebaseService = FirebaseService()
 
     var body: some View {
         
@@ -36,8 +37,9 @@ struct ListRepositoriesView: View {
             }
         }.onAppear() {
             repoViewModel.fetchRepositories()
-            repoViewModel.apiService.analytics(nome: "repository_menu", classe: "repository")
+            firebaseService.analytics(userName: "repository_menu", className: "repository")
         }
         
     }
 }
+

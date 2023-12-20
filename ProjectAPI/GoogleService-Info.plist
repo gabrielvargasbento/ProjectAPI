@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyDqrUyXikBFVNWElvv8zDVIJKexnSZ43t0</string>
+	<string>AIzaSyBdJ2Br3fFyuHdqA6yaYGFXLGOXoPoWT0c</string>
 	<key>GCM_SENDER_ID</key>
-	<string>49573748979</string>
+	<string>1058651777105</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>gabrielvargas.ProjectAPI</string>
 	<key>PROJECT_ID</key>
-	<string>dti-teste</string>
+	<string>projectapi-dti</string>
 	<key>STORAGE_BUCKET</key>
-	<string>dti-teste.appspot.com</string>
+	<string>projectapi-dti.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:49573748979:ios:9871c4c8bcd537a7011786</string>
+	<string>1:1058651777105:ios:a0fd86f70fbb2090c07070</string>
 </dict>
 </plist>

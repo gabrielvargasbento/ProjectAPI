@@ -2,11 +2,10 @@
 //  APIService.swift
 //  ProjectAPI
 //
-//  Created by dti Digital on 14/12/23.
+//  Created by Gabriel Vargas on 14/12/23.
 //
 
 import Foundation
-import FirebaseAnalytics
 
 class APIService<T: Decodable>: ObservableObject, RandomAccessCollection {
     
@@ -23,7 +22,8 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection {
     subscript(position: Int) -> T {
         return apiList[position]
     }
-        
+    
+    // Recuperar dados de uma API, retornando um array generico
     func fetchData(from url: URL) -> [T] {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -42,19 +42,9 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection {
         
         return self.apiList
     }
-    
-    func analytics (nome: String, classe: String) {
-        
-        Analytics.logEvent(AnalyticsEventScreenView,
-                           parameters: [AnalyticsParameterScreenName: nome,
-                                       AnalyticsParameterScreenClass: classe])
-    }
-    
 }
 
-// renomear
-// novo arquivo
-// ga_event_origin (_o) = app; -> renomear parametros
-
-// crash
+// novo arquivo                                           OK
+// ga_event_origin (_o) = app; -> renomear parametros     OK
+// crash                                                  OK
 // clique dos botoes

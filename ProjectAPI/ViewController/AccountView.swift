@@ -15,7 +15,7 @@ struct AccountView: View {
     let description: String?
     let htmlUrl: String?
     
-    let apiService = APIService<Repository>()
+    let firebaseService = FirebaseService()
 
     var body: some View {
         VStack {
@@ -49,7 +49,7 @@ struct AccountView: View {
             Spacer()
         }
         .onAppear() {
-            apiService.analytics(nome: name!, classe: "repository")
+            firebaseService.analytics(userName: name!, className: "repository")
         }
     }
 }

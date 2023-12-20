@@ -15,7 +15,7 @@ struct CharacterView: View {
     let actor: String?
     let image: String?
     
-    let apiService = APIService<HarryPotter>()
+    let firebaseService = FirebaseService()
 
     var body: some View {
         
@@ -44,11 +44,15 @@ struct CharacterView: View {
             
             
             Text(actor ?? "")
+            
+            Button("Crash") {
+              fatalError("Crash was triggered")
+            }
 
             Spacer()
         }
         .onAppear() {
-            apiService.analytics(nome: name!, classe: "harrypotter")
+            firebaseService.analytics(userName: name!, className: "harrypotter")
         }
     }
 }

@@ -12,7 +12,7 @@ class HarryPotterViewModel: ObservableObject {
     
     @Published var apiService = APIService<HarryPotter>()
     @Published var harryPotterList: [HarryPotter] = []
-
+    
     func fetchHarryPotter() {
         guard let url = URL(string: "https://hp-api.onrender.com/api/characters/house/gryffindor") else {
             print("Invalid URL")

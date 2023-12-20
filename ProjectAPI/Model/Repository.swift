@@ -1,6 +1,6 @@
 //
 //  Repository.swift
-//  GitHubList
+//  ProjectAPI
 //
 //  Created by Gabriel Vargas on 14/12/23.
 //

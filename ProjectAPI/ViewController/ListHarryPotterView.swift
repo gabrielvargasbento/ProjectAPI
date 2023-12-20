@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ListHarryPotterView: View {
     
-   @ObservedObject var harrypotterViewModel = HarryPotterViewModel()
+    @ObservedObject var harrypotterViewModel = HarryPotterViewModel()
+    let firebaseService = FirebaseService()
 
     var body: some View {
         
@@ -35,8 +36,7 @@ struct ListHarryPotterView: View {
             }
         }.onAppear() {
             harrypotterViewModel.fetchHarryPotter()
-            harrypotterViewModel.apiService.analytics(nome: "harrypotter_menu", classe: "harrypotter")
-
+            firebaseService.analytics(userName: "harrypotter_menu", className: "harrypotter")
         }
         
     }
