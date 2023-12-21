@@ -1,8 +1,8 @@
 //
-//  AccountView.swift
-//  CharacterView
+//  CharacterView.swift
+//  ProjectAPI
 //
-//  Created by dti Digital on 15/12/23.
+//  Created by Gabriel Vargas on 15/12/23.
 //
 
 import SwiftUI
@@ -16,7 +16,7 @@ struct CharacterView: View {
     let image: String?
     
     let firebaseService = FirebaseService()
-
+    
     var body: some View {
         
         VStack {
@@ -46,13 +46,15 @@ struct CharacterView: View {
             Text(actor ?? "")
             
             Button("Crash") {
-              fatalError("Crash was triggered")
+                fatalError("Crash was triggered")
             }
-
+            
             Spacer()
         }
         .onAppear() {
             firebaseService.analytics(userName: name!, className: "harrypotter")
+            
+            
         }
     }
 }

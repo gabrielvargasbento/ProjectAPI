@@ -2,7 +2,7 @@
 //  AccountView.swift
 //  ProjectAPI
 //
-//  Created by dti Digital on 12/12/23.
+//  Created by Gabriel Vargas on 12/12/23.
 //
 
 import SwiftUI
@@ -16,7 +16,7 @@ struct AccountView: View {
     let htmlUrl: String?
     
     let firebaseService = FirebaseService()
-
+    
     var body: some View {
         VStack {
             AsyncImage(
@@ -45,6 +45,9 @@ struct AccountView: View {
                     .background(Color.gray)
                     .foregroundColor(.white)
                     .cornerRadius(5)
+            }
+            .onTapGesture {
+                firebaseService.buttonEvent(buttonName: "GitHub: \(String(describing: name))")
             }
             Spacer()
         }

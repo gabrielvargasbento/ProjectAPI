@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B71CC45B2B2CF5F5006B97B0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71CC45A2B2CF5F5006B97B0 /* AdSupport.framework */; };
+		B74EBD8C2B34E7A800F8F9F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EBD8B2B34E7A800F8F9F1 /* AppDelegate.swift */; };
 		B786FEF52B34A8D40023FFC0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B786FEF42B34A8D40023FFC0 /* FirebaseAnalytics */; };
 		B786FEF72B34A8D40023FFC0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B786FEF62B34A8D40023FFC0 /* FirebaseAuth */; };
 		B786FEF92B34A8D40023FFC0 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B786FEF82B34A8D40023FFC0 /* FirebaseCrashlytics */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		B71CC45A2B2CF5F5006B97B0 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		B74EBD8B2B34E7A800F8F9F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B79D4D862B3217F700ECE644 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		B7A221992B2CE351009B79EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7C66D152B2BE85000C8580A /* ProjectAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,7 @@
 				B7C66D472B2BE91500C8580A /* AccountView.swift */,
 				B7C66D5A2B2C976C00C8580A /* CharacterView.swift */,
 				B7C66D492B2BE92400C8580A /* MainView.swift */,
+				B74EBD8B2B34E7A800F8F9F1 /* AppDelegate.swift */,
 				B7C66D1C2B2BE85300C8580A /* Assets.xcassets */,
 			);
 			path = ViewController;
@@ -384,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B74EBD8C2B34E7A800F8F9F1 /* AppDelegate.swift in Sources */,
 				B7C66D4A2B2BE92400C8580A /* MainView.swift in Sources */,
 				B7C66D442B2BE8D300C8580A /* ListRepositoriesView.swift in Sources */,
 				B79D4D872B3217F700ECE644 /* FirebaseService.swift in Sources */,

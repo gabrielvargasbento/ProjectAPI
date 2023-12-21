@@ -1,8 +1,8 @@
 //
 //  ListView.swift
-//  GitHubList
+//  ProjectAPI
 //
-//  Created by dti Digital on 12/12/23.
+//  Created by Gabriel Vargas on 12/12/23.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ struct ListHarryPotterView: View {
     
     @ObservedObject var harrypotterViewModel = HarryPotterViewModel()
     let firebaseService = FirebaseService()
-
+    
     var body: some View {
         
         NavigationStack {
@@ -23,16 +23,19 @@ struct ListHarryPotterView: View {
             
             ZStack {
                 List(harrypotterViewModel.apiService.apiList) { item in
-                        NavigationLink(
-                            destination: CharacterView(
-                                name: item.name,
-                                house: item.house,
-                                dateOfBirth: item.dateOfBirth,
-                                actor: item.actor,
-                                image: item.image)) {
-                            Text(item.name ?? "Nome não disponível")
-                        }
-                    }
+                    NavigationLink(
+                        destination: CharacterView(
+                            name: item.name,
+                            house: item.house,
+                            dateOfBirth: item.dateOfBirth,
+                            actor: item.actor,
+                            image: item.image)) {
+                                Text(item.name ?? "Nome não disponível")
+                            }
+                            .onTapGesture {
+                                firebaseService.buttonEvent(buttonName: item.name!)
+                            }
+                }
             }
         }.onAppear() {
             harrypotterViewModel.fetchHarryPotter()

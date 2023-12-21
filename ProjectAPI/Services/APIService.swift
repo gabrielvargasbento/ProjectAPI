@@ -10,15 +10,15 @@ import Foundation
 class APIService<T: Decodable>: ObservableObject, RandomAccessCollection {
     
     @Published var apiList: [T] = []
-
+    
     // Conformidade ao protocolo RandomAccessCollection
     var startIndex: Int { apiList.startIndex }
     var endIndex: Int { apiList.endIndex }
-
+    
     func index(after i: Int) -> Int {
         return apiList.index(after: i)
     }
-
+    
     subscript(position: Int) -> T {
         return apiList[position]
     }
@@ -43,7 +43,3 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection {
         return self.apiList
     }
 }
-
-// crash
-// clique dos botoes
-// notificacao

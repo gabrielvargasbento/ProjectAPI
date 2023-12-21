@@ -22,37 +22,9 @@ struct MainView: App {
     }
 }
 
-import FirebaseMessaging
-
-class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
-        UNUserNotificationCenter.current().delegate = self
-
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in }
-        
-        application.registerForRemoteNotifications()
-        Messaging.messaging().delegate = self
-
-        return true
-    }
-
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        guard let fcmToken = fcmToken else {
-            print("Erro: Token de registro não disponível.")
-            return
-        }
-        print("Firebase registration token: \(fcmToken)")
-    }
-
-    private func messaging(_ messaging: Messaging, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("Erro ao registrar para notificações remotas: \(error.localizedDescription)")
-    }
-}
-
 struct ContentView: View {
+    @State private var fcmRegTokenMessage: String = ""
+
     var body: some View {
         TabView {
             ListRepositoriesView()
@@ -63,6 +35,14 @@ struct ContentView: View {
                 .tabItem {
                     Label("Harry Potter", systemImage: "eyeglasses")
                 }
+        }
+        .onAppear {
+            NotificationCenter.default.addObserver(forName: Notification.Name("FCMToken"), object: nil, queue: nil) { notification in
+                if let userInfo = notification.userInfo, let token = userInfo["token"] as? String {
+                    // Atualizar a propriedade com o token FCM
+                    self.fcmRegTokenMessage = "Remote FCM registration token: \(token)"
+                }
+            }
         }
     }
 }

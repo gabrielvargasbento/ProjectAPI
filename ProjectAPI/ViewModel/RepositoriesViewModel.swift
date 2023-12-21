@@ -1,8 +1,8 @@
 //
 //  RepositoriesViewModel.swift
-//  GitHubList
+//  ProjectAPI
 //
-//  Created by dti Digital on 14/12/23.
+//  Created by Gabriel Vargas on 14/12/23.
 //
 
 import Foundation
