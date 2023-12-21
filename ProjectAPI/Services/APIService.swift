@@ -44,7 +44,6 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection {
     }
 }
 
-// novo arquivo                                           OK
-// ga_event_origin (_o) = app; -> renomear parametros     OK
-// crash                                                  OK
+// crash
 // clique dos botoes
+// notificacao

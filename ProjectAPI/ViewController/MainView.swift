@@ -1,6 +1,15 @@
+//
+//  MainView.swift
+//  ProjectAPI
+//
+//  Created by Gabriel Vargas on 15/12/23.
+//
+
 import SwiftUI
 import FirebaseCore
 import UserNotifications
+import FirebaseMessaging
+import FirebaseAnalytics
 
 @main
 struct MainView: App {
@@ -13,27 +22,33 @@ struct MainView: App {
     }
 }
 
-class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+import FirebaseMessaging
 
-    // Responsible for connecting Firebase Analytics
+class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-
-        // Set the delegate for UNUserNotificationCenter
         UNUserNotificationCenter.current().delegate = self
 
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-
-        // Request authorization for notifications
-        UNUserNotificationCenter.current().requestAuthorization(
-            options: authOptions,
-            completionHandler: { _, _ in }
-        )
-
-        // Register for remote notifications
-        application.registerForRemoteNotifications()
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in }
         
+        application.registerForRemoteNotifications()
+        Messaging.messaging().delegate = self
+
         return true
+    }
+
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        guard let fcmToken = fcmToken else {
+            print("Erro: Token de registro não disponível.")
+            return
+        }
+        print("Firebase registration token: \(fcmToken)")
+    }
+
+    private func messaging(_ messaging: Messaging, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Erro ao registrar para notificações remotas: \(error.localizedDescription)")
     }
 }
 

@@ -15,10 +15,14 @@ class FirebaseService {
         Analytics.logEvent(AnalyticsEventScreenView,
                            parameters: [AnalyticsParameterScreenName: userName,
                                        AnalyticsParameterScreenClass: className,
-                                       AnalyticsParameterOrigin: "Gabriel Vargas"])
+                                            AnalyticsParameterOrigin: "Gabriel Vargas"])
+    }
+    
+    func buttonEvent(buttonName: String) {
+        Analytics.logEvent("button_clicked", 
+                           parameters: ["button_name": buttonName])
     }
 }
-
 /*
  Link dos possiveis parametros:
  https://firebase.google.com/docs/reference/android/com/google/firebase/analytics/FirebaseAnalytics.Param
