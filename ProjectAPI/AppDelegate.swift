@@ -12,8 +12,24 @@ import FirebaseMessaging
 import FirebaseAnalytics
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
+    
+    func application(_ application: UIApplication, 
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any] = [:],
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        // Determine who sent the URL.
+        let sendingAppID = options[.sourceApplication]
+        print("source application = \(sendingAppID ?? "Unknown")")
+        
+        // Process the URL.
+        guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
+            let listPath = components.path,
+            let params = components.queryItems else {
+                print("Invalid URL")
+                return false
+        }
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print("Configurando Firebase...")
 
         // 1. Solicitar permissões de notificação
@@ -37,10 +53,10 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
                 print("Error fetching FCM registration token: \(error)")
             } else if let token = token {
                 print("FCM registration token: \(token)")
-                // self.fcmRegTokenMessage = "Remote FCM registration token: \(token)"
+               //self.fcmRegTokenMessage = "Remote FCM registration token: \(token)"
             }
         }
-
+    
         Messaging.messaging().isAutoInitEnabled = true
 
         print("Configuração do Firebase concluída.")
@@ -61,5 +77,30 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
             object: nil,
             userInfo: dataDict
         )
+    }
+    
+    
+    func scene(_ scene: UIScene,
+               willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
+
+
+        // Determine who sent the URL.
+        if let urlContext = connectionOptions.urlContexts.first {
+
+
+            let sendingAppID = urlContext.options.sourceApplication
+            let url = urlContext.url
+            print("source application = \(sendingAppID ?? "Unknown")")
+            print("url = \(url)")
+
+
+            // Process the URL similarly to the UIApplicationDelegate example.
+        }
+
+
+        /*
+         *
+         */
     }
 }

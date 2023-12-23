@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B71CC45B2B2CF5F5006B97B0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71CC45A2B2CF5F5006B97B0 /* AdSupport.framework */; };
 		B74EBD8C2B34E7A800F8F9F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EBD8B2B34E7A800F8F9F1 /* AppDelegate.swift */; };
+		B74EBD8E2B36315700F8F9F1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EBD8D2B36315600F8F9F1 /* NotificationService.swift */; };
+		B74EBD902B36336200F8F9F1 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EBD8F2B36336200F8F9F1 /* NotificationView.swift */; };
 		B786FEF52B34A8D40023FFC0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B786FEF42B34A8D40023FFC0 /* FirebaseAnalytics */; };
 		B786FEF72B34A8D40023FFC0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B786FEF62B34A8D40023FFC0 /* FirebaseAuth */; };
 		B786FEF92B34A8D40023FFC0 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B786FEF82B34A8D40023FFC0 /* FirebaseCrashlytics */; };
@@ -54,8 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B71CC45A2B2CF5F5006B97B0 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		B74EBD8B2B34E7A800F8F9F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B74EBD8D2B36315600F8F9F1 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		B74EBD8F2B36336200F8F9F1 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		B79D4D862B3217F700ECE644 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		B7A221992B2CE351009B79EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7C66D152B2BE85000C8580A /* ProjectAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,7 +93,6 @@
 				B786FEF92B34A8D40023FFC0 /* FirebaseCrashlytics in Frameworks */,
 				B786FEFB2B34A8D40023FFC0 /* FirebaseFirestore in Frameworks */,
 				B786FEF52B34A8D40023FFC0 /* FirebaseAnalytics in Frameworks */,
-				B71CC45B2B2CF5F5006B97B0 /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,14 +113,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		36FF3DBBA6A26F9F7303CA76 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B71CC45A2B2CF5F5006B97B0 /* AdSupport.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		B7C66D0C2B2BE85000C8580A = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +120,6 @@
 				B7C66D282B2BE85300C8580A /* ProjectAPITests */,
 				B7C66D322B2BE85300C8580A /* ProjectAPIUITests */,
 				B7C66D162B2BE85000C8580A /* Products */,
-				36FF3DBBA6A26F9F7303CA76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				B7A221992B2CE351009B79EC /* GoogleService-Info.plist */,
+				B74EBD8B2B34E7A800F8F9F1 /* AppDelegate.swift */,
 				B7C66D532B2BEBEB00C8580A /* Services */,
 				B7C66D4E2B2BE98C00C8580A /* Model */,
 				B7C66D4B2B2BE96000C8580A /* ViewModel */,
@@ -186,8 +179,8 @@
 				B7C66D582B2BEF7500C8580A /* ListHarryPotterView.swift */,
 				B7C66D472B2BE91500C8580A /* AccountView.swift */,
 				B7C66D5A2B2C976C00C8580A /* CharacterView.swift */,
+				B74EBD8F2B36336200F8F9F1 /* NotificationView.swift */,
 				B7C66D492B2BE92400C8580A /* MainView.swift */,
-				B74EBD8B2B34E7A800F8F9F1 /* AppDelegate.swift */,
 				B7C66D1C2B2BE85300C8580A /* Assets.xcassets */,
 			);
 			path = ViewController;
@@ -216,6 +209,7 @@
 			children = (
 				B7C66D542B2BEBFD00C8580A /* APIService.swift */,
 				B79D4D862B3217F700ECE644 /* FirebaseService.swift */,
+				B74EBD8D2B36315600F8F9F1 /* NotificationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -389,12 +383,14 @@
 			files = (
 				B74EBD8C2B34E7A800F8F9F1 /* AppDelegate.swift in Sources */,
 				B7C66D4A2B2BE92400C8580A /* MainView.swift in Sources */,
+				B74EBD8E2B36315700F8F9F1 /* NotificationService.swift in Sources */,
 				B7C66D442B2BE8D300C8580A /* ListRepositoriesView.swift in Sources */,
 				B79D4D872B3217F700ECE644 /* FirebaseService.swift in Sources */,
 				B7C66D5B2B2C976C00C8580A /* CharacterView.swift in Sources */,
 				B7C66D522B2BEAE000C8580A /* HarryPotter.swift in Sources */,
 				B7C66D4D2B2BE97F00C8580A /* RepositoriesViewModel.swift in Sources */,
 				B7C66D482B2BE91500C8580A /* AccountView.swift in Sources */,
+				B74EBD902B36336200F8F9F1 /* NotificationView.swift in Sources */,
 				B7C66D572B2BECE300C8580A /* HarryPotterViewModel.swift in Sources */,
 				B7C66D552B2BEBFD00C8580A /* APIService.swift in Sources */,
 				B7C66D502B2BE99F00C8580A /* Repository.swift in Sources */,
@@ -566,6 +562,7 @@
 				DEVELOPMENT_TEAM = DG7F78X4FB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProjectAPI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -595,6 +592,7 @@
 				DEVELOPMENT_TEAM = DG7F78X4FB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProjectAPI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

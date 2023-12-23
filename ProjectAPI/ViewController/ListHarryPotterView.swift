@@ -44,5 +44,3 @@ struct ListHarryPotterView: View {
         
     }
 }
-
-

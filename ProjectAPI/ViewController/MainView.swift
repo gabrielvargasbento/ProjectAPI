@@ -18,6 +18,9 @@ struct MainView: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onOpenURL{ url in
+                    print(url)
+                }
         }
     }
 }
@@ -35,6 +38,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("Harry Potter", systemImage: "eyeglasses")
                 }
+            NotificationView()
+                .tabItem {
+                    Label("Notificação", systemImage: "bell")
+                }
         }
         .onAppear {
             NotificationCenter.default.addObserver(forName: Notification.Name("FCMToken"), object: nil, queue: nil) { notification in
@@ -46,3 +53,7 @@ struct ContentView: View {
         }
     }
 }
+
+
+
+start deep linking and push notifications
