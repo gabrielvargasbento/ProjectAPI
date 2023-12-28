@@ -9,38 +9,34 @@ import SwiftUI
 
 struct ListHarryPotterView: View {
     
+    @EnvironmentObject var routerManager: NavigationRouter
     @ObservedObject var harrypotterViewModel = HarryPotterViewModel()
     let firebaseService = FirebaseService()
     
     var body: some View {
         
-        NavigationStack {
+        NavigationStack(path: $routerManager.routes) {
             
-            Text("Personagens do Harry Potter")
-                .bold()
-                .font(.system(size: 30))
-                .multilineTextAlignment(.center)
-            
-            ZStack {
-                List(harrypotterViewModel.apiService.apiList) { item in
-                    NavigationLink(
-                        destination: CharacterView(
-                            name: item.name,
-                            house: item.house,
-                            dateOfBirth: item.dateOfBirth,
-                            actor: item.actor,
-                            image: item.image)) {
-                                Text(item.name ?? "Nome não disponível")
-                            }
-                            .onTapGesture {
-                                firebaseService.buttonEvent(buttonName: item.name!)
-                            }
+            List {
+                Section("Personagens") {
+                    ForEach(harrypotterViewModel.apiService.apiList) { item in
+                        NavigationLink(value: Route.harryPotterItem(item: item)) {
+                            Text(item.name ?? "Nome Indefinido")
+                        }
+                        .onTapGesture {
+                            firebaseService.buttonEvent(buttonName: item.name ?? "")
+                        }
+                    }
                 }
             }
-        }.onAppear() {
+            .navigationTitle("Harry Potter")
+            .navigationDestination(for: Route.self) { $0 }
+        }
+        .onAppear() {
             harrypotterViewModel.fetchHarryPotter()
             firebaseService.analytics(userName: "harrypotter_menu", className: "harrypotter")
+            routerManager.reset()
         }
-        
+        .environmentObject(routerManager)
     }
 }

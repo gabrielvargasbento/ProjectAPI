@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7412C562B3B3034006E92A4 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7412C552B3B3034006E92A4 /* Route.swift */; };
+		B7412C592B3B3336006E92A4 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7412C582B3B3336006E92A4 /* NavigationRouter.swift */; };
+		B7412C5B2B3C56DA006E92A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7412C5A2B3C56DA006E92A4 /* ContentView.swift */; };
+		B7412C5D2B3C86CD006E92A4 /* RouteFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7412C5C2B3C86CD006E92A4 /* RouteFinder.swift */; };
 		B74EBD8C2B34E7A800F8F9F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EBD8B2B34E7A800F8F9F1 /* AppDelegate.swift */; };
 		B74EBD8E2B36315700F8F9F1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EBD8D2B36315600F8F9F1 /* NotificationService.swift */; };
 		B74EBD902B36336200F8F9F1 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EBD8F2B36336200F8F9F1 /* NotificationView.swift */; };
@@ -55,6 +59,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B7412C552B3B3034006E92A4 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		B7412C582B3B3336006E92A4 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		B7412C5A2B3C56DA006E92A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B7412C5C2B3C86CD006E92A4 /* RouteFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFinder.swift; sourceTree = "<group>"; };
 		B74EBD8B2B34E7A800F8F9F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B74EBD8D2B36315600F8F9F1 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		B74EBD8F2B36336200F8F9F1 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -113,6 +121,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7412C572B3B3301006E92A4 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B7412C552B3B3034006E92A4 /* Route.swift */,
+				B7412C582B3B3336006E92A4 /* NavigationRouter.swift */,
+				B7412C5C2B3C86CD006E92A4 /* RouteFinder.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		B7C66D0C2B2BE85000C8580A = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +156,7 @@
 			children = (
 				B7A221992B2CE351009B79EC /* GoogleService-Info.plist */,
 				B74EBD8B2B34E7A800F8F9F1 /* AppDelegate.swift */,
+				B7412C572B3B3301006E92A4 /* Navigation */,
 				B7C66D532B2BEBEB00C8580A /* Services */,
 				B7C66D4E2B2BE98C00C8580A /* Model */,
 				B7C66D4B2B2BE96000C8580A /* ViewModel */,
@@ -180,6 +199,7 @@
 				B7C66D472B2BE91500C8580A /* AccountView.swift */,
 				B7C66D5A2B2C976C00C8580A /* CharacterView.swift */,
 				B74EBD8F2B36336200F8F9F1 /* NotificationView.swift */,
+				B7412C5A2B3C56DA006E92A4 /* ContentView.swift */,
 				B7C66D492B2BE92400C8580A /* MainView.swift */,
 				B7C66D1C2B2BE85300C8580A /* Assets.xcassets */,
 			);
@@ -383,9 +403,12 @@
 			files = (
 				B74EBD8C2B34E7A800F8F9F1 /* AppDelegate.swift in Sources */,
 				B7C66D4A2B2BE92400C8580A /* MainView.swift in Sources */,
+				B7412C592B3B3336006E92A4 /* NavigationRouter.swift in Sources */,
 				B74EBD8E2B36315700F8F9F1 /* NotificationService.swift in Sources */,
+				B7412C562B3B3034006E92A4 /* Route.swift in Sources */,
 				B7C66D442B2BE8D300C8580A /* ListRepositoriesView.swift in Sources */,
 				B79D4D872B3217F700ECE644 /* FirebaseService.swift in Sources */,
+				B7412C5B2B3C56DA006E92A4 /* ContentView.swift in Sources */,
 				B7C66D5B2B2C976C00C8580A /* CharacterView.swift in Sources */,
 				B7C66D522B2BEAE000C8580A /* HarryPotter.swift in Sources */,
 				B7C66D4D2B2BE97F00C8580A /* RepositoriesViewModel.swift in Sources */,
@@ -393,6 +416,7 @@
 				B74EBD902B36336200F8F9F1 /* NotificationView.swift in Sources */,
 				B7C66D572B2BECE300C8580A /* HarryPotterViewModel.swift in Sources */,
 				B7C66D552B2BEBFD00C8580A /* APIService.swift in Sources */,
+				B7412C5D2B3C86CD006E92A4 /* RouteFinder.swift in Sources */,
 				B7C66D502B2BE99F00C8580A /* Repository.swift in Sources */,
 				B7C66D592B2BEF7500C8580A /* ListHarryPotterView.swift in Sources */,
 			);

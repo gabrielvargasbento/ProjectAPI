@@ -9,18 +9,14 @@ import SwiftUI
 
 struct AccountView: View {
     
-    let id: Int?
-    let avatarUrl: String?
-    let name: String?
-    let description: String?
-    let htmlUrl: String?
-    
+    let account: Repository
     let firebaseService = FirebaseService()
-    
+    @EnvironmentObject var routerManager: NavigationRouter
+
     var body: some View {
         VStack {
             AsyncImage(
-                url: URL(string: avatarUrl!),
+                url: URL(string: account.owner!.avatarUrl!),
                 content: { img in
                     img
                         .resizable()
@@ -34,12 +30,12 @@ struct AccountView: View {
             )
             .padding(20)
             
-            Text(name ?? "")
+            Text(account.name ?? "")
                 .bold()
             
-            Text(description ?? "")
+            Text(account.description ?? "")
             
-            Link(destination: URL(string: htmlUrl!)!) {
+            Link(destination: URL(string: account.owner!.htmlUrl!)!) {
                 Text("Acessar GitHub")
                     .padding()
                     .background(Color.gray)
@@ -47,12 +43,15 @@ struct AccountView: View {
                     .cornerRadius(5)
             }
             .onTapGesture {
-                firebaseService.buttonEvent(buttonName: "GitHub: \(String(describing: name))")
+                firebaseService.buttonEvent(buttonName: "GitHub: \(String(describing: account.name))")
             }
             Spacer()
         }
         .onAppear() {
-            firebaseService.analytics(userName: name!, className: "repository")
+            firebaseService.analytics(userName: account.name!, className: "repository")
+        }
+        .onDisappear() {
+            routerManager.reset()
         }
     }
 }

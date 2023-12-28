@@ -9,39 +9,35 @@ import SwiftUI
 
 struct ListRepositoriesView: View {
     
+    @EnvironmentObject var routerManager: NavigationRouter
     @ObservedObject var repoViewModel = RepositoriesViewModel()
     let firebaseService = FirebaseService()
     
     var body: some View {
         
-        NavigationStack {
+        NavigationStack(path: $routerManager.routes) {
             
-            Text("Repositórios do GitHub")
-                .bold()
-                .font(.system(size: 30))
-                .multilineTextAlignment(.center)
-            
-            ZStack {
-                List(repoViewModel.apiService.apiList) { item in
-                    NavigationLink(
-                        destination: AccountView(
-                            id: item.id,
-                            avatarUrl: item.owner.avatarUrl,
-                            name: item.name,
-                            description: item.description,
-                            htmlUrl: item.owner.htmlUrl)) {
-                                Text(item.name ?? "Nome não disponível")
-                            }
-                            .onTapGesture {
-                                firebaseService.buttonEvent(buttonName: item.name!)
-                            }
+            List {
+                Section("Repositórios") {
+                    ForEach(repoViewModel.apiService.apiList) { item in
+                        NavigationLink(value: Route.repositoryItem(item: item)) {
+                            Text(item.name ?? "Nome Indefinido")
+                        }
+                        .onTapGesture {
+                            firebaseService.buttonEvent(buttonName: item.name ?? "")
+                        }
+                    }
                 }
             }
-        }.onAppear() {
+            .navigationTitle("GitHub")
+            .navigationDestination(for: Route.self) { $0 }
+        }
+        .onAppear() {
             repoViewModel.fetchRepositories()
             firebaseService.analytics(userName: "repository_menu", className: "repository")
+            routerManager.reset()
         }
-        
+        .environmentObject(routerManager)
     }
 }
 

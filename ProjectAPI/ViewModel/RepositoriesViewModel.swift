@@ -18,6 +18,8 @@ class RepositoriesViewModel: ObservableObject {
             print("Invalid URL")
             return
         }
-        repositoryList = apiService.fetchData(from: url)
+        DispatchQueue.main.async {
+            self.repositoryList = self.apiService.fetchData(from: url)
+        }
     }
 }

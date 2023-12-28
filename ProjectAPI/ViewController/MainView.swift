@@ -14,46 +14,19 @@ import FirebaseAnalytics
 @main
 struct MainView: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject private var routerManager = NavigationRouter()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(routerManager)
                 .onOpenURL{ url in
-                    print(url)
+                    let routeFinder = RouteFinder()
+                    if let route = routeFinder.find(from: url) {
+                        routerManager.reset()
+                        routerManager.push(to: route)
+                    }
                 }
         }
     }
 }
-
-struct ContentView: View {
-    @State private var fcmRegTokenMessage: String = ""
-
-    var body: some View {
-        TabView {
-            ListRepositoriesView()
-                .tabItem {
-                    Label("GitHub", systemImage: "octagon")
-                }
-            ListHarryPotterView()
-                .tabItem {
-                    Label("Harry Potter", systemImage: "eyeglasses")
-                }
-            NotificationView()
-                .tabItem {
-                    Label("Notificação", systemImage: "bell")
-                }
-        }
-        .onAppear {
-            NotificationCenter.default.addObserver(forName: Notification.Name("FCMToken"), object: nil, queue: nil) { notification in
-                if let userInfo = notification.userInfo, let token = userInfo["token"] as? String {
-                    // Atualizar a propriedade com o token FCM
-                    self.fcmRegTokenMessage = "Remote FCM registration token: \(token)"
-                }
-            }
-        }
-    }
-}
-
-
-
-start deep linking and push notifications

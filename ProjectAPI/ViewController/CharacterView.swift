@@ -9,19 +9,15 @@ import SwiftUI
 
 struct CharacterView: View {
     
-    let name: String?
-    let house: String?
-    let dateOfBirth: String?
-    let actor: String?
-    let image: String?
-    
+    let character: HarryPotter
     let firebaseService = FirebaseService()
-    
+    @EnvironmentObject var routerManager: NavigationRouter
+
     var body: some View {
         
         VStack {
             AsyncImage(
-                url: URL(string: image!),
+                url: URL(string: character.image!),
                 content: { img in
                     img
                         .resizable()
@@ -35,15 +31,15 @@ struct CharacterView: View {
             )
             .padding(20)
             
-            Text(name ?? "")
+            Text(character.name ?? "")
                 .bold()
             
-            Text(house ?? "")
+            Text(character.house ?? "")
             
-            Text(dateOfBirth ?? "")
+            Text(character.dateOfBirth ?? "")
             
             
-            Text(actor ?? "")
+            Text(character.actor ?? "")
             
             Button("Crash") {
                 fatalError("Crash was triggered")
@@ -52,9 +48,10 @@ struct CharacterView: View {
             Spacer()
         }
         .onAppear() {
-            firebaseService.analytics(userName: name!, className: "harrypotter")
-            
-            
+            firebaseService.analytics(userName: character.name!, className: "harrypotter")
+        }
+        .onDisappear() {
+            routerManager.reset()
         }
     }
 }
