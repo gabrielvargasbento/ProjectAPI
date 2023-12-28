@@ -18,6 +18,14 @@ class HarryPotterViewModel: ObservableObject {
             print("Invalid URL")
             return
         }
-        harryPotterList = apiService.fetchData(from: url)
+        
+        self.apiService.fetchData(from: url) { decodedData in
+            if let decodedData = decodedData {
+                DispatchQueue.main.async {
+                    self.harryPotterList = decodedData
+                }
+            }
+        }
+        
     }
 }

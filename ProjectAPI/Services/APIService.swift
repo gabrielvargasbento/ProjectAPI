@@ -23,23 +23,24 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection {
         return apiList[position]
     }
     
-    // Recuperar dados de uma API, retornando um array generico
-    func fetchData(from url: URL) -> [T] {
+    // Recuperar dados de uma API, retornando um array generico com escaping
+    func fetchData(from url: URL, completion: @escaping ([T]?) -> ()) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print("Erro na requisição: \(error.localizedDescription)")
+                completion(nil)
             } else if let data = data {
                 do {
                     let decodedData = try JSONDecoder().decode([T].self, from: data)
                     DispatchQueue.main.async {
                         self.apiList = decodedData
+                        completion(decodedData)
                     }
                 } catch {
                     print("Erro ao decodificar dados: \(error)")
+                    completion(nil)
                 }
             }
         }.resume()
-        
-        return self.apiList
     }
 }
