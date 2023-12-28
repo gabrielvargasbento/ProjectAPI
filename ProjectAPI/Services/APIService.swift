@@ -10,6 +10,7 @@ import Foundation
 class APIService<T: Decodable>: ObservableObject, RandomAccessCollection {
     
     @Published var apiList: [T] = []
+    @Published var apiitem: T? = nil
     
     // Conformidade ao protocolo RandomAccessCollection
     var startIndex: Int { apiList.startIndex }
@@ -39,6 +40,27 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection {
                 } catch {
                     print("Erro ao decodificar dados: \(error)")
                     completion(nil)
+                }
+            }
+        }.resume()
+    }
+    
+    // Recuperar um unico dado de uma API, retornando um array generico com escaping
+    func fetchDataItem(from url: URL, completion: @escaping (Result<T?, Error>) -> ()) {
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("Erro na requisição: \(error.localizedDescription)")
+                completion(.failure(error))
+            } else if let data = data {
+                do {
+                    let decodedData = try JSONDecoder().decode(T?.self, from: data)
+                    DispatchQueue.main.async {
+                        self.apiitem = decodedData
+                        completion(.success(decodedData))
+                    }
+                } catch {
+                    print("Erro ao decodificar dados: \(error)")
+                    completion(.failure(error))
                 }
             }
         }.resume()

@@ -13,9 +13,9 @@ final class NavigationRouter: ObservableObject {
     @Published var routes = [Route]()
     
     func push(to screen: Route) {
-        guard !routes.contains(screen) else {
-            return
-        }
+//        guard !routes.contains(screen) else {
+//            return
+//        }
         routes.append(screen)
     }
     

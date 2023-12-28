@@ -33,6 +33,9 @@ struct AccountView: View {
             Text(account.name ?? "")
                 .bold()
             
+            Text(account.owner!.login ?? "")
+                .bold()
+            
             Text(account.description ?? "")
             
             Link(destination: URL(string: account.owner!.htmlUrl!)!) {

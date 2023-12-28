@@ -20,13 +20,27 @@ struct MainView: App {
         WindowGroup {
             ContentView()
                 .environmentObject(routerManager)
-                .onOpenURL{ url in
+                .onOpenURL { url in
                     let routeFinder = RouteFinder()
-                    if let route = routeFinder.find(from: url) {
-                        routerManager.reset()
-                        routerManager.push(to: route)
+                    routeFinder.find(from: url) { result in
+                        switch result {
+                        case .repositoryItem(let item):
+                            routerManager.reset()
+                            routerManager.push(to: .repositoryItem(item: item))
+                            
+                        case .repositoryMenu:
+                            routerManager.reset()
+                            routerManager.push(to: .repositoryMenu)
+                            
+                        case .harryPotterMenu:
+                            routerManager.reset()
+                            routerManager.push(to: .harryPotterMenu)
+                        default:
+                            break
+                        }
                     }
                 }
         }
     }
 }
+

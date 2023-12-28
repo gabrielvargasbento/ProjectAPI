@@ -21,11 +21,11 @@ struct RouteFinder {
     let repoViewModel = RepositoriesViewModel()
     let harrypotterViewModel = HarryPotterViewModel()
     
-    func find(from url: URL) -> Route? {
+    func find(from url: URL, completion: @escaping (Route?) -> ()) {
         
-        guard let host = url.host()
-        else {
-            return nil
+        guard let host = url.host else {
+            completion(nil)
+            return
         }
         
         print(host)
@@ -33,30 +33,37 @@ struct RouteFinder {
         switch DeepLinkURLs(rawValue: host) {
             
         case .repositoryMenu:
-            return .repositoryMenu
+            completion(.repositoryMenu)
+            
         case .harryPotterMenu:
-            return .harryPotterMenu
+            completion(.harryPotterMenu)
             
         case .repository:
             let queryParams = url.queryParamaters
             
-            guard let name = queryParams?["name"] as? String else { return nil }
+            guard let name = queryParams?["name"] as? String else {
+                completion(nil)
+                return
+            }
             print(name)
             
-            //repoViewModel.fetchRepositories()
-            //print(repoViewModel.repositoryList.count)
-            
-            if let repo = repoViewModel.repositoryList.first(where: { $0.name == name }) {
-                return .repositoryItem(item: repo)
-            } else {
-                return nil
+            repoViewModel.fetchRepositoryByName(name: name) { result in
+                switch result {
+                case .success(let repository):
+                    print(repository)
+                    completion(.repositoryItem(item: repository))
+                case .failure(let error):
+                    print(error)
+                    completion(nil)
+                }
             }
-                    
+
         default:
-            return nil
+            completion(nil)
         }
     }
 }
+
 
 extension URL {
     public var queryParamaters: [String: String]? {

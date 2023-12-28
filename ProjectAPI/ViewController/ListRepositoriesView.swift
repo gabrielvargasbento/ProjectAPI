@@ -21,7 +21,7 @@ struct ListRepositoriesView: View {
                 Section("Repositórios") {
                     ForEach(repoViewModel.apiService.apiList) { item in
                         NavigationLink(value: Route.repositoryItem(item: item)) {
-                            Text(item.name ?? "Nome Indefinido")
+                            Text("\(item.id) - \(item.name!)")
                         }
                         .onTapGesture {
                             firebaseService.buttonEvent(buttonName: item.name ?? "")
