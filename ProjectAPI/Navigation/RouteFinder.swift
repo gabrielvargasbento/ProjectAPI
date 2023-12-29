@@ -60,24 +60,24 @@ struct RouteFinder {
 
         case .harryPotter:
             completion(nil)
-//            let queryParams = url.queryParamaters
-//            
-//            guard let id = queryParams?["id"] as? String else {
-//                completion(nil)
-//                return
-//            }
-//            print(id)
-//            
-//            harrypotterViewModel.fetchHarryPotterById(id: id) { result in
-//                switch result {
-//                case .success(let character):
-//                    print(character)
-//                    completion(.harryPotterItem(item: character))
-//                case .failure(let error):
-//                    print(error)
-//                    completion(nil)
-//                }
-//            }
+            let queryParams = url.queryParamaters
+            
+            guard let id = queryParams?["id"] as? String else {
+                completion(nil)
+                return
+            }
+            print(id)
+            
+            harrypotterViewModel.fetchHarryPotterById(id: id) { result in
+                switch result {
+                case .success(let character):
+                    print(character)
+                    completion(.harryPotterItem(item: character))
+                case .failure(let error):
+                    print(error)
+                    completion(nil)
+                }
+            }
             
         default:
             completion(nil)

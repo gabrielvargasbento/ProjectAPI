@@ -7,16 +7,15 @@
 
 import SwiftUI
 
-class TabSelectionManager: ObservableObject {
-    @Published var selectedTabIndex = 0
-}
+//class TabIndexManager: ObservableObject {
+//    @Published var selectedTabIndex: Int = 0
+//}
 
 struct ContentView: View {
-    @StateObject var tabSelectionManager: TabSelectionManager
-    @StateObject var routerManager: NavigationRouter
+//    @EnvironmentObject private var tabIndexManager: TabIndexManager
 
     var body: some View {
-        TabView(selection: $tabSelectionManager.selectedTabIndex) {
+        TabView{ //(selection: $tabIndexManager.selectedTabIndex) {
             ListRepositoriesView()
                 .tabItem {
                     Label("GitHub", systemImage: "octagon")
@@ -28,13 +27,12 @@ struct ContentView: View {
                     Label("Harry Potter", systemImage: "eyeglasses")
                 }
                 .tag(1)
-
             NotificationView()
                 .tabItem {
                     Label("Notificação", systemImage: "bell")
                 }
                 .tag(2)
         }
-        .environmentObject(routerManager)
+//        .environmentObject(tabIndexManager)
     }
 }

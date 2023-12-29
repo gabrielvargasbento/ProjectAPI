@@ -11,36 +11,57 @@ import SwiftUI
 struct MainView: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var routerManager = NavigationRouter()
-    @StateObject private var tabSelectionManager = TabSelectionManager()
-    
+//    @StateObject private var tabIndexManager = TabIndexManager()
+
     var body: some Scene {
         WindowGroup {
-            ContentView(tabSelectionManager: tabSelectionManager, routerManager: routerManager)
+            ContentView()
                 .onOpenURL { url in
-                    let routeFinder = RouteFinder()
-                    routeFinder.find(from: url) { result in
-                        switch result {
-                        case .repositoryItem(let item):
-                            routerManager.reset()
-                            tabSelectionManager.selectedTabIndex = 0
-                            routerManager.push(to: .repositoryItem(item: item))
-                            
-                        case .repositoryMenu:
-                            tabSelectionManager.selectedTabIndex = 0
-                            routerManager.reset()
-                            routerManager.push(to: .repositoryMenu)
-                            
-                        case .harryPotterMenu:
-                            tabSelectionManager.selectedTabIndex = 1
-                            routerManager.reset()
-                            routerManager.push(to: .harryPotterMenu)
-                            
-                        default:
-                            break
-                        }
+                    Task {
+                        await handleDeepLink(from: url)
                     }
                 }
+                .onAppear {
+                    delegate.app = self
+                }
+            
+                .environmentObject(routerManager)
+//                .environmentObject(tabIndexManager)
         }
-        .environmentObject(routerManager)
+    }
+}
+
+extension MainView {
+    
+    func handleDeepLink(from url: URL) async {
+        let routeFinder = RouteFinder()
+        routeFinder.find(from: url) { result in
+            switch result {
+                
+            case .repositoryItem(let item):
+                routerManager.reset()
+//              tabIndexManager.selectedTabIndex = 0
+                routerManager.push(to: .repositoryItem(item: item))
+                
+            case .harryPotterItem(let item):
+                routerManager.reset()
+//              tabIndexManager.selectedTabIndex = 1
+                routerManager.push(to: .harryPotterItem(item: item))
+                
+                
+            case .repositoryMenu:
+                routerManager.reset()
+//              tabIndexManager.selectedTabIndex = 0
+                routerManager.push(to: .repositoryMenu)
+                
+            case .harryPotterMenu:
+                routerManager.reset()
+//              tabIndexManager.selectedTabIndex = 1
+                routerManager.push(to: .harryPotterMenu)
+                
+            default:
+                break
+            }
+        }
     }
 }

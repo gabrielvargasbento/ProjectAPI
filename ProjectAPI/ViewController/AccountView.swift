@@ -11,7 +11,9 @@ struct AccountView: View {
     
     let account: Repository
     let firebaseService = FirebaseService()
+    
     @EnvironmentObject var routerManager: NavigationRouter
+//    @EnvironmentObject private var tabIndexManager: TabIndexManager
 
     var body: some View {
         VStack {
@@ -56,5 +58,7 @@ struct AccountView: View {
         .onDisappear() {
             routerManager.reset()
         }
+//        .environmentObject(routerManager)
+//        .environmentObject(tabIndexManager)
     }
 }

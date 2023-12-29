@@ -24,7 +24,6 @@ class RepositoriesViewModel: ObservableObject {
             if let decodedData = decodedData {
                 DispatchQueue.main.async {
                     self.repositoryList = decodedData
-                    print(decodedData)
                 }
             }
         }

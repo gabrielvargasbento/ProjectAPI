@@ -10,6 +10,8 @@ import SwiftUI
 struct ListHarryPotterView: View {
     
     @EnvironmentObject var routerManager: NavigationRouter
+//    @EnvironmentObject private var tabIndexManager: TabIndexManager
+
     @ObservedObject var harrypotterViewModel = HarryPotterViewModel()
     let firebaseService = FirebaseService()
     
@@ -33,10 +35,12 @@ struct ListHarryPotterView: View {
             .navigationDestination(for: Route.self) { $0 }
         }
         .onAppear() {
+//            tabIndexManager.selectedTabIndex = 1
             harrypotterViewModel.fetchHarryPotter()
             firebaseService.analytics(userName: "harrypotter_menu", className: "harrypotter")
             routerManager.reset()
         }
-        .environmentObject(routerManager)
+//        .environmentObject(routerManager)
+//        .environmentObject(tabIndexManager)
     }
 }

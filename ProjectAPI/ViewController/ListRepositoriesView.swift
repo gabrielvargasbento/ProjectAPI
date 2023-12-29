@@ -10,6 +10,8 @@ import SwiftUI
 struct ListRepositoriesView: View {
     
     @EnvironmentObject var routerManager: NavigationRouter
+//    @EnvironmentObject private var tabIndexManager: TabIndexManager
+
     @ObservedObject var repoViewModel = RepositoriesViewModel()
     let firebaseService = FirebaseService()
     
@@ -33,13 +35,13 @@ struct ListRepositoriesView: View {
             .navigationDestination(for: Route.self) { $0 }
         }
         .onAppear() {
-            print("open")
+//            tabIndexManager.selectedTabIndex = 0
             repoViewModel.fetchRepositories()
-            print(repoViewModel.apiService.apiList.count)
             firebaseService.analytics(userName: "repository_menu", className: "repository")
             routerManager.reset()
         }
-        .environmentObject(routerManager)
+//        .environmentObject(routerManager)
+//        .environmentObject(tabIndexManager)
     }
 }
 

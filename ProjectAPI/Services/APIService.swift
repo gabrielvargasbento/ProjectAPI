@@ -10,7 +10,7 @@ import Foundation
 class APIService<T: Decodable>: ObservableObject, RandomAccessCollection {
     
     @Published var apiList: [T] = []
-    @Published var apiitem: T? = nil
+    @Published var apiItem: T? = nil
     
     // Conformidade ao protocolo RandomAccessCollection
     var startIndex: Int { apiList.startIndex }
@@ -45,24 +45,36 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection {
         }.resume()
     }
     
-    // Recuperar um unico dado de uma API, retornando um array generico com escaping
     func fetchDataItem(from url: URL, completion: @escaping (Result<T?, Error>) -> ()) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print("Erro na requisição: \(error.localizedDescription)")
                 completion(.failure(error))
             } else if let data = data {
+                
+                // Tentar decodificar uma struct
                 do {
-                    let decodedData = try JSONDecoder().decode(T?.self, from: data)
+                    let decodedData = try JSONDecoder().decode(T.self, from: data)
                     DispatchQueue.main.async {
-                        self.apiitem = decodedData
                         completion(.success(decodedData))
                     }
                 } catch {
-                    print("Erro ao decodificar dados: \(error)")
-                    completion(.failure(error))
+                    
+                    // Tentar decodififcar um array com uma unica struct contida nele
+                    do {
+                        let decodedData = try JSONDecoder().decode([T].self, from: data)
+                        DispatchQueue.main.async {
+                            completion(.success(decodedData[0]))
+                        }
+                    } catch {
+                        
+                        print("Erro ao decodificar dados: \(error)")
+                        completion(.failure(error))
+                    }
                 }
             }
         }.resume()
     }
+    
+    
 }
