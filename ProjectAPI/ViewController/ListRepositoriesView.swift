@@ -33,7 +33,9 @@ struct ListRepositoriesView: View {
             .navigationDestination(for: Route.self) { $0 }
         }
         .onAppear() {
+            print("open")
             repoViewModel.fetchRepositories()
+            print(repoViewModel.apiService.apiList.count)
             firebaseService.analytics(userName: "repository_menu", className: "repository")
             routerManager.reset()
         }

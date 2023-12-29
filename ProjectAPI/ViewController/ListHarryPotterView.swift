@@ -21,7 +21,7 @@ struct ListHarryPotterView: View {
                 Section("Personagens") {
                     ForEach(harrypotterViewModel.apiService.apiList) { item in
                         NavigationLink(value: Route.harryPotterItem(item: item)) {
-                            Text(item.name ?? "Nome Indefinido")
+                            Text(item.name!)
                         }
                         .onTapGesture {
                             firebaseService.buttonEvent(buttonName: item.name ?? "")
