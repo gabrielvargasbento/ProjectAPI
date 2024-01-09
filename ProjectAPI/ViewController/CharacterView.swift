@@ -10,7 +10,7 @@ import SwiftUI
 struct CharacterView: View {
     
     let character: HarryPotter
-    let firebaseService = FirebaseService()
+    let firebaseService = AnalyticsService()
     @EnvironmentObject var routerManager: NavigationRouter
 
     var body: some View {

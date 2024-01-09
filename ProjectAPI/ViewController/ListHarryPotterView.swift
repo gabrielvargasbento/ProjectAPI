@@ -13,7 +13,7 @@ struct ListHarryPotterView: View {
 //    @EnvironmentObject private var tabIndexManager: TabIndexManager
 
     @ObservedObject var harrypotterViewModel = HarryPotterViewModel()
-    let firebaseService = FirebaseService()
+    let firebaseService = AnalyticsService()
     
     var body: some View {
         

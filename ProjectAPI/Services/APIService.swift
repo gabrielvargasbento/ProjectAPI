@@ -75,6 +75,6 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection {
             }
         }.resume()
     }
-    
-    
 }
+
+// switch

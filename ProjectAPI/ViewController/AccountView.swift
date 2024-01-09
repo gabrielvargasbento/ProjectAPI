@@ -10,7 +10,7 @@ import SwiftUI
 struct AccountView: View {
     
     let account: Repository
-    let firebaseService = FirebaseService()
+    let firebaseService = AnalyticsService()
     
     @EnvironmentObject var routerManager: NavigationRouter
 //    @EnvironmentObject private var tabIndexManager: TabIndexManager

@@ -13,7 +13,7 @@ struct ListRepositoriesView: View {
 //    @EnvironmentObject private var tabIndexManager: TabIndexManager
 
     @ObservedObject var repoViewModel = RepositoriesViewModel()
-    let firebaseService = FirebaseService()
+    let firebaseService = AnalyticsService()
     
     var body: some View {
         

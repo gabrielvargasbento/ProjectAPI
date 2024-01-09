@@ -32,6 +32,11 @@ struct ContentView: View {
                     Label("Notificação", systemImage: "bell")
                 }
                 .tag(2)
+            LoginView()
+                .tabItem {
+                    Label("Login", systemImage: "person.circle")
+                }
+                .tag(3)
         }
 //        .environmentObject(tabIndexManager)
     }
