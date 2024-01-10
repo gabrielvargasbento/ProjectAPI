@@ -17,15 +17,20 @@ struct LoginView: View {
     
     @State private var email = ""
     @State private var password = ""
+    @State private var userNameLogged = ""
     @State private var userIsLoggedIn = false
+    
+    @State private var showAlert = false
+    
+    @State private var isSheetPresented = false
+    @State private var urlWeb: URL?
     
     var body: some View {
         VStack(spacing: 40) {
             if userIsLoggedIn {
-                Text("You are logged in")
+                Text("You are logged in, \(userNameLogged)")
                     .font(.system(size: 40, weight: .bold, design: .rounded))
                 Button(action: {
-                    // Perform logout action here
                     loginService.logout()
                     userIsLoggedIn.toggle()
                 }) {
@@ -59,6 +64,9 @@ struct LoginView: View {
                 
                 Button {
                     loginService.login(email: email, password: password)
+                    userNameLogged = String(email.prefix { $0 != "@" })
+                    print("userNameLogged = \(userNameLogged)")
+                    
                 } label: {
                     Text("Login")
                         .bold()
@@ -71,10 +79,15 @@ struct LoginView: View {
                 }
                 
                 LoginService.GoogleSignInButton()
-                .frame(width: 200, height: 40)
-                .onTapGesture {
-                    loginService.loginWithGoogle()
-                }
+                    .frame(width: 200, height: 40)
+                    .onTapGesture {
+                        loginService.loginWithGoogle { userName in
+                            if let userName = userName {
+                                userNameLogged = userName
+                                print("Nome do usuário:", userName)
+                            }
+                        }
+                    }
                 
                 LoginService.AppleSignInButton { authorization, error in
                     if let error = error {
@@ -94,23 +107,45 @@ struct LoginView: View {
                 }
                 .frame(width: 200, height: 40)
 
-                LoginService.GitHubSignInButton { token, error in
-                    if let error = error {
-                        print("Erro durante o login do GitHub: \(error.localizedDescription)")
-                    } else if let token = token {
-                        print("Login do GitHub bem-sucedido. Token: \(token)")
+                LoginService.GitHubSignInButton()
+                    .frame(width: 200, height: 40)
+                    .onTapGesture {
+                        loginService.loginWithGitHub { url in
+                            if let url = url {
+                                urlWeb = url
+                                print("urlWeb = \(String(describing: urlWeb))")
+                                isSheetPresented = true
+                            }
+                        }
                     }
-                }
-                .frame(width: 200, height: 40)
+                    .sheet(isPresented: $isSheetPresented, content: {
+                        LoginService.WebView(url: (urlWeb ?? URL(string: "https://github.com/login/oauth/authorize?client_id=0d3bb26953af1e251399&redirect_uri=https://projectapi-dti.firebaseapp.com/__/auth/handler"))!)
+                                                                 
+                                                                 
+                                                                 
+                                                                 //=projectapi://repositoryMenu"))!)
+                    })
             }
         }
         .frame(width: 350)
         .onAppear() {
             Auth.auth().addStateDidChangeListener { auth, user in
                 if user != nil {
-                    userIsLoggedIn.toggle()
+                    userIsLoggedIn = true
+                    showAlert = true
+                    print("user: \(String(describing: user))")
+                } else {
+                    userIsLoggedIn = false
+                    showAlert = false
                 }
             }
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Sucesso!"),
+                message: Text("Você está logado!"),
+                dismissButton: .default(Text("OK"))
+            )
         }
     }
 }

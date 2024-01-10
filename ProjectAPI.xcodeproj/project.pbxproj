@@ -46,6 +46,31 @@
 		B7C66D5B2B2C976C00C8580A /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C66D5A2B2C976C00C8580A /* CharacterView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		B74C84162B4F04AF007B8790 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		B74C84172B4F04B0007B8790 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXContainerItemProxy section */
 		B7C66D262B2BE85300C8580A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -259,6 +284,8 @@
 				B79D4D882B3349AD00ECE644 /* ShellScript */,
 			);
 			buildRules = (
+				B74C84172B4F04B0007B8790 /* PBXBuildRule */,
+				B74C84162B4F04AF007B8790 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);

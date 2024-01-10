@@ -78,5 +78,3 @@ extension AppDelegate: MessagingDelegate {
         #endif
     }
 }
-
-

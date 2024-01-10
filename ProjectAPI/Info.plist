@@ -17,6 +17,10 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>https://projectapi-dti.firebaseapp.com/__/auth/handler</string>
+			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
@@ -26,6 +30,14 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>projectapi</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>app-1-1058651777105-ios-a0fd86f70fbb2090c07070</string>
 			</array>
 		</dict>
 	</array>
