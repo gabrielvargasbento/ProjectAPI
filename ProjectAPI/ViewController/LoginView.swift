@@ -21,9 +21,7 @@ struct LoginView: View {
     @State private var userIsLoggedIn = false
     
     @State private var showAlert = false
-    
     @State private var isSheetPresented = false
-    @State private var urlWeb: URL?
     
     var body: some View {
         VStack(spacing: 40) {
@@ -111,16 +109,16 @@ struct LoginView: View {
                         }
                     }
                 
-//                LoginService.MicrosoftInButton()
-//                    .frame(width: 200, height: 40)
-//                    .onTapGesture {
-//                        loginService.loginWithMicrosoft { userName in
-//                            if let userName = userName {
-//                                userNameLogged = userName
-//                                print("Nome do usuário:", userName)
-//                            }
-//                        }
-//                    }
+                LoginService.MicrosoftInButton()
+                    .frame(width: 200, height: 40)
+                    .onTapGesture {
+                        loginService.loginWithMicrosoft { userName in
+                            if let userName = userName {
+                                userNameLogged = userName
+                                print("Nome do usuário:", userName)
+                            }
+                        }
+                    }
             }
         }
         .frame(width: 350)

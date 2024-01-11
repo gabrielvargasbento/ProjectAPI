@@ -1,0 +1,1240 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0496E7FAA26B24DA18937A4524CCCA7F /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620AAEA1BF47FE1F7DD3FCCA7D7416BD /* RequestModel.swift */; };
+		0514FCE6C64ADACA6745A4CC96A273D4 /* RequestModelBeautifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB16E86FA0C9355DA72C5C3F246864B2 /* RequestModelBeautifier.swift */; };
+		1EEDAD12DDDC3142EE57080A9A27A63E /* ShareUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A001A366DDAF11A53F17059C552E1A3 /* ShareUtils.swift */; };
+		263106EA3D8265BD84AA81C2FAA702E4 /* CustomHTTPProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C6BE3D50B80515394E9A9822D6B4F2 /* CustomHTTPProtocol.swift */; };
+		2D88D6A79862A326D5702110DD10AD56 /* Wormholy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8842CFA29FF5B9346610DA2B882057 /* Wormholy.swift */; };
+		307CA4E728309E6A74F8619FC3706A69 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A3D976896C0203FC9F267787257A41B /* TextTableViewCell.xib */; };
+		329D1E331CFDE43F39F2F27277A2AF55 /* WormholyConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C3E65BDF9177E305283D054CD70FC7 /* WormholyConstructor.m */; };
+		32A2054EDED31E8A56B360CB1FCB9C56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		37C241264893C04ABFCB123FB86AB2FD /* WHLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B3D9E9EE1A96ECE9674B6CEE29DF7D /* WHLabel.swift */; };
+		3908D5A3F69A7F521721DA6EF8B6DB87 /* WHBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7FFE0B6E10DD38A0DD050A72C4095D /* WHBundle.swift */; };
+		3D96722FFAFA9FFFA92796DEBDF60DB1 /* WHDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084E6053214F19A19EDA007BDEB444C7 /* WHDate.swift */; };
+		3E9EC5E741D104D87387618F660244D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3FD2F8868658F608EBE7115F12A2E985 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		400C7AE826CDAEB8321CC822E9C0D2CC /* InputStream+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A09230D9AC5AB332F62C7694F32FA1 /* InputStream+Utils.swift */; };
+		4BA4814575EB8ACAEB44F16D0F3CBB00 /* Wormholy-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E483CB8AC9F61AD6B4ECDF5C88337B44 /* Wormholy-dummy.m */; };
+		590077FEFAF241474E808BD285E4BE32 /* Pods-ProjectAPI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7F0ABEB8F8A11932CFF22AF5E4DA60 /* Pods-ProjectAPI-dummy.m */; };
+		5B0FEAEB0385C632E303BFABAF6AA156 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8D4EF766F3B9A4E8F3099DE7D6069 /* RequestCell.swift */; };
+		653BE9DDAAC1E95C7161A875BA60240A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		657102EE616A3728959EC61DAFF0AF90 /* RequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B117D040AD5848427C5A92D36FF7121B /* RequestCell.xib */; };
+		6A795EC73F636B5EAAA443CD1A666277 /* WHBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF30D4AA1B04718AB5D79D76AEAAC59 /* WHBaseViewController.swift */; };
+		6EC7DC62BDAF027121003FD09B4329A1 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905D5FABF855ED132B82CD65879C2CD5 /* Section.swift */; };
+		6F04A7B593B195D28F21C9D8B3254DE2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1A44725E8016211CCAE3B3A3B6A8A /* Colors.swift */; };
+		7052DD2A79F8558F8C35488C877AC20D /* Flow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A97ADF2C478817F1A32C3ABF02ED284 /* Flow.storyboard */; };
+		708C65AC8DEA19B924ED06A72D869EE5 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80453661B63F471503A8C497606DA56 /* Config.swift */; };
+		720D17097D4F0CDDE89C4B21C0553355 /* RequestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E7E066A283B782A7D657456672ED22 /* RequestDetailViewController.swift */; };
+		745C29EB3EBB39538160C5EBED6797AC /* RequestTitleSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F22C72DDDF9327B8CCE9609712CDF4 /* RequestTitleSectionView.xib */; };
+		74BF16160537FCBEBE26A6A757044CB3 /* WHTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A8F7191DACE5C7ACBB58C1EA4B6470 /* WHTextView.swift */; };
+		78A3AE11CA2758D43EB35941F7C2FB7C /* ActionableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6531C42F0378DD4C29EDCC978D27AE04 /* ActionableTableViewCell.xib */; };
+		7FF4011775A6621749EBF58B9F3B37E5 /* Postman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43428B3ECB8A53A823F71415625F3814 /* Postman.swift */; };
+		83C60180EEA0FD6B7F22FF74E2DCAFC6 /* WormholyMethodSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 900C014E5D6C2ED77C3CF06885F80E96 /* WormholyMethodSwizzling.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		841BC9A6B15C2D0EB73A2645E9CC0021 /* RequestResponseExportOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C69353CE92AC22C0E426BE91512DF6 /* RequestResponseExportOption.swift */; };
+		8A492E15AC13DD3A4832B77238057EB2 /* WHTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705372EAEA3AFFE1035457BAA85E2BD4 /* WHTableView.swift */; };
+		8A7A1BC68F5CF770015DBDC7631E677F /* BodyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4AB277907E2DBCB6E3A7B2227118D /* BodyDetailViewController.swift */; };
+		8CD80D320A437048D1469AA382719CED /* Wormholy-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7149E2686C3D29A617BB0CDFB731746E /* Wormholy-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9000003347A315E78EFE8CF6B485FCAA /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4125741AFEED4EE986C1294E60FAB /* FileHandler.swift */; };
+		903C7B45FD055FADE53DEE47EF593A1B /* Pods-ProjectAPITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E36F77A02A36128120ABA44268E585A /* Pods-ProjectAPITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9348B34237AE2975E20AA8D604F1423D /* WHString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B23C731B03BC191CC7755B7C3E29CF /* WHString.swift */; };
+		935557E2ED1490E3CE73179D1E175332 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6573C327753D465788D72ABDF3511657 /* TextTableViewCell.swift */; };
+		9559CDDEF450402A44A1108219EB4504 /* Pods-ProjectAPI-ProjectAPIUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DDADF9BAC50628DEFCCD7828F8D067C7 /* Pods-ProjectAPI-ProjectAPIUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97BAD5386DB86E57C8121DC5BB9EB7EA /* NSURLSessionConfiguration+Wormholy.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AB47BF5E35F00184B370E3A1BAAEFD9 /* NSURLSessionConfiguration+Wormholy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4C9EB97F20B7C24E713C0050829D6E2 /* Wormholy-Wormholy in Resources */ = {isa = PBXBuildFile; fileRef = AA92ED38E716E03D3FC758C810953B95 /* Wormholy-Wormholy */; };
+		A63E618214C11DFD86BEEB5D2DFD0355 /* WHCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227ECE45C3104624EA579B9B89AC6CDF /* WHCollectionView.swift */; };
+		B44E7EEF87BF99B3A42C85119DF0AC63 /* RequestTitleSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54360AB19E58FF214039519577EECE70 /* RequestTitleSectionView.swift */; };
+		B5CCAA12D451B5A2DA163D5697787FA1 /* NSURLSessionConfiguration+Wormholy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0687B46DE39D4F77084657FF03A69BA /* NSURLSessionConfiguration+Wormholy.m */; };
+		BA746FE274B45095BFCF1FFF7A7E0A9D /* CustomActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B232DF847FAE0ABBE1C316F21867588 /* CustomActivity.swift */; };
+		BBB34288DA32EC91B33C6C258039770E /* WHNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9C98E815CDDA122B1A3ACD198707C1 /* WHNavigationController.swift */; };
+		BDE773EB7BA73CAE5FF58588B01D2140 /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D34520534CFE69F159F755959C3EC43 /* RequestsViewController.swift */; };
+		C2295D3A9296079498EF6831DD064EA7 /* WHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783A14FB9396EC4013BE3B477098CF1 /* WHView.swift */; };
+		D10308BC93D2DB860615771003DF8EB1 /* Pods-ProjectAPITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B5254E95FAF6DD11F8576FC92FF3B36D /* Pods-ProjectAPITests-dummy.m */; };
+		D166711CC0B402CC46D5BAB3D8A036A3 /* Pods-ProjectAPI-ProjectAPIUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C26F77C3DB6EED7B9A7B8FB3665F6 /* Pods-ProjectAPI-ProjectAPIUITests-dummy.m */; };
+		D22B1B6048FF533A75EE3C02858F01F8 /* Wormholy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FC4614D855E04B8D30C7134F1209232 /* Wormholy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D475921FD42C5F9AF0CDC4A5F4FE4055 /* ActionableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFEEF35002D0080DBA4B09707C7CE9F /* ActionableTableViewCell.swift */; };
+		D4AA83B55907BAFF61483A404992A6E2 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECF632DB893A01BCCDFF58ECCDB19EB /* Storage.swift */; };
+		D910B7B19A025D37504B8A8339733587 /* Pods-ProjectAPI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8022D6DBF49EACEAE53DD9C4915B43A /* Pods-ProjectAPI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEAAF1DB35FB3F9FDAB6CACC90B882E3 /* WormholyMethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7193232C7450FAD722B73C94840F2 /* WormholyMethodSwizzling.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		516EDA96C0C63B35DC2ADF8EC2E58855 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 415C43F6CBB8524871B57A5470F3D96B;
+			remoteInfo = "Pods-ProjectAPI";
+		};
+		992D4E606E15A349D8301DF75B3646EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E73ED39761329414C06DD4486C5058E;
+			remoteInfo = Wormholy;
+		};
+		ABD8AFCFA89CAFD8B3C8AC94299BA5E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E73ED39761329414C06DD4486C5058E;
+			remoteInfo = Wormholy;
+		};
+		C054DB0FDE820A22DDC32C8E29DBDC01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93CEC7FFB57A497DE49471C5D9517C13;
+			remoteInfo = "Wormholy-Wormholy";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07063B9A8F9FDBD93CFE3DC6F46E1DE5 /* Pods-ProjectAPI-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ProjectAPI-acknowledgements.plist"; sourceTree = "<group>"; };
+		0740CB8CD3C41F45DAB864D871D3C14B /* Pods-ProjectAPITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ProjectAPITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		0778A367AA806123DF6402960A9D8DA0 /* Pods-ProjectAPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ProjectAPITests.debug.xcconfig"; sourceTree = "<group>"; };
+		07C69353CE92AC22C0E426BE91512DF6 /* RequestResponseExportOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestResponseExportOption.swift; path = Sources/Utils/RequestResponseExportOption.swift; sourceTree = "<group>"; };
+		084E6053214F19A19EDA007BDEB444C7 /* WHDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WHDate.swift; path = Sources/Subclasses/WHDate.swift; sourceTree = "<group>"; };
+		09F22C72DDDF9327B8CCE9609712CDF4 /* RequestTitleSectionView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = RequestTitleSectionView.xib; path = Sources/UI/Sections/RequestTitleSectionView.xib; sourceTree = "<group>"; };
+		0A001A366DDAF11A53F17059C552E1A3 /* ShareUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareUtils.swift; path = Sources/Utils/ShareUtils.swift; sourceTree = "<group>"; };
+		0B3EE91B4AB939302B9A14820D927458 /* Pods-ProjectAPI-ProjectAPIUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ProjectAPI-ProjectAPIUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		180BAED53DF6028C89C726846A000A14 /* Pods-ProjectAPI-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ProjectAPI-Info.plist"; sourceTree = "<group>"; };
+		1BF7193232C7450FAD722B73C94840F2 /* WormholyMethodSwizzling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WormholyMethodSwizzling.m; path = Sources/Objc/WormholyMethodSwizzling.m; sourceTree = "<group>"; };
+		1EFEEF35002D0080DBA4B09707C7CE9F /* ActionableTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActionableTableViewCell.swift; path = Sources/UI/Cells/ActionableTableViewCell.swift; sourceTree = "<group>"; };
+		227ECE45C3104624EA579B9B89AC6CDF /* WHCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WHCollectionView.swift; path = Sources/Subclasses/WHCollectionView.swift; sourceTree = "<group>"; };
+		23A0AED209AC3ADB7AF91062D6B4D04B /* Pods-ProjectAPITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ProjectAPITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		23FF9DFD6D5C599CA73D6574AAE91746 /* Pods-ProjectAPITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ProjectAPITests.modulemap"; sourceTree = "<group>"; };
+		2530BC414137FF7A53A0368B476547B9 /* Wormholy */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Wormholy; path = Wormholy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A09230D9AC5AB332F62C7694F32FA1 /* InputStream+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "InputStream+Utils.swift"; path = "Sources/Utils/InputStream+Utils.swift"; sourceTree = "<group>"; };
+		29C3E65BDF9177E305283D054CD70FC7 /* WormholyConstructor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WormholyConstructor.m; path = Sources/Objc/WormholyConstructor.m; sourceTree = "<group>"; };
+		2D34520534CFE69F159F755959C3EC43 /* RequestsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestsViewController.swift; path = Sources/UI/RequestsViewController.swift; sourceTree = "<group>"; };
+		38CF6C5F7220DE312A3B3833B9D55406 /* Pods-ProjectAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ProjectAPI.release.xcconfig"; sourceTree = "<group>"; };
+		3A97ADF2C478817F1A32C3ABF02ED284 /* Flow.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = Flow.storyboard; path = Sources/UI/Flow.storyboard; sourceTree = "<group>"; };
+		3B7B188411C1F36E31E5FFFA6852898B /* Pods-ProjectAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ProjectAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		3DC8D4EF766F3B9A4E8F3099DE7D6069 /* RequestCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestCell.swift; path = Sources/UI/Cells/RequestCell.swift; sourceTree = "<group>"; };
+		3ECF632DB893A01BCCDFF58ECCDB19EB /* Storage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Storage.swift; path = Sources/Storage.swift; sourceTree = "<group>"; };
+		3FC4614D855E04B8D30C7134F1209232 /* Wormholy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Wormholy.h; path = Sources/Wormholy.h; sourceTree = "<group>"; };
+		3FCFB4AF8CB4032C23F7D5CB6A1632CD /* Pods-ProjectAPI-ProjectAPIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ProjectAPI-ProjectAPIUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		43428B3ECB8A53A823F71415625F3814 /* Postman.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Postman.swift; path = Sources/Models/Postman/Postman.swift; sourceTree = "<group>"; };
+		4A3D976896C0203FC9F267787257A41B /* TextTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = TextTableViewCell.xib; path = Sources/UI/Cells/TextTableViewCell.xib; sourceTree = "<group>"; };
+		4C57C108612164157599AC838BF371BF /* Pods-ProjectAPI-ProjectAPIUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ProjectAPI-ProjectAPIUITests-frameworks.sh"; sourceTree = "<group>"; };
+		54360AB19E58FF214039519577EECE70 /* RequestTitleSectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTitleSectionView.swift; path = Sources/UI/Sections/RequestTitleSectionView.swift; sourceTree = "<group>"; };
+		57B23C731B03BC191CC7755B7C3E29CF /* WHString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WHString.swift; path = Sources/Subclasses/WHString.swift; sourceTree = "<group>"; };
+		5AB47BF5E35F00184B370E3A1BAAEFD9 /* NSURLSessionConfiguration+Wormholy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLSessionConfiguration+Wormholy.h"; path = "Sources/Objc/NSURLSessionConfiguration+Wormholy.h"; sourceTree = "<group>"; };
+		5C707DB3487DE791FE2508179E7D01FC /* Pods-ProjectAPI-ProjectAPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ProjectAPI-ProjectAPIUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5D92A7E6B1374CE2F756F26EE6B8CD9D /* Pods-ProjectAPI-ProjectAPIUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ProjectAPI-ProjectAPIUITests-Info.plist"; sourceTree = "<group>"; };
+		620AAEA1BF47FE1F7DD3FCCA7D7416BD /* RequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModel.swift; path = Sources/Models/RequestModel.swift; sourceTree = "<group>"; };
+		6531C42F0378DD4C29EDCC978D27AE04 /* ActionableTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ActionableTableViewCell.xib; path = Sources/UI/Cells/ActionableTableViewCell.xib; sourceTree = "<group>"; };
+		6573C327753D465788D72ABDF3511657 /* TextTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextTableViewCell.swift; path = Sources/UI/Cells/TextTableViewCell.swift; sourceTree = "<group>"; };
+		67EDA87341A26A15AD025DC0B17D446F /* Wormholy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Wormholy.debug.xcconfig; sourceTree = "<group>"; };
+		6ACC7B27FFC8944000932CBC2EB52DD5 /* Pods-ProjectAPI-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ProjectAPI-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6B7F0ABEB8F8A11932CFF22AF5E4DA60 /* Pods-ProjectAPI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ProjectAPI-dummy.m"; sourceTree = "<group>"; };
+		6E2C26F77C3DB6EED7B9A7B8FB3665F6 /* Pods-ProjectAPI-ProjectAPIUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ProjectAPI-ProjectAPIUITests-dummy.m"; sourceTree = "<group>"; };
+		705372EAEA3AFFE1035457BAA85E2BD4 /* WHTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WHTableView.swift; path = Sources/Subclasses/WHTableView.swift; sourceTree = "<group>"; };
+		7149E2686C3D29A617BB0CDFB731746E /* Wormholy-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Wormholy-umbrella.h"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7763FEC7BDB48CA82A164D35EDC05400 /* Pods-ProjectAPI-ProjectAPIUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ProjectAPI-ProjectAPIUITests.modulemap"; sourceTree = "<group>"; };
+		7EF30D4AA1B04718AB5D79D76AEAAC59 /* WHBaseViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WHBaseViewController.swift; path = Sources/Subclasses/WHBaseViewController.swift; sourceTree = "<group>"; };
+		801167632029D29EA1055A1ED62F2217 /* Pods-ProjectAPITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-ProjectAPITests"; path = Pods_ProjectAPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		807027D175000563BD1EEDF1318AB6C4 /* Pods-ProjectAPI */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-ProjectAPI"; path = Pods_ProjectAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88C6BE3D50B80515394E9A9822D6B4F2 /* CustomHTTPProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomHTTPProtocol.swift; path = Sources/CustomHTTPProtocol.swift; sourceTree = "<group>"; };
+		8DE4125741AFEED4EE986C1294E60FAB /* FileHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileHandler.swift; path = Sources/Utils/FileHandler.swift; sourceTree = "<group>"; };
+		900C014E5D6C2ED77C3CF06885F80E96 /* WormholyMethodSwizzling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WormholyMethodSwizzling.h; path = Sources/Objc/WormholyMethodSwizzling.h; sourceTree = "<group>"; };
+		905D5FABF855ED132B82CD65879C2CD5 /* Section.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Section.swift; path = Sources/Models/Section.swift; sourceTree = "<group>"; };
+		9098C704B6E4A70430E95AB99B8FD2ED /* Pods-ProjectAPITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ProjectAPITests-Info.plist"; sourceTree = "<group>"; };
+		9AB7CA3CB33C6A55E85AE02DA33336E4 /* Pods-ProjectAPI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ProjectAPI.modulemap"; sourceTree = "<group>"; };
+		9B232DF847FAE0ABBE1C316F21867588 /* CustomActivity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomActivity.swift; path = Sources/Subclasses/CustomActivity.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E36F77A02A36128120ABA44268E585A /* Pods-ProjectAPITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ProjectAPITests-umbrella.h"; sourceTree = "<group>"; };
+		A48E512CA9D05D5F33A0906AC404AC4B /* Wormholy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Wormholy.release.xcconfig; sourceTree = "<group>"; };
+		A4B3D9E9EE1A96ECE9674B6CEE29DF7D /* WHLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WHLabel.swift; path = Sources/Subclasses/WHLabel.swift; sourceTree = "<group>"; };
+		A783A14FB9396EC4013BE3B477098CF1 /* WHView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WHView.swift; path = Sources/Subclasses/WHView.swift; sourceTree = "<group>"; };
+		AA92ED38E716E03D3FC758C810953B95 /* Wormholy-Wormholy */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Wormholy-Wormholy"; path = Wormholy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD7FFE0B6E10DD38A0DD050A72C4095D /* WHBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WHBundle.swift; path = Sources/Subclasses/WHBundle.swift; sourceTree = "<group>"; };
+		AE1E866EBFDF05FA99B21F2E269CC1B5 /* Wormholy-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Wormholy-prefix.pch"; sourceTree = "<group>"; };
+		AED4AB277907E2DBCB6E3A7B2227118D /* BodyDetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BodyDetailViewController.swift; path = Sources/UI/BodyDetailViewController.swift; sourceTree = "<group>"; };
+		B0687B46DE39D4F77084657FF03A69BA /* NSURLSessionConfiguration+Wormholy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLSessionConfiguration+Wormholy.m"; path = "Sources/Objc/NSURLSessionConfiguration+Wormholy.m"; sourceTree = "<group>"; };
+		B117D040AD5848427C5A92D36FF7121B /* RequestCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = RequestCell.xib; path = Sources/UI/Cells/RequestCell.xib; sourceTree = "<group>"; };
+		B5254E95FAF6DD11F8576FC92FF3B36D /* Pods-ProjectAPITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ProjectAPITests-dummy.m"; sourceTree = "<group>"; };
+		B901F0888F7938A82F7B6676782C3CD6 /* Pods-ProjectAPI-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ProjectAPI-frameworks.sh"; sourceTree = "<group>"; };
+		BB8842CFA29FF5B9346610DA2B882057 /* Wormholy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Wormholy.swift; path = Sources/Wormholy.swift; sourceTree = "<group>"; };
+		BB9C98E815CDDA122B1A3ACD198707C1 /* WHNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WHNavigationController.swift; path = Sources/Subclasses/WHNavigationController.swift; sourceTree = "<group>"; };
+		BEA1A44725E8016211CCAE3B3A3B6A8A /* Colors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = "Sources/Support Files/Colors.swift"; sourceTree = "<group>"; };
+		C4E7E066A283B782A7D657456672ED22 /* RequestDetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestDetailViewController.swift; path = Sources/UI/RequestDetailViewController.swift; sourceTree = "<group>"; };
+		D1A1BC33E4579A2CB9389289DA4E9C55 /* Wormholy-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Wormholy-Info.plist"; sourceTree = "<group>"; };
+		DDADF9BAC50628DEFCCD7828F8D067C7 /* Pods-ProjectAPI-ProjectAPIUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ProjectAPI-ProjectAPIUITests-umbrella.h"; sourceTree = "<group>"; };
+		DF60D2CE66F19DDDA4328F866863F827 /* Pods-ProjectAPI-ProjectAPIUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ProjectAPI-ProjectAPIUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E12B471FCED066F0B7D77CA05F2150BD /* Pods-ProjectAPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ProjectAPITests.release.xcconfig"; sourceTree = "<group>"; };
+		E1A8F7191DACE5C7ACBB58C1EA4B6470 /* WHTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WHTextView.swift; path = Sources/Subclasses/WHTextView.swift; sourceTree = "<group>"; };
+		E483CB8AC9F61AD6B4ECDF5C88337B44 /* Wormholy-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Wormholy-dummy.m"; sourceTree = "<group>"; };
+		E80453661B63F471503A8C497606DA56 /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Config.swift; path = "Sources/Support Files/Config.swift"; sourceTree = "<group>"; };
+		E9BBD159D516DB76D58E65A06DA0C58E /* ResourceBundle-Wormholy-Wormholy-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Wormholy-Wormholy-Info.plist"; sourceTree = "<group>"; };
+		F8022D6DBF49EACEAE53DD9C4915B43A /* Pods-ProjectAPI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ProjectAPI-umbrella.h"; sourceTree = "<group>"; };
+		F94096B5C451D830C7BC74F9CD28393A /* Wormholy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Wormholy.modulemap; sourceTree = "<group>"; };
+		FA9B668B5DB404933ECBD76D0B9A437E /* Pods-ProjectAPI-ProjectAPIUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-ProjectAPI-ProjectAPIUITests"; path = Pods_ProjectAPI_ProjectAPIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB16E86FA0C9355DA72C5C3F246864B2 /* RequestModelBeautifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModelBeautifier.swift; path = Sources/Utils/RequestModelBeautifier.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AEBCAF129BBECB9EEDDF2ECD401C612 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653BE9DDAAC1E95C7161A875BA60240A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E8272A7223B175F1A0101B0AB1E6745 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E9EC5E741D104D87387618F660244D6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6228318B7F94F0D98A6941A9B3CB8905 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7842F9B78DC96C9FB07F1CD5DCFB4BA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32A2054EDED31E8A56B360CB1FCB9C56 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88BB6F9F6A7B36CACC15AE87B390AA96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FD2F8868658F608EBE7115F12A2E985 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D0E49096082D6A740A4B2C4139C316A /* Pods-ProjectAPI */ = {
+			isa = PBXGroup;
+			children = (
+				9AB7CA3CB33C6A55E85AE02DA33336E4 /* Pods-ProjectAPI.modulemap */,
+				6ACC7B27FFC8944000932CBC2EB52DD5 /* Pods-ProjectAPI-acknowledgements.markdown */,
+				07063B9A8F9FDBD93CFE3DC6F46E1DE5 /* Pods-ProjectAPI-acknowledgements.plist */,
+				6B7F0ABEB8F8A11932CFF22AF5E4DA60 /* Pods-ProjectAPI-dummy.m */,
+				B901F0888F7938A82F7B6676782C3CD6 /* Pods-ProjectAPI-frameworks.sh */,
+				180BAED53DF6028C89C726846A000A14 /* Pods-ProjectAPI-Info.plist */,
+				F8022D6DBF49EACEAE53DD9C4915B43A /* Pods-ProjectAPI-umbrella.h */,
+				3B7B188411C1F36E31E5FFFA6852898B /* Pods-ProjectAPI.debug.xcconfig */,
+				38CF6C5F7220DE312A3B3833B9D55406 /* Pods-ProjectAPI.release.xcconfig */,
+			);
+			name = "Pods-ProjectAPI";
+			path = "Target Support Files/Pods-ProjectAPI";
+			sourceTree = "<group>";
+		};
+		13278F6EB295AA15BCA2764DCC260AA7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9BBD159D516DB76D58E65A06DA0C58E /* ResourceBundle-Wormholy-Wormholy-Info.plist */,
+				F94096B5C451D830C7BC74F9CD28393A /* Wormholy.modulemap */,
+				E483CB8AC9F61AD6B4ECDF5C88337B44 /* Wormholy-dummy.m */,
+				D1A1BC33E4579A2CB9389289DA4E9C55 /* Wormholy-Info.plist */,
+				AE1E866EBFDF05FA99B21F2E269CC1B5 /* Wormholy-prefix.pch */,
+				7149E2686C3D29A617BB0CDFB731746E /* Wormholy-umbrella.h */,
+				67EDA87341A26A15AD025DC0B17D446F /* Wormholy.debug.xcconfig */,
+				A48E512CA9D05D5F33A0906AC404AC4B /* Wormholy.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Wormholy";
+			sourceTree = "<group>";
+		};
+		314B927ABC56AAC0E6E22DF1AEBCFB07 /* Pods-ProjectAPI-ProjectAPIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7763FEC7BDB48CA82A164D35EDC05400 /* Pods-ProjectAPI-ProjectAPIUITests.modulemap */,
+				0B3EE91B4AB939302B9A14820D927458 /* Pods-ProjectAPI-ProjectAPIUITests-acknowledgements.markdown */,
+				DF60D2CE66F19DDDA4328F866863F827 /* Pods-ProjectAPI-ProjectAPIUITests-acknowledgements.plist */,
+				6E2C26F77C3DB6EED7B9A7B8FB3665F6 /* Pods-ProjectAPI-ProjectAPIUITests-dummy.m */,
+				4C57C108612164157599AC838BF371BF /* Pods-ProjectAPI-ProjectAPIUITests-frameworks.sh */,
+				5D92A7E6B1374CE2F756F26EE6B8CD9D /* Pods-ProjectAPI-ProjectAPIUITests-Info.plist */,
+				DDADF9BAC50628DEFCCD7828F8D067C7 /* Pods-ProjectAPI-ProjectAPIUITests-umbrella.h */,
+				3FCFB4AF8CB4032C23F7D5CB6A1632CD /* Pods-ProjectAPI-ProjectAPIUITests.debug.xcconfig */,
+				5C707DB3487DE791FE2508179E7D01FC /* Pods-ProjectAPI-ProjectAPIUITests.release.xcconfig */,
+			);
+			name = "Pods-ProjectAPI-ProjectAPIUITests";
+			path = "Target Support Files/Pods-ProjectAPI-ProjectAPIUITests";
+			sourceTree = "<group>";
+		};
+		35635B617D419BA4476AA4D949922216 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				807027D175000563BD1EEDF1318AB6C4 /* Pods-ProjectAPI */,
+				FA9B668B5DB404933ECBD76D0B9A437E /* Pods-ProjectAPI-ProjectAPIUITests */,
+				801167632029D29EA1055A1ED62F2217 /* Pods-ProjectAPITests */,
+				2530BC414137FF7A53A0368B476547B9 /* Wormholy */,
+				AA92ED38E716E03D3FC758C810953B95 /* Wormholy-Wormholy */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D9541155887162C929F53C83400016B /* Wormholy */ = {
+			isa = PBXGroup;
+			children = (
+				1EFEEF35002D0080DBA4B09707C7CE9F /* ActionableTableViewCell.swift */,
+				AED4AB277907E2DBCB6E3A7B2227118D /* BodyDetailViewController.swift */,
+				BEA1A44725E8016211CCAE3B3A3B6A8A /* Colors.swift */,
+				E80453661B63F471503A8C497606DA56 /* Config.swift */,
+				9B232DF847FAE0ABBE1C316F21867588 /* CustomActivity.swift */,
+				88C6BE3D50B80515394E9A9822D6B4F2 /* CustomHTTPProtocol.swift */,
+				8DE4125741AFEED4EE986C1294E60FAB /* FileHandler.swift */,
+				26A09230D9AC5AB332F62C7694F32FA1 /* InputStream+Utils.swift */,
+				5AB47BF5E35F00184B370E3A1BAAEFD9 /* NSURLSessionConfiguration+Wormholy.h */,
+				B0687B46DE39D4F77084657FF03A69BA /* NSURLSessionConfiguration+Wormholy.m */,
+				43428B3ECB8A53A823F71415625F3814 /* Postman.swift */,
+				3DC8D4EF766F3B9A4E8F3099DE7D6069 /* RequestCell.swift */,
+				C4E7E066A283B782A7D657456672ED22 /* RequestDetailViewController.swift */,
+				620AAEA1BF47FE1F7DD3FCCA7D7416BD /* RequestModel.swift */,
+				FB16E86FA0C9355DA72C5C3F246864B2 /* RequestModelBeautifier.swift */,
+				07C69353CE92AC22C0E426BE91512DF6 /* RequestResponseExportOption.swift */,
+				2D34520534CFE69F159F755959C3EC43 /* RequestsViewController.swift */,
+				54360AB19E58FF214039519577EECE70 /* RequestTitleSectionView.swift */,
+				905D5FABF855ED132B82CD65879C2CD5 /* Section.swift */,
+				0A001A366DDAF11A53F17059C552E1A3 /* ShareUtils.swift */,
+				3ECF632DB893A01BCCDFF58ECCDB19EB /* Storage.swift */,
+				6573C327753D465788D72ABDF3511657 /* TextTableViewCell.swift */,
+				7EF30D4AA1B04718AB5D79D76AEAAC59 /* WHBaseViewController.swift */,
+				AD7FFE0B6E10DD38A0DD050A72C4095D /* WHBundle.swift */,
+				227ECE45C3104624EA579B9B89AC6CDF /* WHCollectionView.swift */,
+				084E6053214F19A19EDA007BDEB444C7 /* WHDate.swift */,
+				A4B3D9E9EE1A96ECE9674B6CEE29DF7D /* WHLabel.swift */,
+				BB9C98E815CDDA122B1A3ACD198707C1 /* WHNavigationController.swift */,
+				57B23C731B03BC191CC7755B7C3E29CF /* WHString.swift */,
+				705372EAEA3AFFE1035457BAA85E2BD4 /* WHTableView.swift */,
+				E1A8F7191DACE5C7ACBB58C1EA4B6470 /* WHTextView.swift */,
+				A783A14FB9396EC4013BE3B477098CF1 /* WHView.swift */,
+				3FC4614D855E04B8D30C7134F1209232 /* Wormholy.h */,
+				BB8842CFA29FF5B9346610DA2B882057 /* Wormholy.swift */,
+				29C3E65BDF9177E305283D054CD70FC7 /* WormholyConstructor.m */,
+				900C014E5D6C2ED77C3CF06885F80E96 /* WormholyMethodSwizzling.h */,
+				1BF7193232C7450FAD722B73C94840F2 /* WormholyMethodSwizzling.m */,
+				A2F2053AB26B0660F3DB4890612A26B8 /* Resources */,
+				13278F6EB295AA15BCA2764DCC260AA7 /* Support Files */,
+			);
+			name = Wormholy;
+			path = Wormholy;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A2F2053AB26B0660F3DB4890612A26B8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6531C42F0378DD4C29EDCC978D27AE04 /* ActionableTableViewCell.xib */,
+				3A97ADF2C478817F1A32C3ABF02ED284 /* Flow.storyboard */,
+				B117D040AD5848427C5A92D36FF7121B /* RequestCell.xib */,
+				09F22C72DDDF9327B8CCE9609712CDF4 /* RequestTitleSectionView.xib */,
+				4A3D976896C0203FC9F267787257A41B /* TextTableViewCell.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B32D58B5984E04D40C41C2FB39517203 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D0E49096082D6A740A4B2C4139C316A /* Pods-ProjectAPI */,
+				314B927ABC56AAC0E6E22DF1AEBCFB07 /* Pods-ProjectAPI-ProjectAPIUITests */,
+				BD0481333DF60A2C4342BB0CCA008E9C /* Pods-ProjectAPITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BD0481333DF60A2C4342BB0CCA008E9C /* Pods-ProjectAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				23FF9DFD6D5C599CA73D6574AAE91746 /* Pods-ProjectAPITests.modulemap */,
+				23A0AED209AC3ADB7AF91062D6B4D04B /* Pods-ProjectAPITests-acknowledgements.markdown */,
+				0740CB8CD3C41F45DAB864D871D3C14B /* Pods-ProjectAPITests-acknowledgements.plist */,
+				B5254E95FAF6DD11F8576FC92FF3B36D /* Pods-ProjectAPITests-dummy.m */,
+				9098C704B6E4A70430E95AB99B8FD2ED /* Pods-ProjectAPITests-Info.plist */,
+				9E36F77A02A36128120ABA44268E585A /* Pods-ProjectAPITests-umbrella.h */,
+				0778A367AA806123DF6402960A9D8DA0 /* Pods-ProjectAPITests.debug.xcconfig */,
+				E12B471FCED066F0B7D77CA05F2150BD /* Pods-ProjectAPITests.release.xcconfig */,
+			);
+			name = "Pods-ProjectAPITests";
+			path = "Target Support Files/Pods-ProjectAPITests";
+			sourceTree = "<group>";
+		};
+		CE0079000DCA9BECBC468D027D155893 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D9541155887162C929F53C83400016B /* Wormholy */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				CE0079000DCA9BECBC468D027D155893 /* Pods */,
+				35635B617D419BA4476AA4D949922216 /* Products */,
+				B32D58B5984E04D40C41C2FB39517203 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		088C9F4AADC3E9AF286EE814DA701862 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97BAD5386DB86E57C8121DC5BB9EB7EA /* NSURLSessionConfiguration+Wormholy.h in Headers */,
+				D22B1B6048FF533A75EE3C02858F01F8 /* Wormholy.h in Headers */,
+				8CD80D320A437048D1469AA382719CED /* Wormholy-umbrella.h in Headers */,
+				83C60180EEA0FD6B7F22FF74E2DCAFC6 /* WormholyMethodSwizzling.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA9D1BE4B11D2B4CB2F49330CF1A8CEE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D910B7B19A025D37504B8A8339733587 /* Pods-ProjectAPI-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E71005317D282E76A60F628925C8EC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				903C7B45FD055FADE53DEE47EF593A1B /* Pods-ProjectAPITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED3686DB3418DBAFDA32F839C5F17994 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9559CDDEF450402A44A1108219EB4504 /* Pods-ProjectAPI-ProjectAPIUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0CBF746B538E681843A072CF967B823B /* Pods-ProjectAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11752652B66776058FA0F5D7D14A8363 /* Build configuration list for PBXNativeTarget "Pods-ProjectAPITests" */;
+			buildPhases = (
+				D2E71005317D282E76A60F628925C8EC /* Headers */,
+				B262253104BEEBF863CDA132D368D8DA /* Sources */,
+				7842F9B78DC96C9FB07F1CD5DCFB4BA2 /* Frameworks */,
+				9FC01E40983979A1CEDFBCC217BBF22D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC2DA1EB62C5DB8DE8584BFA2DFC5DE8 /* PBXTargetDependency */,
+			);
+			name = "Pods-ProjectAPITests";
+			productName = Pods_ProjectAPITests;
+			productReference = 801167632029D29EA1055A1ED62F2217 /* Pods-ProjectAPITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		3E73ED39761329414C06DD4486C5058E /* Wormholy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4FC1F2DCD724C0C62379A878C2FD7D1 /* Build configuration list for PBXNativeTarget "Wormholy" */;
+			buildPhases = (
+				088C9F4AADC3E9AF286EE814DA701862 /* Headers */,
+				332727A5393C8A001AA7B35FA5D4C20E /* Sources */,
+				3E8272A7223B175F1A0101B0AB1E6745 /* Frameworks */,
+				9BDCFC4F0A5DBB4FF94EDBE487DB6C3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05813B37E47980CAB5D6D5818F5FDA38 /* PBXTargetDependency */,
+			);
+			name = Wormholy;
+			productName = Wormholy;
+			productReference = 2530BC414137FF7A53A0368B476547B9 /* Wormholy */;
+			productType = "com.apple.product-type.framework";
+		};
+		415C43F6CBB8524871B57A5470F3D96B /* Pods-ProjectAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A0244EF0F60D66456FE961E53375DC1 /* Build configuration list for PBXNativeTarget "Pods-ProjectAPI" */;
+			buildPhases = (
+				CA9D1BE4B11D2B4CB2F49330CF1A8CEE /* Headers */,
+				761A48D4997F2220F840EAFA016E6CE0 /* Sources */,
+				1AEBCAF129BBECB9EEDDF2ECD401C612 /* Frameworks */,
+				42CF982CBA37992896628B0F76BBFD99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26924CA8DDF950BA41107B10CF6EB6B0 /* PBXTargetDependency */,
+			);
+			name = "Pods-ProjectAPI";
+			productName = Pods_ProjectAPI;
+			productReference = 807027D175000563BD1EEDF1318AB6C4 /* Pods-ProjectAPI */;
+			productType = "com.apple.product-type.framework";
+		};
+		93CEC7FFB57A497DE49471C5D9517C13 /* Wormholy-Wormholy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D7E5D3887F05ECB8BF7089DE4C39637 /* Build configuration list for PBXNativeTarget "Wormholy-Wormholy" */;
+			buildPhases = (
+				C1B309AD56EF77E58CF451D410D01C63 /* Sources */,
+				6228318B7F94F0D98A6941A9B3CB8905 /* Frameworks */,
+				CCE6C4D2758F1DE8328B9E0FE2E6BBD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Wormholy-Wormholy";
+			productName = Wormholy;
+			productReference = AA92ED38E716E03D3FC758C810953B95 /* Wormholy-Wormholy */;
+			productType = "com.apple.product-type.bundle";
+		};
+		F2EAC7DF04A6A41EB093D75B6DB9651E /* Pods-ProjectAPI-ProjectAPIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B83F2C36F2B9F62E044316E9A8E2CD33 /* Build configuration list for PBXNativeTarget "Pods-ProjectAPI-ProjectAPIUITests" */;
+			buildPhases = (
+				ED3686DB3418DBAFDA32F839C5F17994 /* Headers */,
+				A5D3F161F7E3BECECB0A02B1C4D50E91 /* Sources */,
+				88BB6F9F6A7B36CACC15AE87B390AA96 /* Frameworks */,
+				51685AC8CACDEB32699071CDA059D8C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				017A936356704057998FC618BAC19514 /* PBXTargetDependency */,
+			);
+			name = "Pods-ProjectAPI-ProjectAPIUITests";
+			productName = Pods_ProjectAPI_ProjectAPIUITests;
+			productReference = FA9B668B5DB404933ECBD76D0B9A437E /* Pods-ProjectAPI-ProjectAPIUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 35635B617D419BA4476AA4D949922216 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				415C43F6CBB8524871B57A5470F3D96B /* Pods-ProjectAPI */,
+				F2EAC7DF04A6A41EB093D75B6DB9651E /* Pods-ProjectAPI-ProjectAPIUITests */,
+				0CBF746B538E681843A072CF967B823B /* Pods-ProjectAPITests */,
+				3E73ED39761329414C06DD4486C5058E /* Wormholy */,
+				93CEC7FFB57A497DE49471C5D9517C13 /* Wormholy-Wormholy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42CF982CBA37992896628B0F76BBFD99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51685AC8CACDEB32699071CDA059D8C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDCFC4F0A5DBB4FF94EDBE487DB6C3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4C9EB97F20B7C24E713C0050829D6E2 /* Wormholy-Wormholy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FC01E40983979A1CEDFBCC217BBF22D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCE6C4D2758F1DE8328B9E0FE2E6BBD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78A3AE11CA2758D43EB35941F7C2FB7C /* ActionableTableViewCell.xib in Resources */,
+				7052DD2A79F8558F8C35488C877AC20D /* Flow.storyboard in Resources */,
+				657102EE616A3728959EC61DAFF0AF90 /* RequestCell.xib in Resources */,
+				745C29EB3EBB39538160C5EBED6797AC /* RequestTitleSectionView.xib in Resources */,
+				307CA4E728309E6A74F8619FC3706A69 /* TextTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		332727A5393C8A001AA7B35FA5D4C20E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D475921FD42C5F9AF0CDC4A5F4FE4055 /* ActionableTableViewCell.swift in Sources */,
+				8A7A1BC68F5CF770015DBDC7631E677F /* BodyDetailViewController.swift in Sources */,
+				6F04A7B593B195D28F21C9D8B3254DE2 /* Colors.swift in Sources */,
+				708C65AC8DEA19B924ED06A72D869EE5 /* Config.swift in Sources */,
+				BA746FE274B45095BFCF1FFF7A7E0A9D /* CustomActivity.swift in Sources */,
+				263106EA3D8265BD84AA81C2FAA702E4 /* CustomHTTPProtocol.swift in Sources */,
+				9000003347A315E78EFE8CF6B485FCAA /* FileHandler.swift in Sources */,
+				400C7AE826CDAEB8321CC822E9C0D2CC /* InputStream+Utils.swift in Sources */,
+				B5CCAA12D451B5A2DA163D5697787FA1 /* NSURLSessionConfiguration+Wormholy.m in Sources */,
+				7FF4011775A6621749EBF58B9F3B37E5 /* Postman.swift in Sources */,
+				5B0FEAEB0385C632E303BFABAF6AA156 /* RequestCell.swift in Sources */,
+				720D17097D4F0CDDE89C4B21C0553355 /* RequestDetailViewController.swift in Sources */,
+				0496E7FAA26B24DA18937A4524CCCA7F /* RequestModel.swift in Sources */,
+				0514FCE6C64ADACA6745A4CC96A273D4 /* RequestModelBeautifier.swift in Sources */,
+				841BC9A6B15C2D0EB73A2645E9CC0021 /* RequestResponseExportOption.swift in Sources */,
+				BDE773EB7BA73CAE5FF58588B01D2140 /* RequestsViewController.swift in Sources */,
+				B44E7EEF87BF99B3A42C85119DF0AC63 /* RequestTitleSectionView.swift in Sources */,
+				6EC7DC62BDAF027121003FD09B4329A1 /* Section.swift in Sources */,
+				1EEDAD12DDDC3142EE57080A9A27A63E /* ShareUtils.swift in Sources */,
+				D4AA83B55907BAFF61483A404992A6E2 /* Storage.swift in Sources */,
+				935557E2ED1490E3CE73179D1E175332 /* TextTableViewCell.swift in Sources */,
+				6A795EC73F636B5EAAA443CD1A666277 /* WHBaseViewController.swift in Sources */,
+				3908D5A3F69A7F521721DA6EF8B6DB87 /* WHBundle.swift in Sources */,
+				A63E618214C11DFD86BEEB5D2DFD0355 /* WHCollectionView.swift in Sources */,
+				3D96722FFAFA9FFFA92796DEBDF60DB1 /* WHDate.swift in Sources */,
+				37C241264893C04ABFCB123FB86AB2FD /* WHLabel.swift in Sources */,
+				BBB34288DA32EC91B33C6C258039770E /* WHNavigationController.swift in Sources */,
+				9348B34237AE2975E20AA8D604F1423D /* WHString.swift in Sources */,
+				8A492E15AC13DD3A4832B77238057EB2 /* WHTableView.swift in Sources */,
+				74BF16160537FCBEBE26A6A757044CB3 /* WHTextView.swift in Sources */,
+				C2295D3A9296079498EF6831DD064EA7 /* WHView.swift in Sources */,
+				2D88D6A79862A326D5702110DD10AD56 /* Wormholy.swift in Sources */,
+				4BA4814575EB8ACAEB44F16D0F3CBB00 /* Wormholy-dummy.m in Sources */,
+				329D1E331CFDE43F39F2F27277A2AF55 /* WormholyConstructor.m in Sources */,
+				DEAAF1DB35FB3F9FDAB6CACC90B882E3 /* WormholyMethodSwizzling.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		761A48D4997F2220F840EAFA016E6CE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				590077FEFAF241474E808BD285E4BE32 /* Pods-ProjectAPI-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5D3F161F7E3BECECB0A02B1C4D50E91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D166711CC0B402CC46D5BAB3D8A036A3 /* Pods-ProjectAPI-ProjectAPIUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B262253104BEEBF863CDA132D368D8DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D10308BC93D2DB860615771003DF8EB1 /* Pods-ProjectAPITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1B309AD56EF77E58CF451D410D01C63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		017A936356704057998FC618BAC19514 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Wormholy;
+			target = 3E73ED39761329414C06DD4486C5058E /* Wormholy */;
+			targetProxy = 992D4E606E15A349D8301DF75B3646EC /* PBXContainerItemProxy */;
+		};
+		05813B37E47980CAB5D6D5818F5FDA38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Wormholy-Wormholy";
+			target = 93CEC7FFB57A497DE49471C5D9517C13 /* Wormholy-Wormholy */;
+			targetProxy = C054DB0FDE820A22DDC32C8E29DBDC01 /* PBXContainerItemProxy */;
+		};
+		26924CA8DDF950BA41107B10CF6EB6B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Wormholy;
+			target = 3E73ED39761329414C06DD4486C5058E /* Wormholy */;
+			targetProxy = ABD8AFCFA89CAFD8B3C8AC94299BA5E7 /* PBXContainerItemProxy */;
+		};
+		BC2DA1EB62C5DB8DE8584BFA2DFC5DE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-ProjectAPI";
+			target = 415C43F6CBB8524871B57A5470F3D96B /* Pods-ProjectAPI */;
+			targetProxy = 516EDA96C0C63B35DC2ADF8EC2E58855 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		032504F201C69275441D32C68CCD1F0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		0D0B5555D7BA01A3BF9E5BD4F1AD7B65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FCFB4AF8CB4032C23F7D5CB6A1632CD /* Pods-ProjectAPI-ProjectAPIUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ProjectAPI-ProjectAPIUITests/Pods-ProjectAPI-ProjectAPIUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ProjectAPI-ProjectAPIUITests/Pods-ProjectAPI-ProjectAPIUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2999C427379B75D226EEC7EE8E583306 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B7B188411C1F36E31E5FFFA6852898B /* Pods-ProjectAPI.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ProjectAPI/Pods-ProjectAPI-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ProjectAPI/Pods-ProjectAPI.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3B8DE3D3DE6FD7CA7D3AB592A7900BBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67EDA87341A26A15AD025DC0B17D446F /* Wormholy.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Wormholy/Wormholy-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Wormholy/Wormholy-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Wormholy/Wormholy.modulemap";
+				PRODUCT_MODULE_NAME = Wormholy;
+				PRODUCT_NAME = Wormholy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		414C07493EA9C10E4ED83F2D5894DD95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E12B471FCED066F0B7D77CA05F2150BD /* Pods-ProjectAPITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ProjectAPITests/Pods-ProjectAPITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ProjectAPITests/Pods-ProjectAPITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		48F67AB1E5DBE79CCF2F86C75296AB01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		531A13CE3D22E6F458A65F012E21406B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A48E512CA9D05D5F33A0906AC404AC4B /* Wormholy.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Wormholy";
+				IBSC_MODULE = Wormholy;
+				INFOPLIST_FILE = "Target Support Files/Wormholy/ResourceBundle-Wormholy-Wormholy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = Wormholy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		57546FC798D260116234AC0AB3A58F9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A48E512CA9D05D5F33A0906AC404AC4B /* Wormholy.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Wormholy/Wormholy-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Wormholy/Wormholy-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Wormholy/Wormholy.modulemap";
+				PRODUCT_MODULE_NAME = Wormholy;
+				PRODUCT_NAME = Wormholy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		604A4912EC56BF1344BF008DA49E5844 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67EDA87341A26A15AD025DC0B17D446F /* Wormholy.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Wormholy";
+				IBSC_MODULE = Wormholy;
+				INFOPLIST_FILE = "Target Support Files/Wormholy/ResourceBundle-Wormholy-Wormholy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = Wormholy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		65E7C34F7A275E9555E6E47C152D34E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0778A367AA806123DF6402960A9D8DA0 /* Pods-ProjectAPITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ProjectAPITests/Pods-ProjectAPITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ProjectAPITests/Pods-ProjectAPITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		73EAF34E3E4A4739FBF531D48CEBC391 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38CF6C5F7220DE312A3B3833B9D55406 /* Pods-ProjectAPI.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ProjectAPI/Pods-ProjectAPI-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ProjectAPI/Pods-ProjectAPI.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E707BEA1BB4EC7409B5908824C2A9546 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C707DB3487DE791FE2508179E7D01FC /* Pods-ProjectAPI-ProjectAPIUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ProjectAPI-ProjectAPIUITests/Pods-ProjectAPI-ProjectAPIUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ProjectAPI-ProjectAPIUITests/Pods-ProjectAPI-ProjectAPIUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11752652B66776058FA0F5D7D14A8363 /* Build configuration list for PBXNativeTarget "Pods-ProjectAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65E7C34F7A275E9555E6E47C152D34E1 /* Debug */,
+				414C07493EA9C10E4ED83F2D5894DD95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A0244EF0F60D66456FE961E53375DC1 /* Build configuration list for PBXNativeTarget "Pods-ProjectAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2999C427379B75D226EEC7EE8E583306 /* Debug */,
+				73EAF34E3E4A4739FBF531D48CEBC391 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48F67AB1E5DBE79CCF2F86C75296AB01 /* Debug */,
+				032504F201C69275441D32C68CCD1F0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D7E5D3887F05ECB8BF7089DE4C39637 /* Build configuration list for PBXNativeTarget "Wormholy-Wormholy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				604A4912EC56BF1344BF008DA49E5844 /* Debug */,
+				531A13CE3D22E6F458A65F012E21406B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4FC1F2DCD724C0C62379A878C2FD7D1 /* Build configuration list for PBXNativeTarget "Wormholy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B8DE3D3DE6FD7CA7D3AB592A7900BBA /* Debug */,
+				57546FC798D260116234AC0AB3A58F9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B83F2C36F2B9F62E044316E9A8E2CD33 /* Build configuration list for PBXNativeTarget "Pods-ProjectAPI-ProjectAPIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D0B5555D7BA01A3BF9E5BD4F1AD7B65 /* Debug */,
+				E707BEA1BB4EC7409B5908824C2A9546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
