@@ -236,7 +236,82 @@ class LoginService {
     
     
     func loginWithMicrosoft(completion: @escaping (String?) -> Void) {
-        completion(nil)
+        
+        // Redirect URL: msauth.gabrielvargas.ProjectAPI://auth
+        
+        let kClientID = "6889e864-a436-4308-9c77-feeefe3264af"
+        let kRedirectUri = "msauth.gabrielvargas.ProjectAPI://auth"
+        let kAuthority = "https://login.microsoftonline.com/9a27ec91-275b-4a43-9cf3-7590acfc6795"
+        let kGraphEndpoint = "https://graph.microsoft.com/"
+        
+        // Conectar a Microsoft
+        let provider = OAuthProvider(providerID: "microsoft.com")
+        
+        let scopes = ["mail.read", "calendars.read"]
+        provider.scopes = scopes
+        
+        provider.getCredentialWith(nil) { credential, error in
+            if let error = error {
+                print("Erro ao obter credencial: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            if let credential = credential {
+                Auth.auth().signIn(with: credential) { authResult, error in
+                    if let error = error {
+                        print("Erro ao fazer login: \(error.localizedDescription)")
+                        completion(nil)
+                        return
+                    }
+                    
+                    guard let oauthCredential = authResult?.credential as? OAuthCredential else {
+                        print("Erro ao obter informações do perfil: \(String(describing: error?.localizedDescription))")
+                        completion(nil)
+                        return
+                    }
+                    
+                    // Obter link da API para carregar informacoes
+                    if let accessToken = oauthCredential.accessToken {
+                        
+                        let url = URL(string: "https://graph.microsoft.com/v1.0/me")!
+                        var request = URLRequest(url: url)
+                        request.httpMethod = "GET"
+                        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+                        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                        
+                        // Fazer a solicitacao
+                        URLSession.shared.dataTask(with: request) { data, response, error in
+                            guard let data = data, error == nil else {
+                                completion(nil)
+                                print("Erro ao obter dados do usuário da Microsoft: \(String(describing: error?.localizedDescription))")
+                                return
+                            }
+                            
+                            do {
+                                // Analisar os dados JSON para obter informacoes do usuario
+                                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                                    if let userName = json["name"] as? String {
+                                        completion(userName)
+                                    } else {
+                                        print("Nome do usuário não encontrado no JSON.")
+                                        completion(nil)
+                                    }
+                                }
+                            } catch {
+                                print("Erro ao analisar dados JSON: \(error.localizedDescription)")
+                                completion(nil)
+                            }
+                        }.resume()
+                    } else {
+                        completion(nil)
+                    }
+                }
+            } else {
+                completion(nil)
+            }
+        }
+        completion("nil")
     }
 }
 
