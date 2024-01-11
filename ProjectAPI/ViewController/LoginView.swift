@@ -89,42 +89,38 @@ struct LoginView: View {
                         }
                     }
                 
-                LoginService.AppleSignInButton { authorization, error in
-                    if let error = error {
-                        print("Error during Apple login: \(error.localizedDescription)")
-                    } else if let appleIDCredential = authorization?.credential as? ASAuthorizationAppleIDCredential {
-                        let userIdentifier = appleIDCredential.user
-
-                        loginService.loginWithApple(credential: appleIDCredential) { result in
-                            switch result {
-                            case .success:
-                                print("Apple login successful: \(userIdentifier)")
-                            case .failure(let error):
-                                print("Error duribg Apple login: \(error.localizedDescription)")
+                LoginService.AppleSignInButton()
+                    .frame(width: 200, height: 40)
+                    .onTapGesture {
+                        loginService.loginWithApple { userName in
+                            if let userName = userName {
+                                userNameLogged = userName
+                                print("Nome do usuário:", userName)
                             }
                         }
                     }
-                }
-                .frame(width: 200, height: 40)
-
+                
                 LoginService.GitHubSignInButton()
                     .frame(width: 200, height: 40)
                     .onTapGesture {
-                        loginService.loginWithGitHub { url in
-                            if let url = url {
-                                urlWeb = url
-                                print("urlWeb = \(String(describing: urlWeb))")
-                                isSheetPresented = true
+                        loginService.loginWithGitHub { userName in
+                            if let userName = userName {
+                                userNameLogged = userName
+                                print("Nome do usuário:", userName)
                             }
                         }
                     }
-                    .sheet(isPresented: $isSheetPresented, content: {
-                        LoginService.WebView(url: (urlWeb ?? URL(string: "https://github.com/login/oauth/authorize?client_id=0d3bb26953af1e251399&redirect_uri=https://projectapi-dti.firebaseapp.com/__/auth/handler"))!)
-                                                                 
-                                                                 
-                                                                 
-                                                                 //=projectapi://repositoryMenu"))!)
-                    })
+                
+//                LoginService.MicrosoftInButton()
+//                    .frame(width: 200, height: 40)
+//                    .onTapGesture {
+//                        loginService.loginWithMicrosoft { userName in
+//                            if let userName = userName {
+//                                userNameLogged = userName
+//                                print("Nome do usuário:", userName)
+//                            }
+//                        }
+//                    }
             }
         }
         .frame(width: 350)
