@@ -14,15 +14,17 @@ import UIKit
 import FirebaseCore
 import SafariServices
 import WebKit
+import Combine
 
 class LoginService {
     
     // MARK: - Logout
     func logout() {
+        let firebaseAuth = Auth.auth()
         do {
-            try Auth.auth().signOut()
-        } catch {
-            print("Error during logout: \(error.localizedDescription)")
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
         }
     }
     
@@ -110,7 +112,6 @@ class LoginService {
     
     // MARK: - Apple Sign-In
     struct AppleSignInButton: UIViewRepresentable {
-        var completion: (ASAuthorization?, Error?) -> Void
         
         func makeUIView(context: Context) -> ASAuthorizationAppleIDButton {
             return ASAuthorizationAppleIDButton(type: .signIn, style: .black)
@@ -121,6 +122,10 @@ class LoginService {
     
     func loginWithApple(credential: ASAuthorizationAppleIDCredential, completion: @escaping (Result<Void, Error>) -> Void) {
         
+    }
+    
+    func loginWithApple(completion: @escaping (String?) -> Void) {
+        completion("")
     }
     
     // MARK: - GitHub Sign-In
@@ -140,123 +145,100 @@ class LoginService {
     }
     
     
-    func loginWithGitHub(completion: @escaping (URL?) -> Void) {
+    func loginWithGitHub(completion: @escaping (String?) -> Void) {
         
+        // Conectar ao GitHub
         let provider = OAuthProvider(providerID: "github.com")
-                
+        let scopes = ["user"]
         
-        let clientID = "0d3bb26953af1e251399"
-//        let clientSecret = "d3905c32ed61208234a27eb6dab54bbdd9c3e1e0"
-        let redirectURI = "https://projectapi-dti.firebaseapp.com/__/auth/handler"
-        let authorizationURL = "https://github.com/login/oauth/authorize"
+        provider.scopes = scopes
         
-        let urlString = "\(authorizationURL)?client_id=\(clientID)&redirect_uri=\(redirectURI)&scope=user"
-        if let url = URL(string: urlString) {
+        provider.getCredentialWith(nil) { credential, error in
+            if let error = error {
+                print("Erro ao obter credencial: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
             
-//        https://github.com/login/oauth/authorize?client_id=0d3bb26953af1e251399&redirect_uri=https://projectapi-dti.firebaseapp.com/__/auth/handle&scope=user
-            
-            print("url: \(url)")
-            
-            completion(url)
-            
+            if let credential = credential {
+                Auth.auth().signIn(with: credential) { authResult, error in
+                    if let error = error {
+                        print("Erro ao fazer login: \(error.localizedDescription)")
+                        completion(nil)
+                        return
+                    }
+                    
+                    guard let oauthCredential = authResult?.credential as? OAuthCredential else {
+                        print("Erro ao obter informações do perfil: \(String(describing: error?.localizedDescription))")
+                        completion(nil)
+                        return
+                    }
+                    
+                    // Obter link da API para carregar informacoes
+                    if let accessToken = oauthCredential.accessToken {
+                        
+                        let url = URL(string: "https://api.github.com/user")!
+                        var request = URLRequest(url: url)
+                        request.httpMethod = "GET"
+                        request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+                        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                        request.addValue("2022-11-28", forHTTPHeaderField: "X-GitHub-Api-Version")
+                        
+                        // Fazer a solicitacao
+                        URLSession.shared.dataTask(with: request) { data, response, error in
+                            guard let data = data, error == nil else {
+                                completion(nil)
+                                print("Erro ao obter dados do usuário do GitHub: \(String(describing: error?.localizedDescription))")
+                                return
+                            }
+                            
+                            do {
+                                // Analisar os dados JSON para obter informacoes do usuario
+                                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                                    if let userName = json["name"] as? String {
+                                        completion(userName)
+                                    } else {
+                                        print("Nome do usuário não encontrado no JSON.")
+                                        completion(nil)
+                                    }
+                                }
+                            } catch {
+                                print("Erro ao analisar dados JSON: \(error.localizedDescription)")
+                                completion(nil)
+                            }
+                        }.resume()
+                    } else {
+                        completion(nil)
+                    }
+                }
+            } else {
+                completion(nil)
+            }
         }
-        
+        completion("nil")
     }
     
-    struct WebView: UIViewRepresentable {
-        let url: URL
+    // MARK: - Microsoft Sign-In
+    struct MicrosoftInButton: UIViewRepresentable {
         
-        func makeUIView(context: Context) -> WKWebView {
-            let webView = WKWebView()
-            return webView
+        func makeUIView(context: Context) -> UIButton {
+            let button = UIButton(type: .system)
+            
+            button.setTitle("Sign in with Microsoft", for: .normal)
+            button.setTitleColor(.white, for: .normal)
+            button.backgroundColor = .orange
+            
+            return button
         }
         
-        func updateUIView(_ uiView: WKWebView, context: Context) {
-            let request = URLRequest(url: url)
-            uiView.load(request)
-        }
+        func updateUIView(_ uiView: UIButton, context: Context) {}
     }
     
+    
+    func loginWithMicrosoft(completion: @escaping (String?) -> Void) {
+        completion(nil)
+    }
 }
-    
-//    
-//
-//    struct GitHubSignInWebView: UIViewControllerRepresentable {
-//        typealias UIViewControllerType = UIViewController
-//
-//        var completion: (String?) -> Void
-//
-//        func makeUIViewController(context: Context) -> UIViewController {
-//            let viewController = UIViewController()
-//            let webView = UIWebView(frame: viewController.view.bounds)
-//            webView.delegate = context.coordinator
-//            viewController.view.addSubview(webView)
-//
-//            let clientID = "0d3bb26953af1e251399"
-//            let clientSecret = "d3905c32ed61208234a27eb6dab54bbdd9c3e1e0"
-//            let redirectURI = "https://projectapi-dti.firebaseapp.com/__/auth/handler"
-//            let authorizationURL = "https://github.com/login/oauth/authorize"
-//
-//            let urlString = "\(authorizationURL)?client_id=\(clientID)&redirect_uri=\(redirectURI)&scope=user"
-//            if let url = URL(string: urlString) {
-//                let request = URLRequest(url: url)
-//                webView.loadRequest(request)
-//            }
-//
-//            return viewController
-//        }
-//
-//        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
-//
-//        func makeCoordinator() -> Coordinator {
-//            Coordinator(parent: self)
-//        }
-//
-//        class Coordinator: NSObject, UIWebViewDelegate {
-//            var parent: GitHubSignInWebView
-//
-//            init(parent: GitHubSignInWebView) {
-//                self.parent = parent
-//            }
-//
-//            func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
-//                if let url = request.url, url.absoluteString.hasPrefix("SUA_URL_DE_REDIRECIONAMENTO") {
-//                    // Extrair o código do URL
-//                    if let code = url.queryParameters?["code"] {
-//                        // Trocar o código por um token de acesso
-//                        exchangeCodeForToken(code: code)
-//                    } else {
-//                        parent.completion(nil)
-//                    }
-//
-//                    // Fechar a WebView após obter o código ou lidar com o erro
-//                    webView.removeFromSuperview()
-//                    parent.completion(nil)
-//                    return false
-//                }
-//                return true
-//            }
-//
-//            func exchangeCodeForToken(code: String) {
-//                // Implemente a lógica para trocar o código por um token de acesso aqui
-//                // Use a API do GitHub para obter o token de acesso
-//                // Envie o token de acesso para o completionHandler
-//                parent.completion("SEU_TOKEN_DE_ACESSO")
-//            }
-//        }
-//    }
-//
-//}
-//
-//extension URL {
-//    var queryParameters: [String: String]? {
-//        guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true),
-//              let queryItems = components.queryItems else { return nil }
-//
-//        var parameters = [String: String]()
-//        for item in queryItems {
-//            parameters[item.name] = item.value
-//        }
-//        return parameters
-//    }
-//}
+
+
+

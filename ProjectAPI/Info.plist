@@ -40,6 +40,14 @@
 				<string>app-1-1058651777105-ios-a0fd86f70fbb2090c07070</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>1:1058651777105:ios:a0fd86f70fbb2090c07070</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>
