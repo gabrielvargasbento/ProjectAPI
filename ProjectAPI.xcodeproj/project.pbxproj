@@ -181,7 +181,6 @@
 				B490E031C23F8AD619A831B7 /* Pods-ProjectAPITests.debug.xcconfig */,
 				27147ADA81834F1C16AD9C9A /* Pods-ProjectAPITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
