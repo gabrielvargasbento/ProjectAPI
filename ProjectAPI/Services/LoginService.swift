@@ -239,9 +239,9 @@ class LoginService {
         
         // Redirect URL: msauth.gabrielvargas.ProjectAPI://auth
         
-        let kClientID = "6889e864-a436-4308-9c77-feeefe3264af"
+        let kClientID = "d234ed16-7238-400d-b645-660139f1a3d2"
         let kRedirectUri = "msauth.gabrielvargas.ProjectAPI://auth"
-        let kAuthority = "https://login.microsoftonline.com/9a27ec91-275b-4a43-9cf3-7590acfc6795"
+        let kAuthority = "https://login.microsoftonline.com/common"
         let kGraphEndpoint = "https://graph.microsoft.com/"
         
         // Conectar a Microsoft
@@ -291,7 +291,8 @@ class LoginService {
                             do {
                                 // Analisar os dados JSON para obter informacoes do usuario
                                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                                    if let userName = json["name"] as? String {
+                                    if let givenName = json["givenName"] as? String, let surname = json["surname"] as? String {
+                                        let userName = "\(givenName) \(surname)"
                                         completion(userName)
                                     } else {
                                         print("Nome do usuário não encontrado no JSON.")
