@@ -25,6 +25,10 @@
 		B79D4D872B3217F700ECE644 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79D4D862B3217F700ECE644 /* AnalyticsService.swift */; };
 		B7A262DC2B34A1D1009BF461 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B7A262DB2B34A1D1009BF461 /* FirebaseCrashlytics */; };
 		B7A262DE2B34A1D1009BF461 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B7A262DD2B34A1D1009BF461 /* FirebaseMessaging */; };
+		B7B692F52B55B3C2004D9059 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = B7B692F42B55B3C2004D9059 /* Quick */; };
+		B7B692F82B55B3E4004D9059 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = B7B692F72B55B3E4004D9059 /* Nimble */; };
+		B7B692FB2B55B44D004D9059 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B692FA2B55B44D004D9059 /* RepositoryTests.swift */; };
+		B7B692FD2B55B47F004D9059 /* HarryPotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B692FC2B55B47F004D9059 /* HarryPotterTests.swift */; };
 		B7C2702C2B4C361E00F448A1 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = B7C2702B2B4C361E00F448A1 /* FirebaseAuthCombine-Community */; };
 		B7C2702F2B4C399100F448A1 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B7C2702E2B4C399100F448A1 /* GoogleSignIn */; };
 		B7C270312B4C399100F448A1 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B7C270302B4C399100F448A1 /* GoogleSignInSwift */; };
@@ -33,7 +37,6 @@
 		B7C270372B4D6FBB00F448A1 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C270362B4D6FBB00F448A1 /* LoginService.swift */; };
 		B7C66D1D2B2BE85300C8580A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C66D1C2B2BE85300C8580A /* Assets.xcassets */; };
 		B7C66D202B2BE85300C8580A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C66D1F2B2BE85300C8580A /* Preview Assets.xcassets */; };
-		B7C66D2A2B2BE85300C8580A /* ProjectAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C66D292B2BE85300C8580A /* ProjectAPITests.swift */; };
 		B7C66D342B2BE85300C8580A /* ProjectAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C66D332B2BE85300C8580A /* ProjectAPIUITests.swift */; };
 		B7C66D362B2BE85300C8580A /* ProjectAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C66D352B2BE85300C8580A /* ProjectAPIUITestsLaunchTests.swift */; };
 		B7C66D442B2BE8D300C8580A /* ListRepositoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C66D432B2BE8D300C8580A /* ListRepositoriesView.swift */; };
@@ -106,6 +109,8 @@
 		B74EBD8D2B36315600F8F9F1 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		B74EBD8F2B36336200F8F9F1 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		B79D4D862B3217F700ECE644 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
+		B7B692FA2B55B44D004D9059 /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
+		B7B692FC2B55B47F004D9059 /* HarryPotterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarryPotterTests.swift; sourceTree = "<group>"; };
 		B7C270322B4C3B0400F448A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7C270342B4C479200F448A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B7C270362B4D6FBB00F448A1 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -113,7 +118,6 @@
 		B7C66D1C2B2BE85300C8580A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7C66D1F2B2BE85300C8580A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B7C66D252B2BE85300C8580A /* ProjectAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7C66D292B2BE85300C8580A /* ProjectAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAPITests.swift; sourceTree = "<group>"; };
 		B7C66D2F2B2BE85300C8580A /* ProjectAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C66D332B2BE85300C8580A /* ProjectAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAPIUITests.swift; sourceTree = "<group>"; };
 		B7C66D352B2BE85300C8580A /* ProjectAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7B692F82B55B3E4004D9059 /* Nimble in Frameworks */,
+				B7B692F52B55B3C2004D9059 /* Quick in Frameworks */,
 				B237758786EC585549332C9D /* Pods_ProjectAPITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +208,15 @@
 				B7412C5C2B3C86CD006E92A4 /* RouteFinder.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		B7B692F92B55B410004D9059 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				B7B692FA2B55B44D004D9059 /* RepositoryTests.swift */,
+				B7B692FC2B55B47F004D9059 /* HarryPotterTests.swift */,
+			);
+			path = ModelTests;
 			sourceTree = "<group>";
 		};
 		B7C66D0C2B2BE85000C8580A = {
@@ -252,7 +267,7 @@
 		B7C66D282B2BE85300C8580A /* ProjectAPITests */ = {
 			isa = PBXGroup;
 			children = (
-				B7C66D292B2BE85300C8580A /* ProjectAPITests.swift */,
+				B7B692F92B55B410004D9059 /* ModelTests */,
 			);
 			path = ProjectAPITests;
 			sourceTree = "<group>";
@@ -357,6 +372,7 @@
 				B7C66D212B2BE85300C8580A /* Sources */,
 				B7C66D222B2BE85300C8580A /* Frameworks */,
 				B7C66D232B2BE85300C8580A /* Resources */,
+				EC56B8B09C52706F434E8A94 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -364,6 +380,10 @@
 				B7C66D272B2BE85300C8580A /* PBXTargetDependency */,
 			);
 			name = ProjectAPITests;
+			packageProductDependencies = (
+				B7B692F42B55B3C2004D9059 /* Quick */,
+				B7B692F72B55B3E4004D9059 /* Nimble */,
+			);
 			productName = ProjectAPITests;
 			productReference = B7C66D252B2BE85300C8580A /* ProjectAPITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -403,6 +423,7 @@
 					};
 					B7C66D242B2BE85300C8580A = {
 						CreatedOnToolsVersion = 15.1;
+						LastSwiftMigration = 1510;
 						TestTargetID = B7C66D142B2BE85000C8580A;
 					};
 					B7C66D2E2B2BE85300C8580A = {
@@ -423,6 +444,8 @@
 			packageReferences = (
 				B786FEF32B34A8D40023FFC0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				B7C2702D2B4C399100F448A1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				B7B692F32B55B3C2004D9059 /* XCRemoteSwiftPackageReference "Quick" */,
+				B7B692F62B55B3E4004D9059 /* XCRemoteSwiftPackageReference "Nimble" */,
 			);
 			productRefGroup = B7C66D162B2BE85000C8580A /* Products */;
 			projectDirPath = "";
@@ -560,6 +583,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EC56B8B09C52706F434E8A94 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectAPITests/Pods-ProjectAPITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectAPITests/Pods-ProjectAPITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectAPITests/Pods-ProjectAPITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EF47E351291114C166728C04 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -616,7 +656,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7C66D2A2B2BE85300C8580A /* ProjectAPITests.swift in Sources */,
+				B7B692FD2B55B47F004D9059 /* HarryPotterTests.swift in Sources */,
+				B7B692FB2B55B44D004D9059 /* RepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,6 +874,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B5SM2A3HZ4;
@@ -842,6 +884,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gabrielvargas.ProjectAPITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjectAPI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ProjectAPI";
@@ -854,6 +897,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B5SM2A3HZ4;
@@ -957,6 +1001,22 @@
 				minimumVersion = 10.19.1;
 			};
 		};
+		B7B692F32B55B3C2004D9059 /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		B7B692F62B55B3E4004D9059 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		B7C2702D2B4C399100F448A1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -1005,6 +1065,16 @@
 		B7A262DD2B34A1D1009BF461 /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FirebaseMessaging;
+		};
+		B7B692F42B55B3C2004D9059 /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7B692F32B55B3C2004D9059 /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		B7B692F72B55B3E4004D9059 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7B692F62B55B3E4004D9059 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
 		};
 		B7C2702B2B4C361E00F448A1 /* FirebaseAuthCombine-Community */ = {
 			isa = XCSwiftPackageProductDependency;
