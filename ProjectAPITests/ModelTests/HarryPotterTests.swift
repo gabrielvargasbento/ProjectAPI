@@ -7,7 +7,7 @@
 
 import Quick
 import Nimble
+@testable import ProjectAPI
 
 final class HarryPotterTests: QuickSpec {
-
 }
