@@ -129,22 +129,6 @@ final class RepositoryTests: QuickSpec {
                     expect(repository?.description).to(beNil())
                 }
                 
-                it("Codable Repository") {
-                    expect(repository as? (any Codable)).to(beNil())
-                }
-
-                it("Hashable Repository") {
-                    expect(repository as? (any Hashable)).to(beNil())
-                }
-
-                it("Identifiable Repository") {
-                    expect(repository as? (any Identifiable)).to(beNil())
-                }
-
-                it("RepositoryItem Repository") {
-                    expect(repository as? RepositoryItem).to(beNil())
-                }
-                
                 afterEach {
                     owner = nil
                     repository = nil

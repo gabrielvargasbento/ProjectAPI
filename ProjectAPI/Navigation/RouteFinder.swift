@@ -47,15 +47,14 @@ struct RouteFinder {
             }
             print(name)
             
-            repoViewModel.fetchRepositoryByName(name: name) { result in
-                switch result {
-                case .success(let repository):
-                    print(repository)
-                    completion(.repositoryItem(item: repository))
-                case .failure(let error):
-                    print(error)
+            repoViewModel.fetchRepositoryByName(name: name) { repository, error in
+                
+                if error != nil {
+                    print(error as Any)
                     completion(nil)
                 }
+                print(repository!)
+                completion(.repositoryItem(item: repository!))
             }
 
         case .harryPotter:
@@ -68,15 +67,14 @@ struct RouteFinder {
             }
             print(id)
             
-            harrypotterViewModel.fetchHarryPotterById(id: id) { result in
-                switch result {
-                case .success(let character):
-                    print(character)
-                    completion(.harryPotterItem(item: character))
-                case .failure(let error):
-                    print(error)
+            harrypotterViewModel.fetchHarryPotterById(id: id) { harryPotter, error in
+
+                if error != nil {
+                    print(error as Any)
                     completion(nil)
                 }
+                print(harryPotter!)
+                completion(.harryPotterItem(item: harryPotter!))
             }
             
         default:
@@ -84,7 +82,6 @@ struct RouteFinder {
         }
     }
 }
-
 
 extension URL {
     public var queryParamaters: [String: String]? {

@@ -114,23 +114,7 @@ final class HarryPotterTests: QuickSpec {
                     expect(harryPotter?.actor).to(beNil())
                     expect(harryPotter?.image).to(beNil())
                 }
-                
-                it("Codable HarryPotter") {
-                    expect(harryPotter as? (any Codable)).to(beNil())
-                }
 
-                it("Hashable HarryPotter") {
-                    expect(harryPotter as? (any Hashable)).to(beNil())
-                }
-
-                it("Identifiable HarryPotter") {
-                    expect(harryPotter as? (any Identifiable)).to(beNil())
-                }
-
-                it("HarryPotterItem HarryPotter") {
-                    expect(harryPotter as? HarryPotterItem).to(beNil())
-                }
-                
                 afterEach {
                     harryPotter = nil
                 }

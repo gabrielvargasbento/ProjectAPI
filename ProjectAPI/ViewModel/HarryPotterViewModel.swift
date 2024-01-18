@@ -20,8 +20,8 @@ class HarryPotterViewModel: ObservableObject {
             return
         }
         
-        self.apiService.fetchData(from: url) { decodedData in
-            if let decodedData = decodedData {
+        self.apiService.fetchData(from: url) { (harryPotter, error) in
+            if let decodedData = harryPotter {
                 DispatchQueue.main.async {
                     self.harryPotterList = decodedData
                 }
@@ -30,30 +30,30 @@ class HarryPotterViewModel: ObservableObject {
         
     }
     
-    func fetchHarryPotterById(id: String, completion: @escaping (Result<HarryPotter, Error>) -> ()) {
+    func fetchHarryPotterById(id: String, completion: @escaping (HarryPotter?, ProviderError?) -> ()) {
         guard let url = URL(string: "https://hp-api.onrender.com/api/character/\(id)") else {
             print("Invalid URL")
-            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            completion(nil, .invalidURL)
             return
         }
         
         print("url: \(url)")
         
-        self.apiService.fetchDataItem(from: url) { (result: Result<HarryPotter?, Error>) in
-            switch result {
-            case .success(let decodedData):
-                if let decodedData = decodedData {
-                    DispatchQueue.main.async {
-                        self.selectedCharacter = decodedData
-                        print(decodedData)
-                        completion(.success(decodedData))
-                    }
-                } else {
-                    completion(.failure(NSError(domain: "Decoding Error", code: -1, userInfo: nil)))
+        self.apiService.fetchDataItem(from: url) { (harryPotter, error) in
+            
+            if error != nil {
+                print("Error: \(String(describing: error))")
+                completion(nil, error)
+            }
+            
+            if let decodedData = harryPotter {
+                DispatchQueue.main.async {
+                    self.selectedCharacter = decodedData
+                    print(decodedData)
+                    completion(decodedData, nil)
                 }
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
-                completion(.failure(error))
+            } else {
+                completion(nil, error)
             }
         }
     }
