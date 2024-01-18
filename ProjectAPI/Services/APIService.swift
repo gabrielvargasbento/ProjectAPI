@@ -7,16 +7,9 @@
 
 import Foundation
 
-enum ProviderError {
-    case decodingFailed
-    case noData
-    case invalidResponse
-    case invalidURL
-}
-
 protocol APIServiceProtocol {
     associatedtype T: Decodable
-    func fetchData(from url: URL, completion: @escaping ([T]?, ProviderError?) -> ())
+    func fetchData(from url: URL, completion: @escaping ([T]?, Error?) -> ())
 }
 
 class APIService<T: Decodable>: ObservableObject, RandomAccessCollection, APIServiceProtocol {
@@ -36,11 +29,11 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection, APISer
     }
     
     // Recuperar dados de uma API, retornando um array generico ou erro
-    func fetchData(from url: URL, completion: @escaping ([T]?, ProviderError?) -> ()) {
+    func fetchData(from url: URL, completion: @escaping ([T]?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print("Erro na requisição: \(error.localizedDescription)")
-                completion(nil, .noData)
+                completion(nil, error)
             } else if let data = data {
                 do {
                     let decodedData = try JSONDecoder().decode([T].self, from: data)
@@ -50,17 +43,17 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection, APISer
                     }
                 } catch {
                     print("Erro ao decodificar dados: \(error)")
-                    completion(nil, .invalidResponse)
+                    completion(nil, error)
                 }
             }
         }.resume()
     }
     
-    func fetchDataItem(from url: URL, completion: @escaping (T?, ProviderError?) -> ()) {
+    func fetchDataItem(from url: URL, completion: @escaping (T?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print("Erro na requisição: \(error.localizedDescription)")
-                completion(nil, .noData)
+                completion(nil, error)
             } else if let data = data {
                 
                 // Tentar decodificar uma struct ou um array com uma única struct contida nele
@@ -78,15 +71,15 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection, APISer
                             }
                         } else {
                             print("Erro ao decodificar dado: Tipo incompatível")
-                            completion(nil, .invalidResponse)
+                            completion(nil, error)
                         }
                     } catch {
                         print("Erro ao decodificar dado: \(error)")
-                        completion(nil, .invalidResponse)
+                        completion(nil, error)
                     }
                 } else {
                     print("Erro ao decodificar dados: Tipo não Decodable")
-                    completion(nil, .invalidResponse)
+                    completion(nil, error)
                 }
 
 

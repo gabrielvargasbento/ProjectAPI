@@ -29,9 +29,8 @@
 		B7B692F82B55B3E4004D9059 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = B7B692F72B55B3E4004D9059 /* Nimble */; };
 		B7B692FB2B55B44D004D9059 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B692FA2B55B44D004D9059 /* RepositoryTests.swift */; };
 		B7B692FD2B55B47F004D9059 /* HarryPotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B692FC2B55B47F004D9059 /* HarryPotterTests.swift */; };
-		B7B693062B584A57004D9059 /* APIServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B693052B584A56004D9059 /* APIServiceMock.swift */; };
-		B7B6930E2B599047004D9059 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6930D2B599047004D9059 /* MockURLSession.swift */; };
 		B7B693102B599A82004D9059 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B6930F2B599A82004D9059 /* APIServiceTests.swift */; };
+		B7B693132B59ADF1004D9059 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B693122B59ADF1004D9059 /* URLExtensions.swift */; };
 		B7C2702C2B4C361E00F448A1 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = B7C2702B2B4C361E00F448A1 /* FirebaseAuthCombine-Community */; };
 		B7C2702F2B4C399100F448A1 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B7C2702E2B4C399100F448A1 /* GoogleSignIn */; };
 		B7C270312B4C399100F448A1 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B7C270302B4C399100F448A1 /* GoogleSignInSwift */; };
@@ -114,9 +113,8 @@
 		B79D4D862B3217F700ECE644 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		B7B692FA2B55B44D004D9059 /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		B7B692FC2B55B47F004D9059 /* HarryPotterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarryPotterTests.swift; sourceTree = "<group>"; };
-		B7B693052B584A56004D9059 /* APIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceMock.swift; sourceTree = "<group>"; };
-		B7B6930D2B599047004D9059 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		B7B6930F2B599A82004D9059 /* APIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
+		B7B693122B59ADF1004D9059 /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
 		B7C270322B4C3B0400F448A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7C270342B4C479200F448A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B7C270362B4D6FBB00F448A1 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -228,11 +226,17 @@
 		B7B693022B5848CB004D9059 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B7B6930D2B599047004D9059 /* MockURLSession.swift */,
-				B7B693052B584A56004D9059 /* APIServiceMock.swift */,
 				B7B6930F2B599A82004D9059 /* APIServiceTests.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B7B693112B59ADB3004D9059 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B7B693122B59ADF1004D9059 /* URLExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B7C66D0C2B2BE85000C8580A = {
@@ -262,6 +266,7 @@
 			children = (
 				B7C270322B4C3B0400F448A1 /* GoogleService-Info.plist */,
 				B74EBD8B2B34E7A800F8F9F1 /* AppDelegate.swift */,
+				B7B693112B59ADB3004D9059 /* Extensions */,
 				B7412C572B3B3301006E92A4 /* Navigation */,
 				B7C66D532B2BEBEB00C8580A /* Services */,
 				B7C66D4E2B2BE98C00C8580A /* Model */,
@@ -653,6 +658,7 @@
 				B7412C562B3B3034006E92A4 /* Route.swift in Sources */,
 				B7C66D442B2BE8D300C8580A /* ListRepositoriesView.swift in Sources */,
 				B79D4D872B3217F700ECE644 /* AnalyticsService.swift in Sources */,
+				B7B693132B59ADF1004D9059 /* URLExtensions.swift in Sources */,
 				B7C270372B4D6FBB00F448A1 /* LoginService.swift in Sources */,
 				B7412C5B2B3C56DA006E92A4 /* ContentView.swift in Sources */,
 				B7C66D5B2B2C976C00C8580A /* CharacterView.swift in Sources */,
@@ -673,9 +679,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7B693062B584A57004D9059 /* APIServiceMock.swift in Sources */,
 				B7B692FD2B55B47F004D9059 /* HarryPotterTests.swift in Sources */,
-				B7B6930E2B599047004D9059 /* MockURLSession.swift in Sources */,
 				B7B692FB2B55B44D004D9059 /* RepositoryTests.swift in Sources */,
 				B7B693102B599A82004D9059 /* APIServiceTests.swift in Sources */,
 			);

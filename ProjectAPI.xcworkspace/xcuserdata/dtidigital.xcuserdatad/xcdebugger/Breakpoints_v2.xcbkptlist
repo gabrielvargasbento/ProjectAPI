@@ -68,5 +68,148 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2C684B4-6E8E-4088-83FC-E4BACE6A8335"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectAPI/Services/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "fetchData(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76496A77-4742-49BF-8C61-2164D5FCC24A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectAPI/Services/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "fetchData(from:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "76496A77-4742-49BF-8C61-2164D5FCC24A - 9b44658a4f342fe9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ProjectAPI.APIService.fetchData(from: Foundation.URL, completion: (Swift.Optional&lt;Swift.Array&lt;&#x3c4;_0_0&gt;&gt;, Swift.Optional&lt;ProjectAPI.ProviderError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ProjectAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dtidigital/Documents/ProjectAPI/ProjectAPI/Services/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "368">
+               </Location>
+               <Location
+                  uuid = "76496A77-4742-49BF-8C61-2164D5FCC24A - 9b44658a4f342fe9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ProjectAPI.APIService.fetchData(from: Foundation.URL, completion: (Swift.Optional&lt;Swift.Array&lt;&#x3c4;_0_0&gt;&gt;, Swift.Optional&lt;ProjectAPI.ProviderError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ProjectAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dtidigital/Documents/ProjectAPI/ProjectAPI/Services/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "484">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFC7C92A-89D8-4232-8C1E-7BB95F250EAB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectAPI/Services/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "fetchData(from:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AFC7C92A-89D8-4232-8C1E-7BB95F250EAB - 9b44658a4f342f4c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ProjectAPI.APIService.fetchData(from: Foundation.URL, completion: (Swift.Optional&lt;Swift.Array&lt;&#x3c4;_0_0&gt;&gt;, Swift.Optional&lt;ProjectAPI.ProviderError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ProjectAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dtidigital/Documents/ProjectAPI/ProjectAPI/Services/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "412">
+               </Location>
+               <Location
+                  uuid = "AFC7C92A-89D8-4232-8C1E-7BB95F250EAB - 9b44658a4f342f4c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ProjectAPI.APIService.fetchData(from: Foundation.URL, completion: (Swift.Optional&lt;Swift.Array&lt;&#x3c4;_0_0&gt;&gt;, Swift.Optional&lt;ProjectAPI.ProviderError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ProjectAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dtidigital/Documents/ProjectAPI/ProjectAPI/Services/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "1056">
+               </Location>
+               <Location
+                  uuid = "AFC7C92A-89D8-4232-8C1E-7BB95F250EAB - 9b44658a4f342f4c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ProjectAPI.APIService.fetchData(from: Foundation.URL, completion: (Swift.Optional&lt;Swift.Array&lt;&#x3c4;_0_0&gt;&gt;, Swift.Optional&lt;ProjectAPI.ProviderError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ProjectAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dtidigital/Documents/ProjectAPI/ProjectAPI/Services/APIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "1108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "712F3A36-D88C-4C0F-A4AB-7FB07BCBBB79"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectAPI/Services/APIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "fetchData(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

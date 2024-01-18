@@ -30,10 +30,11 @@ class HarryPotterViewModel: ObservableObject {
         
     }
     
-    func fetchHarryPotterById(id: String, completion: @escaping (HarryPotter?, ProviderError?) -> ()) {
+    func fetchHarryPotterById(id: String, completion: @escaping (HarryPotter?, Error?) -> ()) {
         guard let url = URL(string: "https://hp-api.onrender.com/api/character/\(id)") else {
             print("Invalid URL")
-            completion(nil, .invalidURL)
+            let errorURL = NSError(domain: "InvalidURL", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+            completion(nil, errorURL)
             return
         }
         

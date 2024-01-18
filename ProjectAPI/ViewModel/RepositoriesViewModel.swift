@@ -29,10 +29,11 @@ class RepositoriesViewModel: ObservableObject {
         }
     }
     
-    func fetchRepositoryByName(name: String, completion: @escaping (Repository?, ProviderError?) -> ()) {
+    func fetchRepositoryByName(name: String, completion: @escaping (Repository?, Error?) -> ()) {
         guard let url = URL(string: "https://api.github.com/repos/\(name)") else {
             print("Invalid URL")
-            completion(nil, .invalidURL)
+            let errorURL = NSError(domain: "InvalidURL", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+            completion(nil, errorURL)
             return
         }
         
