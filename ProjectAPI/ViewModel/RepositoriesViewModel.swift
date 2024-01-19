@@ -14,14 +14,11 @@ class RepositoriesViewModel: ObservableObject {
     @Published var repositoryList: [Repository] = []
     @Published var selectedRepository: Repository? = nil
     
+     private let url = URL(string: "https://api.github.com/repositories")!
+    
     func fetchRepositories() {
-        guard let url = URL(string: "https://api.github.com/repositories") else {
-            print("Invalid URL")
-            return
-        }
-        
-        self.apiService.fetchData(from: url) { decodedData in
-            if let decodedData = decodedData {
+        self.apiService.fetchData(from: url) { (repository, error) in
+            if let decodedData = repository {
                 DispatchQueue.main.async {
                     self.repositoryList = decodedData
                 }
@@ -29,30 +26,31 @@ class RepositoriesViewModel: ObservableObject {
         }
     }
     
-    func fetchRepositoryByName(name: String, completion: @escaping (Result<Repository, Error>) -> ()) {
+    func fetchRepositoryByName(name: String, completion: @escaping (Repository?, Error?) -> ()) {
         guard let url = URL(string: "https://api.github.com/repos/\(name)") else {
             print("Invalid URL")
-            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            let errorURL = NSError(domain: "InvalidURL", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+            completion(nil, errorURL)
             return
         }
         
         print("url: \(url)")
         
-        self.apiService.fetchDataItem(from: url) { (result: Result<Repository?, Error>) in
-            switch result {
-            case .success(let decodedData):
-                if let decodedData = decodedData {
-                    DispatchQueue.main.async {
-                        self.selectedRepository = decodedData
-                        print(decodedData)
-                        completion(.success(decodedData))
-                    }
-                } else {
-                    completion(.failure(NSError(domain: "Decoding Error", code: -1, userInfo: nil)))
+        self.apiService.fetchDataItem(from: url) { (repository, error) in
+            
+            if error != nil {
+                print("Error: \(String(describing: error))")
+                completion(nil, error)
+            }
+            
+            if let decodedData = repository {
+                DispatchQueue.main.async {
+                    self.selectedRepository = decodedData
+                    print(decodedData)
+                    completion(decodedData, nil)
                 }
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
-                completion(.failure(error))
+            } else {
+                completion(nil, error)
             }
         }
     }

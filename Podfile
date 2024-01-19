@@ -11,6 +11,8 @@ target 'ProjectAPI' do
   target 'ProjectAPITests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Nimble'
+    pod 'Quick'
   end
 
   target 'ProjectAPIUITests' do

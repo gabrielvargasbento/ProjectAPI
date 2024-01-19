@@ -7,12 +7,16 @@
 
 import Foundation
 
-class APIService<T: Decodable>: ObservableObject, RandomAccessCollection {
+protocol APIServiceProtocol {
+    associatedtype T: Decodable
+    func fetchData(from url: URL, completion: @escaping ([T]?, Error?) -> ())
+}
+
+class APIService<T: Decodable>: ObservableObject, RandomAccessCollection, APIServiceProtocol {
     
     @Published var apiList: [T] = []
     @Published var apiItem: T? = nil
     
-    // Conformidade ao protocolo RandomAccessCollection
     var startIndex: Int { apiList.startIndex }
     var endIndex: Int { apiList.endIndex }
     
@@ -24,57 +28,66 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection {
         return apiList[position]
     }
     
-    // Recuperar dados de uma API, retornando um array generico com escaping
-    func fetchData(from url: URL, completion: @escaping ([T]?) -> ()) {
+    // Recuperar dados de uma API, retornando um array generico ou erro
+    func fetchData(from url: URL, completion: @escaping ([T]?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print("Erro na requisição: \(error.localizedDescription)")
-                completion(nil)
+                completion(nil, error)
             } else if let data = data {
                 do {
                     let decodedData = try JSONDecoder().decode([T].self, from: data)
                     DispatchQueue.main.async {
                         self.apiList = decodedData
-                        completion(decodedData)
+                        completion(decodedData, nil)
                     }
                 } catch {
                     print("Erro ao decodificar dados: \(error)")
-                    completion(nil)
+                    completion(nil, error)
                 }
             }
         }.resume()
     }
     
-    func fetchDataItem(from url: URL, completion: @escaping (Result<T?, Error>) -> ()) {
+    func fetchDataItem(from url: URL, completion: @escaping (T?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print("Erro na requisição: \(error.localizedDescription)")
-                completion(.failure(error))
+                completion(nil, error)
             } else if let data = data {
                 
                 // Tentar decodificar uma struct
                 do {
                     let decodedData = try JSONDecoder().decode(T.self, from: data)
                     DispatchQueue.main.async {
-                        completion(.success(decodedData))
+                        self.apiItem = decodedData
+                        completion(decodedData, nil)
                     }
                 } catch {
                     
                     // Tentar decodififcar um array com uma unica struct contida nele
                     do {
                         let decodedData = try JSONDecoder().decode([T].self, from: data)
-                        DispatchQueue.main.async {
-                            completion(.success(decodedData[0]))
+                        
+                        print("decodedData: \(decodedData)")
+
+                        if let firstElement = decodedData.first {
+                            DispatchQueue.main.async {
+                                self.apiItem = firstElement
+                                completion(firstElement, nil)
+                            }
+                        } else {
+                            let error = NSError(domain: "Project API", code: 1001, userInfo: [NSLocalizedDescriptionKey: "O JSON está vazio"])
+                            DispatchQueue.main.async {
+                                completion(nil, error)
+                            }
                         }
                     } catch {
-                        
                         print("Erro ao decodificar dados: \(error)")
-                        completion(.failure(error))
+                        completion(nil, error)
                     }
                 }
             }
         }.resume()
     }
 }
-
-// switch
