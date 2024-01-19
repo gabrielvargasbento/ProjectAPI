@@ -19,8 +19,58 @@ class APIServiceTests: QuickSpec {
             beforeEach {
                 sut = APIService<MockModel>()
             }
-
-            context("Fetch data") {
+            
+            context("Verify Protocols") {
+                
+                it("ObservableObject APIService") {
+                    expect(sut).to(beAKindOf((any ObservableObject).self))
+                }
+                
+                it("RandomAccessCollection APIService") {
+                    expect(sut).to(beAKindOf((any RandomAccessCollection).self))
+                }
+                
+                it("APIServiceProtocol APIService") {
+                    expect(sut).to(beAKindOf((any APIServiceProtocol).self))
+                }
+            }
+            
+            context("Access API List"){
+                
+                let mock0 = MockModel(id: 0, name: "item0")
+                let mock1 = MockModel(id: 1, name: "item1")
+                let mock2 = MockModel(id: 2, name: "item2")
+                
+                beforeEach {
+                    sut.apiList = [mock0, mock1, mock2]
+                }
+                
+                it("Verify StartIndex API List") {
+                    expect(sut.startIndex).to(equal(0))
+                }
+                
+                it("Verify EndIndex API List") {
+                    expect(sut.endIndex).to(equal(3))
+                }
+                
+                it("Verify Index API List") {
+                    expect(sut.index(after: 0)).to(equal(1))
+                }
+                
+                it("Verify Subscript API List") {
+                    expect(sut.apiList[0].id).to(equal(mock0.id))
+                }
+                
+                afterEach {
+                    sut.apiList = []
+                }
+            }
+            
+            context("Fetch Data") {
+                
+                beforeEach {
+                    URLProtocolMock.unregisterMockURL()
+                }
                 
                 it("Decode apiList correctly with valid data") {
                     let mockURLString = "https://example.com/mock"
@@ -119,11 +169,150 @@ class APIServiceTests: QuickSpec {
                         }
                     }
                 }
+                
+                it("Decode apiList with response error") {
+                    let fakeURLString = "https://example.com/fake"
+
+                    waitUntil { done in
+                        let mockURL = URL(string: fakeURLString)!
+                        sut.fetchData(from: mockURL) { (items, error) in
+                            
+                            // Verificar presenca de erro
+                            expect(error).toNot(beNil())
+                            expect(error).to(beAKindOf(DecodingError.self))
+                            
+                            // Verififcar ausencia de dados
+                            expect(items).to(beNil())
+                            expect(sut.apiList.count) == 0
+                            
+                            done()
+                        }
+                    }
+                }
+                
+                afterEach {
+                    URLProtocolMock.unregisterMockURL()
+                }
+            }
+            
+            context("Fetch Data Item") {
+                
+                beforeEach {
+                    URLProtocolMock.unregisterMockURL()
+                }
+                
+                it("Decode apiItem correctly with valid data struct") {
+                    let mockURLString = "https://example.com/mock"
+                    let mockData = """
+                        {"id": 1, "name": "item1"}
+                    """.data(using: .utf8)!
+                    
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData)
+                    
+                    waitUntil { done in
+                        let mockURL = URL(string: mockURLString)!
+                        sut.fetchDataItem(from: mockURL) { (item, error) in
+                            
+                            // Verificar ausencia de erro
+                            expect(error).to(beNil())
+                            
+                            // Verififcar presenca de dados
+                            expect(item).toNot(beNil())
+                            
+                            // Verificar decodificacao dos dados
+                            expect(sut.apiItem?.id).to(equal(1))
+                            expect(sut.apiItem?.name).to(equal("item1"))
+                            
+                            done()
+                        }
+                    }
+                }
+                
+                it("Decode apiItem correctly with a valid data array") {
+                    let mockURLString = "https://example.com/mock"
+                    let mockData = """
+                        [{"id": 1, "name": "item1"}]
+                    """.data(using: .utf8)!
+                    
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData)
+                    
+                    waitUntil { done in
+                        let mockURL = URL(string: mockURLString)!
+                        sut.fetchDataItem(from: mockURL) { (item, error) in
+                            
+                            // Verificar ausencia de erro
+                            expect(error).to(beNil())
+                            
+                            // Verififcar presenca de dados
+                            expect(item).toNot(beNil())
+                            
+                            // Verificar decodificacao dos dados
+                            expect(sut.apiItem?.id).to(equal(1))
+                            expect(sut.apiItem?.name).to(equal("item1"))
+                            
+                            done()
+                        }
+                    }
+                }
+                
+                it("Decode apiItem correctly with an invalid data array") {
+                    let mockURLString = "https://example.com/mock"
+                    let mockData = """
+                        []
+                    """.data(using: .utf8)!
+                    
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData)
+                    
+                    waitUntil { done in
+                        let mockURL = URL(string: mockURLString)!
+                        sut.fetchDataItem(from: mockURL) { (item, error) in
+                            
+                            // Verificar presenca de erro
+                            expect(error).toNot(beNil())
+                            
+                            // Verififcar ausencia de dados
+                            expect(item).to(beNil())
+                            
+                            // Verificar ausencia de dados
+                            expect(sut.apiItem?.id).to(beNil())
+                            expect(sut.apiItem?.name).to(beNil())
+                            
+                            done()
+                        }
+                    }
+                }
+                
+                it("Decode apiItem with invalid data") {
+                    let mockURLString = "https://example.com/mock"
+                    let mockData = """
+                        [{"id": 1, "error": "item1"}]
+                    """.data(using: .utf8)!
+                    
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData)
+
+                    waitUntil { done in
+                        let mockURL = URL(string: mockURLString)!
+                        sut.fetchDataItem(from: mockURL) { (item, error) in
+                            
+                            // Verificar presenca de erro
+                            expect(error).toNot(beNil())
+                            expect(error).to(beAKindOf(DecodingError.self))
+                            
+                            // Verififcar ausencia de dados
+                            expect(item).to(beNil())
+                            
+                            done()
+                        }
+                    }
+                }
+                
+                afterEach {
+                    URLProtocolMock.unregisterMockURL()
+                }
             }
             
             afterEach {
                 sut = nil
-                URLProtocolMock.unregisterMockURL()
             }
         }
     }

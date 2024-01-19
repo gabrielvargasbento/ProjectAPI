@@ -56,33 +56,37 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection, APISer
                 completion(nil, error)
             } else if let data = data {
                 
-                // Tentar decodificar uma struct ou um array com uma única struct contida nele
-                if let dataType = T.self as? Decodable.Type {
+                // Tentar decodificar uma struct
+                do {
+                    let decodedData = try JSONDecoder().decode(T.self, from: data)
+                    DispatchQueue.main.async {
+                        self.apiItem = decodedData
+                        completion(decodedData, nil)
+                    }
+                } catch {
+                    
+                    // Tentar decodififcar um array com uma unica struct contida nele
                     do {
-                        let decodedData = try JSONDecoder().decode(dataType, from: data)
+                        let decodedData = try JSONDecoder().decode([T].self, from: data)
                         
-                        if let decodedItem = decodedData as? T {
+                        print("decodedData: \(decodedData)")
+
+                        if let firstElement = decodedData.first {
                             DispatchQueue.main.async {
-                                completion(decodedItem, nil)
-                            }
-                        } else if let decodedArray = decodedData as? [T], let decodedItem = decodedArray.first {
-                            DispatchQueue.main.async {
-                                completion(decodedItem, nil)
+                                self.apiItem = firstElement
+                                completion(firstElement, nil)
                             }
                         } else {
-                            print("Erro ao decodificar dado: Tipo incompatível")
-                            completion(nil, error)
+                            let error = NSError(domain: "Project API", code: 1001, userInfo: [NSLocalizedDescriptionKey: "O JSON está vazio"])
+                            DispatchQueue.main.async {
+                                completion(nil, error)
+                            }
                         }
                     } catch {
-                        print("Erro ao decodificar dado: \(error)")
+                        print("Erro ao decodificar dados: \(error)")
                         completion(nil, error)
                     }
-                } else {
-                    print("Erro ao decodificar dados: Tipo não Decodable")
-                    completion(nil, error)
                 }
-
-
             }
         }.resume()
     }
