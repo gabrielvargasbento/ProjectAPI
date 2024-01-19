@@ -14,12 +14,9 @@ class HarryPotterViewModel: ObservableObject {
     @Published var harryPotterList: [HarryPotter] = []
     @Published var selectedCharacter: HarryPotter? = nil
     
+    private let url = URL(string: "https://hp-api.onrender.com/api/characters/house/gryffindor")!
+    
     func fetchHarryPotter() {
-        guard let url = URL(string: "https://hp-api.onrender.com/api/characters/house/gryffindor") else {
-            print("Invalid URL")
-            return
-        }
-        
         self.apiService.fetchData(from: url) { (harryPotter, error) in
             if let decodedData = harryPotter {
                 DispatchQueue.main.async {

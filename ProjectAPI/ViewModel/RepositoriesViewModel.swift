@@ -14,12 +14,9 @@ class RepositoriesViewModel: ObservableObject {
     @Published var repositoryList: [Repository] = []
     @Published var selectedRepository: Repository? = nil
     
-    func fetchRepositories() {
-        guard let url = URL(string: "https://api.github.com/repositories") else {
-            print("Invalid URL")
-            return
-        }
+     private let url = URL(string: "https://api.github.com/repositories")!
     
+    func fetchRepositories() {
         self.apiService.fetchData(from: url) { (repository, error) in
             if let decodedData = repository {
                 DispatchQueue.main.async {
