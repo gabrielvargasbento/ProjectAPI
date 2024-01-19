@@ -223,12 +223,12 @@
 			path = ModelTests;
 			sourceTree = "<group>";
 		};
-		B7B693022B5848CB004D9059 /* Services */ = {
+		B7B693022B5848CB004D9059 /* ServicesTests */ = {
 			isa = PBXGroup;
 			children = (
 				B7B6930F2B599A82004D9059 /* APIServiceTests.swift */,
 			);
-			path = Services;
+			path = ServicesTests;
 			sourceTree = "<group>";
 		};
 		B7B693112B59ADB3004D9059 /* Extensions */ = {
@@ -288,7 +288,7 @@
 		B7C66D282B2BE85300C8580A /* ProjectAPITests */ = {
 			isa = PBXGroup;
 			children = (
-				B7B693022B5848CB004D9059 /* Services */,
+				B7B693022B5848CB004D9059 /* ServicesTests */,
 				B7B692F92B55B410004D9059 /* ModelTests */,
 			);
 			path = ProjectAPITests;
