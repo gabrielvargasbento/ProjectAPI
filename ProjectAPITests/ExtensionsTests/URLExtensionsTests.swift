@@ -18,9 +18,9 @@ final class URLExtensionsTests: QuickSpec {
             context("URL.queryParamaters Test") {
                 
                 it("Test With Params") {
-                    let url = URL(string: "https://www.example.com/?param1=value1&param2=value2")!
+                    let url = URL(string: "https://www.example.com/?param1=value+1&param2=value+2")!
                     let urlParamaters = url.queryParamaters
-                    let urlParamsExpect = ["param1": "value1", "param2": "value2"]
+                    let urlParamsExpect = ["param1": "value 1", "param2": "value 2"]
                     expect(urlParamaters).to(equal(urlParamsExpect))
                 }
                 
