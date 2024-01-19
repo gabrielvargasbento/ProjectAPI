@@ -24,7 +24,7 @@ class HarryPotterViewModel: ObservableObject {
                 }
             }
         }
-        
+
     }
     
     func fetchHarryPotterById(id: String, completion: @escaping (HarryPotter?, Error?) -> ()) {

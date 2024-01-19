@@ -22,7 +22,7 @@ final class RepositoriesViewModelTests: QuickSpec {
             
             context("Fetch Repositories") {
                 it("Invalid URL") {
-                    let invalidURL = ""
+//                    let invalidURL = ""
                 }
             }
             
