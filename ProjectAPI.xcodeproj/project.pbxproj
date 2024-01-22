@@ -18,6 +18,8 @@
 		B74EBD902B36336200F8F9F1 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EBD8F2B36336200F8F9F1 /* NotificationView.swift */; };
 		B75BB7982B5AC0B7004DDC1E /* RepositoriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75BB7972B5AC0B7004DDC1E /* RepositoriesViewModelTests.swift */; };
 		B75BB79B2B5AD82F004DDC1E /* URLExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75BB79A2B5AD82F004DDC1E /* URLExtensionsTests.swift */; };
+		B75BB79F2B5B09A3004DDC1E /* AnalyticsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75BB79E2B5B09A3004DDC1E /* AnalyticsServiceTests.swift */; };
+		B75BB7A22B5EBE48004DDC1E /* Mockingbird in Frameworks */ = {isa = PBXBuildFile; productRef = B75BB7A12B5EBE48004DDC1E /* Mockingbird */; };
 		B786FEF52B34A8D40023FFC0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B786FEF42B34A8D40023FFC0 /* FirebaseAnalytics */; };
 		B786FEF72B34A8D40023FFC0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B786FEF62B34A8D40023FFC0 /* FirebaseAuth */; };
 		B786FEF92B34A8D40023FFC0 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B786FEF82B34A8D40023FFC0 /* FirebaseCrashlytics */; };
@@ -114,6 +116,7 @@
 		B74EBD8F2B36336200F8F9F1 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		B75BB7972B5AC0B7004DDC1E /* RepositoriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModelTests.swift; sourceTree = "<group>"; };
 		B75BB79A2B5AD82F004DDC1E /* URLExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionsTests.swift; sourceTree = "<group>"; };
+		B75BB79E2B5B09A3004DDC1E /* AnalyticsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsServiceTests.swift; sourceTree = "<group>"; };
 		B79D4D862B3217F700ECE644 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		B7B692FA2B55B44D004D9059 /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		B7B692FC2B55B47F004D9059 /* HarryPotterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarryPotterTests.swift; sourceTree = "<group>"; };
@@ -156,6 +159,7 @@
 				B786FEF72B34A8D40023FFC0 /* FirebaseAuth in Frameworks */,
 				B7C2702F2B4C399100F448A1 /* GoogleSignIn in Frameworks */,
 				B7A262DC2B34A1D1009BF461 /* FirebaseCrashlytics in Frameworks */,
+				B75BB7A22B5EBE48004DDC1E /* Mockingbird in Frameworks */,
 				B786FEF92B34A8D40023FFC0 /* FirebaseCrashlytics in Frameworks */,
 				B786FEFB2B34A8D40023FFC0 /* FirebaseFirestore in Frameworks */,
 				B786FEF52B34A8D40023FFC0 /* FirebaseAnalytics in Frameworks */,
@@ -247,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				B7B6930F2B599A82004D9059 /* APIServiceTests.swift */,
+				B75BB79E2B5B09A3004DDC1E /* AnalyticsServiceTests.swift */,
 			);
 			path = ServicesTests;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				B7C2702B2B4C361E00F448A1 /* FirebaseAuthCombine-Community */,
 				B7C2702E2B4C399100F448A1 /* GoogleSignIn */,
 				B7C270302B4C399100F448A1 /* GoogleSignInSwift */,
+				B75BB7A12B5EBE48004DDC1E /* Mockingbird */,
 			);
 			productName = ProjectAPI;
 			productReference = B7C66D152B2BE85000C8580A /* ProjectAPI.app */;
@@ -490,6 +496,7 @@
 				B7C2702D2B4C399100F448A1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				B7B692F32B55B3C2004D9059 /* XCRemoteSwiftPackageReference "Quick" */,
 				B7B692F62B55B3E4004D9059 /* XCRemoteSwiftPackageReference "Nimble" */,
+				B75BB7A02B5EBE48004DDC1E /* XCRemoteSwiftPackageReference "mockingbird" */,
 			);
 			productRefGroup = B7C66D162B2BE85000C8580A /* Products */;
 			projectDirPath = "";
@@ -705,6 +712,7 @@
 				B75BB7982B5AC0B7004DDC1E /* RepositoriesViewModelTests.swift in Sources */,
 				B7B692FD2B55B47F004D9059 /* HarryPotterTests.swift in Sources */,
 				B7B692FB2B55B44D004D9059 /* RepositoryTests.swift in Sources */,
+				B75BB79F2B5B09A3004DDC1E /* AnalyticsServiceTests.swift in Sources */,
 				B7B693102B599A82004D9059 /* APIServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1041,6 +1049,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B75BB7A02B5EBE48004DDC1E /* XCRemoteSwiftPackageReference "mockingbird" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/birdrides/mockingbird#quick-start";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.20.0;
+			};
+		};
 		B786FEF32B34A8D40023FFC0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1076,6 +1092,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B75BB7A12B5EBE48004DDC1E /* Mockingbird */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B75BB7A02B5EBE48004DDC1E /* XCRemoteSwiftPackageReference "mockingbird" */;
+			productName = Mockingbird;
+		};
 		B786FEF42B34A8D40023FFC0 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B786FEF32B34A8D40023FFC0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
