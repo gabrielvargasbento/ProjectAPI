@@ -18,8 +18,15 @@ enum DeepLinkURLs: String {
 
 struct RouteFinder {
     
-    let repoViewModel = RepositoriesViewModel()
-    let harrypotterViewModel = HarryPotterViewModel()
+    var repoViewModel: any ViewModelProtocol
+    let harrypotterViewModel: any ViewModelProtocol
+    
+    init(repoViewModel: any ViewModelProtocol = RepositoriesViewModel(),
+         harrypotterViewModel: any ViewModelProtocol = HarryPotterViewModel()) {
+        
+        self.repoViewModel = repoViewModel
+        self.harrypotterViewModel = harrypotterViewModel
+    }
     
     func find(from url: URL, completion: @escaping (Route?) -> ()) {
         
@@ -51,7 +58,7 @@ struct RouteFinder {
                     completion(nil)
                 }
                 print(repository!)
-                completion(.repositoryItem(item: repository!))
+                completion(.repositoryItem(item: repository! as! Repository))
             }
 
         case .harryPotter:
@@ -70,7 +77,7 @@ struct RouteFinder {
                     completion(nil)
                 }
                 print(harryPotter!)
-                completion(.harryPotterItem(item: harryPotter!))
+                completion(.harryPotterItem(item: harryPotter! as! HarryPotter))
             }
             
         default:
