@@ -36,7 +36,7 @@ struct ListHarryPotterView: View {
         }
         .onAppear() {
 //            tabIndexManager.selectedTabIndex = 1
-            harrypotterViewModel.fetchHarryPotter()
+            harrypotterViewModel.fetch() {(repo, error) in }
             firebaseService.analytics(userName: "harrypotter_menu", className: "harrypotter")
             routerManager.reset()
         }

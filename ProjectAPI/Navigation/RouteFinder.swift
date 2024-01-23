@@ -27,9 +27,7 @@ struct RouteFinder {
             completion(nil)
             return
         }
-        
-        print(host)
-        
+                
         switch DeepLinkURLs(rawValue: host) {
             
         case .repositoryMenu:
@@ -45,9 +43,8 @@ struct RouteFinder {
                 completion(nil)
                 return
             }
-            print(name)
             
-            repoViewModel.fetchRepositoryByName(name: name) { repository, error in
+            repoViewModel.fetchItem(identifier: name) { repository, error in
                 
                 if error != nil {
                     print(error as Any)
@@ -65,9 +62,8 @@ struct RouteFinder {
                 completion(nil)
                 return
             }
-            print(id)
             
-            harrypotterViewModel.fetchHarryPotterById(id: id) { harryPotter, error in
+            harrypotterViewModel.fetchItem(identifier: id) { harryPotter, error in
 
                 if error != nil {
                     print(error as Any)

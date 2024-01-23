@@ -15,7 +15,7 @@ class APIServiceTests: QuickSpec {
     override class func spec() {
         describe("API Service Tests") {
             var sut: APIService<MockModel>!
-
+            
             beforeEach {
                 sut = APIService<MockModel>()
             }
@@ -78,7 +78,7 @@ class APIServiceTests: QuickSpec {
                         [{"id": 1, "name": "item1"}, {"id": 2, "name": "item2"}]
                     """.data(using: .utf8)!
                     
-                    URLProtocolMock.registerMockURL(mockURLString, with: mockData)
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
                     
                     waitUntil { done in
                         let mockURL = URL(string: mockURLString)!
@@ -105,9 +105,9 @@ class APIServiceTests: QuickSpec {
                 it("Decode apiList with no data") {
                     let mockURLString = "https://example.com/mock"
                     let mockData: Data? = nil
-
-                    URLProtocolMock.registerMockURL(mockURLString, with: mockData)
-
+                    
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
+                    
                     waitUntil { done in
                         let mockURL = URL(string: mockURLString)!
                         sut.fetchData(from: mockURL) { (items, error) in
@@ -131,8 +131,8 @@ class APIServiceTests: QuickSpec {
                         [{"id": 1, "error": "item1"}, {"id": 2, "name": "item2"}]
                     """.data(using: .utf8)!
                     
-                    URLProtocolMock.registerMockURL(mockURLString, with: mockData)
-
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
+                    
                     waitUntil { done in
                         let mockURL = URL(string: mockURLString)!
                         sut.fetchData(from: mockURL) { (items, error) in
@@ -150,36 +150,21 @@ class APIServiceTests: QuickSpec {
                     }
                 }
                 
-                it("Decode apiList with invalid url") {
-                    let fakeURLString = "https://example.com/fake"
-
-                    waitUntil { done in
-                        let mockURL = URL(string: fakeURLString)!
-                        sut.fetchData(from: mockURL) { (items, error) in
-                            
-                            // Verificar presenca de erro
-                            expect(error).toNot(beNil())
-                            expect(error).to(beAKindOf(DecodingError.self))
-                            
-                            // Verififcar ausencia de dados
-                            expect(items).to(beNil())
-                            expect(sut.apiList.count) == 0
-                            
-                            done()
-                        }
-                    }
-                }
-                
                 it("Decode apiList with response error") {
-                    let fakeURLString = "https://example.com/fake"
-
+                    let mockURLString = "https://example.com/mock"
+                    let mockData = """
+                            [{"id": 1, "error": "item1"}, {"id": 2, "name": "item2"}]
+                        """.data(using: .utf8)!
+                    
+                    let mockError = NSError(domain: "Project API", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Mock Error"])
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: mockError)
+                    
                     waitUntil { done in
-                        let mockURL = URL(string: fakeURLString)!
+                        let mockURL = URL(string: mockURLString)!
                         sut.fetchData(from: mockURL) { (items, error) in
                             
                             // Verificar presenca de erro
                             expect(error).toNot(beNil())
-                            expect(error).to(beAKindOf(DecodingError.self))
                             
                             // Verififcar ausencia de dados
                             expect(items).to(beNil())
@@ -207,8 +192,8 @@ class APIServiceTests: QuickSpec {
                         {"id": 1, "name": "item1"}
                     """.data(using: .utf8)!
                     
-                    URLProtocolMock.registerMockURL(mockURLString, with: mockData)
-                    
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
+
                     waitUntil { done in
                         let mockURL = URL(string: mockURLString)!
                         sut.fetchDataItem(from: mockURL) { (item, error) in
@@ -234,8 +219,8 @@ class APIServiceTests: QuickSpec {
                         [{"id": 1, "name": "item1"}]
                     """.data(using: .utf8)!
                     
-                    URLProtocolMock.registerMockURL(mockURLString, with: mockData)
-                    
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
+
                     waitUntil { done in
                         let mockURL = URL(string: mockURLString)!
                         sut.fetchDataItem(from: mockURL) { (item, error) in
@@ -261,8 +246,8 @@ class APIServiceTests: QuickSpec {
                         []
                     """.data(using: .utf8)!
                     
-                    URLProtocolMock.registerMockURL(mockURLString, with: mockData)
-                    
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
+
                     waitUntil { done in
                         let mockURL = URL(string: mockURLString)!
                         sut.fetchDataItem(from: mockURL) { (item, error) in
@@ -288,7 +273,7 @@ class APIServiceTests: QuickSpec {
                         [{"id": 1, "error": "item1"}]
                     """.data(using: .utf8)!
                     
-                    URLProtocolMock.registerMockURL(mockURLString, with: mockData)
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
 
                     waitUntil { done in
                         let mockURL = URL(string: mockURLString)!
@@ -297,6 +282,30 @@ class APIServiceTests: QuickSpec {
                             // Verificar presenca de erro
                             expect(error).toNot(beNil())
                             expect(error).to(beAKindOf(DecodingError.self))
+                            
+                            // Verififcar ausencia de dados
+                            expect(item).to(beNil())
+                            
+                            done()
+                        }
+                    }
+                }
+                
+                it("Decode apiItem with error") {
+                    let mockURLString = "https://example.com/mock"
+                    let mockData = """
+                        {"id": 1, "name": "item1"}
+                    """.data(using: .utf8)!
+                    
+                    let mockError = NSError(domain: "Project API", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Mock Error"])
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: mockError)
+                    
+                    waitUntil { done in
+                        let mockURL = URL(string: mockURLString)!
+                        sut.fetchDataItem(from: mockURL) { (item, error) in
+                            
+                            // Verificar presenca de erro
+                            expect(error).toNot(beNil())
                             
                             // Verififcar ausencia de dados
                             expect(item).to(beNil())
@@ -327,16 +336,19 @@ struct MockModel: Decodable {
 class URLProtocolMock: URLProtocol {
     static var mockURL: URL?
     static var mockData: Data?
+    static var mockError: Error?
     
-    class func registerMockURL(_ urlString: String, with data: Data?) {
+    class func registerMockURL(_ urlString: String, with data: Data?, with error: Error?) {
         mockURL = URL(string: urlString)
         mockData = data ?? nil
+        mockError = error ?? nil
         URLProtocol.registerClass(self)
     }
     
     class func unregisterMockURL() {
         mockURL = nil
         mockData = nil
+        mockError = nil
         URLProtocol.unregisterClass(self)
     }
     
@@ -344,17 +356,22 @@ class URLProtocolMock: URLProtocol {
         guard let mockURL = mockURL else { return false }
         return request.url == mockURL
     }
-
+    
     override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
-
+    
     override func startLoading() {
+        if let mockError = URLProtocolMock.mockError {
+            client?.urlProtocol(self, didFailWithError: mockError)
+            return
+        }
+        
         if let mockData = URLProtocolMock.mockData {
             self.client?.urlProtocol(self, didLoad: mockData)
         }
         self.client?.urlProtocolDidFinishLoading(self)
     }
-
+    
     override func stopLoading() {}
 }

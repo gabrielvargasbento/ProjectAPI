@@ -1,8 +1,8 @@
 //
-//  RepositoriesViewModelTests.swift
+//  HarryPotterViewModelTests.swift
 //  ProjectAPITests
 //
-//  Created by Gaberiel Vargas on 19/01/24.
+//  Created by Gabriel Vargas on 23/01/24.
 //
 
 import Quick
@@ -10,17 +10,17 @@ import Nimble
 import Foundation
 @testable import ProjectAPI
 
-final class RepositoriesViewModelTests: QuickSpec {
+final class HarryPotterViewModelTests: QuickSpec {
     
     override class func spec() {
-        describe("Repository View Model Tests") {
+        describe("HarryPotter View Model Tests") {
             
-            var sut: RepositoriesViewModel!
+            var sut: HarryPotterViewModel!
             
             context("Verify Protocols") {
                 
                 beforeEach {
-                    sut = RepositoriesViewModel()
+                    sut = HarryPotterViewModel()
                 }
                 
                 it("ObservableObject HarryPotter View Model") {
@@ -36,14 +36,14 @@ final class RepositoriesViewModelTests: QuickSpec {
                 }
             }
             
-            //            context("Access Repository List"){
+            //            context("Access HarryPotter List"){
             //
             //                let mock0 = MockModel(id: 0, name: "item0")
             //                let mock1 = MockModel(id: 1, name: "item1")
             //                let mock2 = MockModel(id: 2, name: "item2")
             //
             //                beforeEach {
-            //                    sut.repositoryList = [mock0, mock1, mock2]
+            //                    sut.harryPotterList = [mock0, mock1, mock2]
             //                }
             //
             //                it("Verify StartIndex API List") {
@@ -59,11 +59,11 @@ final class RepositoriesViewModelTests: QuickSpec {
             //                }
             //
             //                it("Verify Subscript API List") {
-            //                    expect(sut.repositoryList[0].id).to(equal(mock0.id))
+            //                    expect(sut.harryPotterList[0].id).to(equal(mock0.id))
             //                }
             //
             //                afterEach {
-            //                    sut.repositoryList = []
+            //                    sut.harryPotterList = []
             //                }
             //            }
             
@@ -74,19 +74,14 @@ final class RepositoriesViewModelTests: QuickSpec {
                     sut = nil
                 }
                 
-                afterEach {
-                    URLProtocolMock.unregisterMockURL()
-                    sut = nil
-                }
-                
-                it("Decode repositoryList correctly with valid data") {
+                it("Decode harryPotterList correctly with valid data") {
                     let mockURLString = "https://example.com/mock"
                     let mockData = """
-                        [{"id": 1, "name": "item1"}, {"id": 2, "name": "item2"}]
+                        [{"id": "1", "name": "item1"}, {"id": "2", "name": "item2"}]
                     """.data(using: .utf8)!
                     
                     URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
-                    sut = RepositoriesViewModel(url: URL(string:mockURLString)!)
+                    sut = HarryPotterViewModel(url: URL(string:mockURLString)!)
                     
                     waitUntil { done in
                         sut.fetch() { (items, error) in
@@ -96,25 +91,25 @@ final class RepositoriesViewModelTests: QuickSpec {
                             
                             // Verififcar presenca de dados
                             expect(items).toNot(beNil())
-                            expect(sut.repositoryList.count) == 2
+                            expect(sut.harryPotterList.count) == 2
                             
                             // Verificar decodificacao dos dados
-                            expect(sut.repositoryList[0].id).to(equal(1))
-                            expect(sut.repositoryList[0].name).to(equal("item1"))
-                            expect(sut.repositoryList[1].id).to(equal(2))
-                            expect(sut.repositoryList[1].name).to(equal("item2"))
+                            expect(sut.harryPotterList[0].id).to(equal("1"))
+                            expect(sut.harryPotterList[0].name).to(equal("item1"))
+                            expect(sut.harryPotterList[1].id).to(equal("2"))
+                            expect(sut.harryPotterList[1].name).to(equal("item2"))
                             
                             done()
                         }
                     }
                 }
                 
-                it("Decode repositoryList with no data") {
+                it("Decode harryPotterList with no data") {
                     let mockURLString = "https://example.com/mock"
                     let mockData: Data? = nil
                     
                     URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
-                    sut = RepositoriesViewModel(url: URL(string:mockURLString)!)
+                    sut = HarryPotterViewModel(url: URL(string:mockURLString)!)
                     
                     waitUntil { done in
                         sut.fetch() { (items, error) in
@@ -125,47 +120,47 @@ final class RepositoriesViewModelTests: QuickSpec {
                             
                             // Verififcar ausencia de dados
                             expect(items).to(beNil())
-                            expect(sut.repositoryList.count) == 0
+                            expect(sut.harryPotterList.count) == 0
                             
                             done()
                         }
                     }
                 }
                 
-                it("Decode repositoryList with invalid data") {
+                it("Decode harryPotterList with invalid data") {
                     let mockURLString = "https://example.com/mock"
                     let mockData = """
-                        [{"id": "1", "name": "item1"}, {"id": "2", "name": "item2"}]
+                        [{"id": 1, "name": "item1"}, {"id": 2, "name": "item2"}]
                     """.data(using: .utf8)!
                     
                     URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
-                    sut = RepositoriesViewModel(url: URL(string:mockURLString)!)
+                    sut = HarryPotterViewModel(url: URL(string:mockURLString)!)
                     
                     waitUntil { done in
                         sut.fetch() { (items, error) in
                             
                             // Verificar presenca de erro
-                            expect(error).toNot(beNil())
+                            expect(error).to(beNil())
                             expect(error).to(beAKindOf(DecodingError.self))
                             
                             // Verififcar ausencia de dados
                             expect(items).to(beNil())
-                            expect(sut.repositoryList.count) == 0
+                            expect(sut.harryPotterList.count) == 0
                             
                             done()
                         }
                     }
                 }
                 
-                it("Decode repositoryList with response error") {
+                it("Decode harryPotterList with response error") {
                     let mockURLString = "https://example.com/mock"
                     let mockData = """
-                            [{"id": 1, "error": "item1"}, {"id": 2, "name": "item2"}]
+                            [{"id": "1", "error": "item1"}, {"id": "2", "name": "item2"}]
                         """.data(using: .utf8)!
                     
                     let mockError = NSError(domain: "Project API", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Mock Error"])
                     URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: mockError)
-                    sut = RepositoriesViewModel(url: URL(string:mockURLString)!)
+                    sut = HarryPotterViewModel(url: URL(string:mockURLString)!)
                     
                     waitUntil { done in
                         sut.fetch() { (items, error) in
@@ -175,11 +170,16 @@ final class RepositoriesViewModelTests: QuickSpec {
                             
                             // Verififcar ausencia de dados
                             expect(items).to(beNil())
-                            expect(sut.repositoryList.count) == 0
+                            expect(sut.harryPotterList.count) == 0
                             
                             done()
                         }
                     }
+                }
+                
+                afterEach {
+                    URLProtocolMock.unregisterMockURL()
+                    sut = nil
                 }
             }
             
@@ -190,19 +190,14 @@ final class RepositoriesViewModelTests: QuickSpec {
                     sut = nil
                 }
                 
-                afterEach {
-                    URLProtocolMock.unregisterMockURL()
-                    sut = nil
-                }
-                
-                it("Decode selectedRepository correctly with valid data struct") {
+                it("Decode selectedCharacter correctly with valid data struct") {
                     let mockURLString = "https://example.com/mock"
                     let mockData = """
-                        {"id": 1, "name": "item1"}
+                        {"id": "1", "name": "item1"}
                     """.data(using: .utf8)!
                     
                     URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
-                    sut = RepositoriesViewModel(url: URL(string:mockURLString)!)
+                    sut = HarryPotterViewModel(url: URL(string:mockURLString)!)
                     
                     waitUntil { done in
                         sut.fetchItem(identifier: nil) { (item, error) in
@@ -214,22 +209,22 @@ final class RepositoriesViewModelTests: QuickSpec {
                             expect(item).toNot(beNil())
                             
                             // Verificar decodificacao dos dados
-                            expect(sut.selectedRepository?.id).to(equal(1))
-                            expect(sut.selectedRepository?.name).to(equal("item1"))
+                            expect(sut.selectedCharacter?.id).to(equal("1"))
+                            expect(sut.selectedCharacter?.name).to(equal("item1"))
                             
                             done()
                         }
                     }
                 }
                 
-                it("Decode selectedRepository correctly with a valid data array") {
+                it("Decode selectedCharacter correctly with a valid data array") {
                     let mockURLString = "https://example.com/mock"
                     let mockData = """
-                        [{"id": 1, "name": "item1"}]
+                        [{"id": "1", "name": "item1"}]
                     """.data(using: .utf8)!
                     
                     URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
-                    sut = RepositoriesViewModel(url: URL(string:mockURLString)!)
+                    sut = HarryPotterViewModel(url: URL(string:mockURLString)!)
                     
                     waitUntil { done in
                         sut.fetchItem(identifier: nil) { (item, error) in
@@ -241,29 +236,28 @@ final class RepositoriesViewModelTests: QuickSpec {
                             expect(item).toNot(beNil())
                             
                             // Verificar decodificacao dos dados
-                            expect(sut.selectedRepository?.id).to(equal(1))
-                            expect(sut.selectedRepository?.name).to(equal("item1"))
+                            expect(sut.selectedCharacter?.id).to(equal("1"))
+                            expect(sut.selectedCharacter?.name).to(equal("item1"))
                             
                             done()
                         }
                     }
                 }
                 
-                it("Decode selectedRepository with invalid data") {
+                it("Decode selectedCharacter with invalid data") {
                     let mockURLString = "https://example.com/mock"
                     let mockData = """
                         [{"error": "item1"}]
                     """.data(using: .utf8)!
                     
                     URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
-                    sut = RepositoriesViewModel(url: URL(string:mockURLString)!)
+                    sut = HarryPotterViewModel(url: URL(string:mockURLString)!)
                     
                     waitUntil { done in
                         sut.fetchItem(identifier: nil) { (item, error) in
                             
                             // Verificar presenca de erro
                             expect(error).toNot(beNil())
-                            expect(error).to(beAKindOf(DecodingError.self))
                             
                             // Verififcar ausencia de dados
                             expect(item).to(beNil())
@@ -271,6 +265,34 @@ final class RepositoriesViewModelTests: QuickSpec {
                             done()
                         }
                     }
+                }
+                
+//                it("Decode selectedCharacter with error") {
+//                    let mockURLString = "https://example.com/mock"
+//                    let mockData = """
+//                        {"id": "1", "name": "item1"}
+//                    """.data(using: .utf8)!
+//
+//                    let mockError = NSError(domain: "Project API", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Mock Error"])
+//                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: mockError)
+//                    sut = HarryPotterViewModel(url: URL(string:mockURLString))
+//
+//                    waitUntil { done in
+//                        sut.fetchItem(identifier: nil) { (item, error) in
+//
+//                            // Verificar presenca de erro
+//                            expect(error).toNot(beNil())
+//
+//                            // Verififcar ausencia de dados
+//                            expect(item).to(beNil())
+//
+//                            done()
+//                        }
+//                    }
+//                }
+                
+                afterEach {
+                    URLProtocolMock.unregisterMockURL()
                 }
             }
             

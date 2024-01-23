@@ -8,34 +8,49 @@
 import Foundation
 import SwiftUI
 
-class HarryPotterViewModel: ObservableObject {
+class HarryPotterViewModel: ObservableObject, ViewModelProtocol {
+    
+    typealias T = HarryPotter
     
     @Published var apiService = APIService<HarryPotter>()
     @Published var harryPotterList: [HarryPotter] = []
     @Published var selectedCharacter: HarryPotter? = nil
     
-    private let url = URL(string: "https://hp-api.onrender.com/api/characters/house/gryffindor")!
+    var url: URL
     
-    func fetchHarryPotter() {
+    init(url: URL = URL(string: "https://api.github.com/repositories")!) {
+        self.url = url
+    }
+    
+    func fetch(completion: @escaping ([T]?, Error?) -> ()) {
         self.apiService.fetchData(from: url) { (harryPotter, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                completion(nil, error)
+            }
+            
             if let decodedData = harryPotter {
                 DispatchQueue.main.async {
                     self.harryPotterList = decodedData
+                    print(decodedData)
+                    completion(decodedData, nil)
                 }
             }
         }
-
     }
     
-    func fetchHarryPotterById(id: String, completion: @escaping (HarryPotter?, Error?) -> ()) {
-        guard let url = URL(string: "https://hp-api.onrender.com/api/character/\(id)") else {
-            print("Invalid URL")
-            let errorURL = NSError(domain: "InvalidURL", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
-            completion(nil, errorURL)
-            return
-        }
+    func fetchItem(identifier: String?, completion: @escaping (HarryPotter?, Error?) -> ()) {
         
-        print("url: \(url)")
+        if let identifier = identifier {
+            guard let newUrl = URL(string: "https://hp-api.onrender.com/api/character/\(identifier)") else {
+                print("Invalid URL")
+                let errorURL = NSError(domain: "InvalidURL", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+                completion(nil, errorURL)
+                return
+            }
+            self.url = newUrl
+        }
         
         self.apiService.fetchDataItem(from: url) { (harryPotter, error) in
             

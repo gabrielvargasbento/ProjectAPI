@@ -36,7 +36,7 @@ struct ListRepositoriesView: View {
         }
         .onAppear() {
 //            tabIndexManager.selectedTabIndex = 0
-            repoViewModel.fetchRepositories()
+            repoViewModel.fetch() { (repo, error) in }
             firebaseService.analytics(userName: "repository_menu", className: "repository")
             routerManager.reset()
         }

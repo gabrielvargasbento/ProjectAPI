@@ -10,14 +10,14 @@ import SwiftUI
 
 enum Route {
     
-    case repositoryItem(item: any RepositoryItem)
-    case harryPotterItem(item: any HarryPotterItem)
+    case repositoryItem(item: Repository)
+    case harryPotterItem(item: HarryPotter)
     
     case repositoryMenu
     case harryPotterMenu
 }
 
-extension Route: Hashable {
+extension Route: Hashable, Equatable {
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(self.hashValue)
@@ -44,9 +44,9 @@ extension Route: View {
     var body: some View {
         switch self {
         case .repositoryItem(item: let item):
-            AccountView(account: item as! Repository)
+            AccountView(account: item)
         case .harryPotterItem(item: let item):
-            CharacterView(character: item as! HarryPotter)
+            CharacterView(character: item)
             
         case .harryPotterMenu:
             ListHarryPotterView()

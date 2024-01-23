@@ -62,3 +62,17 @@ struct AccountView: View {
 //        .environmentObject(tabIndexManager)
     }
 }
+
+struct AccountView_Previews: PreviewProvider {
+    static var previews: some View {
+        let repository = Repository(
+            id: 1,
+            name: "grit",
+            fullName: nil,
+            owner: nil,
+            description: nil)
+        
+        let account = repository
+        return AccountView(account: account)
+    }
+}
