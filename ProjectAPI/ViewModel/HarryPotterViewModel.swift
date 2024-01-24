@@ -18,7 +18,7 @@ class HarryPotterViewModel: ObservableObject, ViewModelProtocol {
     
     var url: URL
     
-    init(url: URL = URL(string: "https://api.github.com/repositories")!) {
+    init(url: URL = URL(string: "https://hp-api.onrender.com/api/characters/house/gryffindor")!) {
         self.url = url
     }
     

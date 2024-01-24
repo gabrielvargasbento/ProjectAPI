@@ -83,30 +83,32 @@ class RouteTests: QuickSpec {
             
             context("Test View ") {
                 it("should display AccountView for repositoryItem case") {
-                    
                     let owner = Owner(
                         login: "mojombo",
                         id: 1,
                         avatarUrl: "https://avatars.githubusercontent.com/u/1?v=4",
-                        htmlUrl: "https://github.com/mojombo")
-                    
+                        htmlUrl: "https://github.com/mojombo"
+                    )
+
                     let repository = Repository(
                         id: 1,
                         name: "grit",
                         fullName: "mojombo/grit",
                         owner: owner,
-                        description: "**Grit is no longer maintained...")
-                    
+                        description: "**Grit is no longer maintained..."
+                    )
+
                     let item = repository
                     let view = Route.repositoryItem(item: repository)
-                    
-                    XCTAssertTrue(view.body is AccountView)
-                    
+
+                    XCTAssertTrue(view.body is AccountView, "Expected view.body to be an instance of AccountView")
+
                     let route = Route.repositoryItem(item: item)
                     let view1 = try? route.inspect().view(AccountView.self)
-                    
-                    expect(view1).notTo(beNil())
+
+                    expect(view1).toNot(beNil())
                 }
+
                 
                 it("should display CharacterView for harryPotterItem case") {
                     
@@ -142,11 +144,4 @@ class RouteTests: QuickSpec {
             }
         }
     }
-}
-
-
-private func createView(for route: Route) throws -> Any {
-    // Função para criar a view com base no route
-    let view = try XCTUnwrap(route.body)
-    return view
 }

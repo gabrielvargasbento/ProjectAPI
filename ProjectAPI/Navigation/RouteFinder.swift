@@ -19,35 +19,37 @@ enum DeepLinkURLs: String {
 struct RouteFinder {
     
     var repoViewModel: any ViewModelProtocol
-    let harrypotterViewModel: any ViewModelProtocol
+    var harryPotterViewModel: any ViewModelProtocol
     
     init(repoViewModel: any ViewModelProtocol = RepositoriesViewModel(),
-         harrypotterViewModel: any ViewModelProtocol = HarryPotterViewModel()) {
+         harryPotterViewModel: any ViewModelProtocol = HarryPotterViewModel()) {
         
         self.repoViewModel = repoViewModel
-        self.harrypotterViewModel = harrypotterViewModel
+        self.harryPotterViewModel = harryPotterViewModel
     }
     
-    func find(from url: URL, completion: @escaping (Route?) -> ()) {
+    func find(from url: URL, completion: @escaping (Route?, Error?) -> ()) {
         
         guard let host = url.host else {
-            completion(nil)
+            let error = NSError(domain: "InvalidURL", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL Host"])
+            completion(nil, error)
             return
         }
                 
         switch DeepLinkURLs(rawValue: host) {
             
         case .repositoryMenu:
-            completion(.repositoryMenu)
+            completion(.repositoryMenu, nil)
             
         case .harryPotterMenu:
-            completion(.harryPotterMenu)
+            completion(.harryPotterMenu, nil)
             
         case .repository:
             let queryParams = url.queryParamaters
             
             guard let name = queryParams?["name"] as? String else {
-                completion(nil)
+                let error = NSError(domain: "InvalidURL", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid Query Params"])
+                completion(nil, error)
                 return
             }
             
@@ -55,33 +57,34 @@ struct RouteFinder {
                 
                 if error != nil {
                     print(error as Any)
-                    completion(nil)
+                    completion(nil, error)
                 }
                 print(repository!)
-                completion(.repositoryItem(item: repository! as! Repository))
+                completion(.repositoryItem(item: repository! as! Repository), nil)
             }
 
         case .harryPotter:
-            completion(nil)
             let queryParams = url.queryParamaters
             
             guard let id = queryParams?["id"] as? String else {
-                completion(nil)
+                let error = NSError(domain: "InvalidURL", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid Query Params"])
+                completion(nil, error)
                 return
             }
             
-            harrypotterViewModel.fetchItem(identifier: id) { harryPotter, error in
+            harryPotterViewModel.fetchItem(identifier: id) { harryPotter, error in
 
                 if error != nil {
                     print(error as Any)
-                    completion(nil)
+                    completion(nil, error)
                 }
                 print(harryPotter!)
-                completion(.harryPotterItem(item: harryPotter! as! HarryPotter))
+                completion(.harryPotterItem(item: harryPotter! as! HarryPotter), nil)
             }
             
         default:
-            completion(nil)
+            let error = NSError(domain: "InvalidURL", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+            completion(nil, error)
         }
     }
 }

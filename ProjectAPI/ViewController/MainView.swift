@@ -35,7 +35,7 @@ extension MainView {
     
     func handleDeepLink(from url: URL) async {
         let routeFinder = RouteFinder()
-        routeFinder.find(from: url) { result in
+        routeFinder.find(from: url) { (result, error) in
             switch result {
                 
             case .repositoryItem(let item):
