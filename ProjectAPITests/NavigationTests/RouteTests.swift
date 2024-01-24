@@ -81,7 +81,7 @@ class RouteTests: QuickSpec {
                 }
             }
             
-            context("Test View ") {
+            context("Test View") {
                 it("should display AccountView for repositoryItem case") {
                     let owner = Owner(
                         login: "mojombo",

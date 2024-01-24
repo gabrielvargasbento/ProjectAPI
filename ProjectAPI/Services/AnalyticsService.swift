@@ -1,24 +1,31 @@
 //
-//  Analytics.swift
+//  AnalyticsService.swift
 //  ProjectAPI
 //
 //  Created by Gabriel Vargas on 23/12/19.
 //
 
-import SwiftUI
-import Foundation
-import FirebaseAnalytics
-import FirebaseAuth
-import FirebaseCore
 import Firebase
-import GoogleSignIn
-import FirebaseAuth
-import AuthenticationServices
+
+protocol FirebaseAnalytics {
+    func logEvent(_ name: String, parameters: [String: Any]?)
+}
+
+class FirebaseAnalyticsImpl: FirebaseAnalytics {
+    func logEvent(_ name: String, parameters: [String: Any]?) {
+        Analytics.logEvent(name, parameters: parameters)
+    }
+}
 
 class AnalyticsService {
-    
+    private let firebaseAnalytics: FirebaseAnalytics
+
+    init(firebaseAnalytics: FirebaseAnalytics = FirebaseAnalyticsImpl()) {
+        self.firebaseAnalytics = firebaseAnalytics
+    }
+
     func analytics(userName: String, className: String) {
-        Analytics.logEvent(
+        firebaseAnalytics.logEvent(
             AnalyticsEventScreenView,
             parameters: [
                 AnalyticsParameterScreenName: userName,
@@ -29,16 +36,6 @@ class AnalyticsService {
     }
 
     func buttonEvent(buttonName: String) {
-        Analytics.logEvent("button_clicked", parameters: ["button_name": buttonName])
+        firebaseAnalytics.logEvent("button_clicked", parameters: ["button_name": buttonName])
     }
-
 }
-
-
-
-
-
-/*
- Link dos possiveis parametros:
- https://firebase.google.com/docs/reference/android/com/google/firebase/analytics/FirebaseAnalytics.Param
- */
