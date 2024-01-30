@@ -10,7 +10,7 @@ PODS:
     - CwlPosixPreconditionTesting (~> 2.1.2)
   - Nimble (13.1.2):
     - CwlPreconditionTesting (~> 2.1.0)
-  - Quick (7.3.0)
+  - Quick (7.3.1)
   - Wormholy (1.7.0)
 
 DEPENDENCIES:
@@ -36,7 +36,7 @@ SPEC CHECKSUMS:
   CwlPosixPreconditionTesting: 4011f0660c0be460b088d10bcfdf351c7e036ac4
   CwlPreconditionTesting: 23ed728f2acc2d774fb59101123c943ce0119107
   Nimble: d733c860d832b324e9779034f12398993c536e7b
-  Quick: d32871931c05547cb4e0bc9009d66a18b50d8558
+  Quick: 83e25bf349dd84f894b024f48033274512d6129b
   Wormholy: ab1c8c2f02f58587a0941deb0088555ffbf039a1
 
 PODFILE CHECKSUM: a181a440b778ae0354c68299a4d829daee60e107

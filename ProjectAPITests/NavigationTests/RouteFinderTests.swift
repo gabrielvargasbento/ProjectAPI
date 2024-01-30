@@ -35,9 +35,7 @@ class RouteFinderTests: QuickSpec {
                     """.data(using: .utf8)!
                     
                     URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
-                    
-                    let repository = RepositoriesViewModelMock(url: URL(string: mockURLString)!)
-                    
+                                        
                     sut = RouteFinder()
                     
                     waitUntil { done in
@@ -62,9 +60,7 @@ class RouteFinderTests: QuickSpec {
                     """.data(using: .utf8)!
                     
                     URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
-                    
-                    let repository = RepositoriesViewModelMock(url: URL(string: mockURLString)!)
-                    
+                                        
                     sut = RouteFinder()
                     
                     waitUntil { done in
@@ -93,9 +89,7 @@ class RouteFinderTests: QuickSpec {
                     """.data(using: .utf8)!
                     
                     URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
-                    
-                    let repository = RepositoriesViewModelMock(url: URL(string: mockURLString)!)
-                    
+                                        
                     sut = RouteFinder()
                     
                     waitUntil { done in
@@ -124,9 +118,7 @@ class RouteFinderTests: QuickSpec {
                     """.data(using: .utf8)!
                     
                     URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
-                    
-                    let repository = RepositoriesViewModelMock(url: URL(string: mockURLString)!)
-                    
+                                        
                     sut = RouteFinder()
                     
                     waitUntil { done in
@@ -153,7 +145,6 @@ class RouteFinderTests: QuickSpec {
                     let mockError = NSError(domain: "Project API: RouteFinderTests", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Mock Error"])
                     
                     URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: mockError)
-                    let repository = RepositoriesViewModelMock(url: URL(string: mockURLString)!)
                     
                     sut = RouteFinder()
                     
@@ -232,9 +223,7 @@ class RouteFinderTests: QuickSpec {
                     """.data(using: .utf8)!
                     
                     URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
-                    
-                    let harryPotterMock = HarryPotterViewModelMock(url: URL(string: mockURLString)!)
-                    
+                                        
                     sut = RouteFinder()
                     
                     waitUntil { done in
@@ -261,7 +250,6 @@ class RouteFinderTests: QuickSpec {
                     let mockError = NSError(domain: "Project API: RouteFinderTests", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Mock Error"])
                     
                     URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: mockError)
-                    let harryPotterMock = HarryPotterViewModelMock(url: URL(string: mockURLString)!)
                     
                     sut = RouteFinder()
                     

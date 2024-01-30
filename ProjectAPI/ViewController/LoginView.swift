@@ -79,7 +79,7 @@ struct LoginView: View {
                 LoginService.GoogleSignInButton()
                     .frame(width: 200, height: 40)
                     .onTapGesture {
-                        loginService.loginWithGoogle { userName in
+                        loginService.loginWithGoogle { userName, error in
                             if let userName = userName {
                                 userNameLogged = userName
                                 print("Nome do usuário:", userName)
@@ -101,7 +101,7 @@ struct LoginView: View {
                 LoginService.GitHubSignInButton()
                     .frame(width: 200, height: 40)
                     .onTapGesture {
-                        loginService.loginWithGitHub { userName in
+                        loginService.loginWithGitHub { userName, error in
                             if let userName = userName {
                                 userNameLogged = userName
                                 print("Nome do usuário:", userName)
@@ -112,7 +112,7 @@ struct LoginView: View {
                 LoginService.MicrosoftInButton()
                     .frame(width: 200, height: 40)
                     .onTapGesture {
-                        loginService.loginWithMicrosoft { userName in
+                        loginService.loginWithMicrosoft { userName, error in
                             if let userName = userName {
                                 userNameLogged = userName
                                 print("Nome do usuário:", userName)

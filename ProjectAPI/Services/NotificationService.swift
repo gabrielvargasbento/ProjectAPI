@@ -8,15 +8,19 @@
 import Foundation
 import UserNotifications
 
-@MainActor
+//@MainActor
 class NotificationService: ObservableObject {
     
-    @Published private(set) var hasPermission = false
+    @Published var hasPermission = false
     
     init() {
         Task {
-            await getAuthStatus()
+            await self.getAuthStatus()
         }
+    }
+    
+    func resetStatus() {
+        hasPermission = false
     }
     
     func request() async {
