@@ -16,6 +16,7 @@
 		B71DABD72B6C83BC00C80EEB /* GitHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABD62B6C83BC00C80EEB /* GitHubUITests.swift */; };
 		B71DABD92B6C842E00C80EEB /* NotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABD82B6C842E00C80EEB /* NotificationUITests.swift */; };
 		B71DABDB2B6C845700C80EEB /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABDA2B6C845700C80EEB /* LoginUITests.swift */; };
+		B71DABDD2B6D2F0100C80EEB /* TesteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABDC2B6D2F0100C80EEB /* TesteUITests.swift */; };
 		B73F98A22B6C31E90050136B /* (null) in Resources */ = {isa = PBXBuildFile; };
 		B74062012B6C7B7500D02CAF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BEED782B5ECDB800BA2333 /* XCTest.framework */; };
 		B74062042B6C7BAE00D02CAF /* XCTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7BEED782B5ECDB800BA2333 /* XCTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -150,6 +151,7 @@
 		B71DABD62B6C83BC00C80EEB /* GitHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUITests.swift; sourceTree = "<group>"; };
 		B71DABD82B6C842E00C80EEB /* NotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUITests.swift; sourceTree = "<group>"; };
 		B71DABDA2B6C845700C80EEB /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
+		B71DABDC2B6D2F0100C80EEB /* TesteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteUITests.swift; sourceTree = "<group>"; };
 		B73F98A52B6C34F60050136B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7412C552B3B3034006E92A4 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		B7412C582B3B3336006E92A4 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				B71DABD42B6C839E00C80EEB /* HarryPotterUITests.swift */,
 				B71DABD82B6C842E00C80EEB /* NotificationUITests.swift */,
 				B71DABDA2B6C845700C80EEB /* LoginUITests.swift */,
+				B71DABDC2B6D2F0100C80EEB /* TesteUITests.swift */,
 			);
 			path = ProjectAPIUITests;
 			sourceTree = "<group>";
@@ -840,6 +843,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B71DABDD2B6D2F0100C80EEB /* TesteUITests.swift in Sources */,
 				B71DABD92B6C842E00C80EEB /* NotificationUITests.swift in Sources */,
 				B71DABD72B6C83BC00C80EEB /* GitHubUITests.swift in Sources */,
 				B71DABD52B6C839E00C80EEB /* HarryPotterUITests.swift in Sources */,
