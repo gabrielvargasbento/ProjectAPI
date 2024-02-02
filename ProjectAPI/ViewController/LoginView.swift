@@ -48,7 +48,7 @@ struct LoginView: View {
                 SecureField("Password", text: $password)
                 
                 Button {
-                    loginService.register(email: email, password: password)
+                    loginService.register(email: email, password: password) { result, error in }
                 } label: {
                     Text("Sign up")
                         .bold()
@@ -61,7 +61,7 @@ struct LoginView: View {
                 }
                 
                 Button {
-                    loginService.login(email: email, password: password)
+                    loginService.login(email: email, password: password) { result, error in }
                     userNameLogged = String(email.prefix { $0 != "@" })
                     print("userNameLogged = \(userNameLogged)")
                     

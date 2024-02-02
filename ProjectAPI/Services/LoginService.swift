@@ -16,44 +16,17 @@ import SafariServices
 import WebKit
 import Combine
 
-protocol FirebaseAuthProtocol {
-    func signOut() throws
-    func signIn(withEmail email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> ())
-    func signIn(with credential: AuthCredential, completion: @escaping (AuthDataResult?, Error?) -> ())
-    func createUser(withEmail email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void)
-}
-
-class FirebaseAuthService: FirebaseAuthProtocol {
-    func signOut() throws {
-        try Auth.auth().signOut()
-    }
-
-    func signIn(withEmail email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            completion(result, error)
-        }
-    }
-    
-    func createUser(withEmail email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-            completion(result, error)
-        }
-    }
-    
-    func signIn(with credential: AuthCredential, completion: @escaping (AuthDataResult?, Error?) -> Void) {
-        Auth.auth().signIn(with: credential) { (result, error) in
-            completion(result, error)
-        }
-    }
-    
-}
-
 class LoginService {
     
     var firebaseAuth: FirebaseAuthProtocol
+    var gitHubProvider: OAuthProviderProtocol
     
-    init(firebaseAuth: FirebaseAuthProtocol = FirebaseAuthService()) {
+    init(
+        firebaseAuth: FirebaseAuthProtocol = FirebaseAuthService(),
+        gitHubProvider: OAuthProviderProtocol = FirebaseOAuthProvider(providerID: "github.com")) {
+            
         self.firebaseAuth = firebaseAuth
+        self.gitHubProvider = gitHubProvider
     }
     
     // MARK: - Logout
@@ -66,19 +39,40 @@ class LoginService {
     }
     
     // MARK: - E-mail Sign-In
-    func login(email: String, password: String) {
+    func login(email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> ()) {
         firebaseAuth.signIn(withEmail: email, password: password) { result, error in
             if let error = error {
                 print("Error during login: \(error.localizedDescription)")
+                completion(nil, error)
+                return
             }
+            
+            if let result = result {
+                completion(result, nil)
+                return
+            }
+            
+            completion(nil, nil)
+            return
         }
     }
     
-    func register(email: String, password: String) {
+    func register(email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> ()) {
         firebaseAuth.createUser(withEmail: email, password: password) { result, error in
             if let error = error {
                 print("Error during register: \(error.localizedDescription)")
+                completion(nil, error)
+                return
             }
+            if let result = result {
+                print("RESULT:")
+                print(result)
+                completion(result, nil)
+                return
+            }
+            
+            completion(nil, nil)
+            return
         }
     }
     
@@ -186,13 +180,10 @@ class LoginService {
     
     func loginWithGitHub(completion: @escaping (String?, Error?) -> Void) {
         
-        // Conectar ao GitHub
-        let provider = OAuthProvider(providerID: "github.com")
         let scopes = ["user"]
+        gitHubProvider.scopes = scopes
         
-        provider.scopes = scopes
-        
-        provider.getCredentialWith(nil) { credential, error in
+        gitHubProvider.getCredentialWith() { credential, error in
             if let error = error {
                 print("Erro ao obter credencial: \(error.localizedDescription)")
                 completion(nil, error)
@@ -200,6 +191,8 @@ class LoginService {
             }
             
             if let credential = credential {
+                print("CREDENTIAL")
+                print(credential)
                 self.firebaseAuth.signIn(with: credential) { authResult, error in
                     if let error = error {
                         print("Erro ao fazer login: \(error.localizedDescription)")
@@ -215,6 +208,8 @@ class LoginService {
                     
                     // Obter link da API para carregar informacoes
                     if let accessToken = oauthCredential.accessToken {
+                        print("ACCESS TOKEN: ")
+                        print(accessToken)
                         
                         let url = URL(string: "https://api.github.com/user")!
                         var request = URLRequest(url: url)
@@ -254,7 +249,9 @@ class LoginService {
                 completion(nil, error)
             }
         }
-        completion("nil", nil)
+        let error = NSError(domain: "loginWithGitHub", code: 404, userInfo: nil)
+        completion(nil, error)
+//        completion("nil", nil)
     }
     
     // MARK: - Microsoft Sign-In
@@ -357,3 +354,75 @@ class LoginService {
 
 
 
+protocol FirebaseAuthProtocol {
+    func signOut() throws
+    func signIn(withEmail email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> ())
+    func signIn(with credential: AuthCredential, completion: @escaping (AuthDataResult?, Error?) -> ())
+    func createUser(withEmail email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void)
+}
+
+class FirebaseAuthService: FirebaseAuthProtocol {
+    func signOut() throws {
+        try Auth.auth().signOut()
+    }
+
+    func signIn(withEmail email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            completion(result, error)
+        }
+    }
+    
+    func createUser(withEmail email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            completion(result, error)
+        }
+    }
+    
+    func signIn(with credential: AuthCredential, completion: @escaping (AuthDataResult?, Error?) -> Void) {
+        Auth.auth().signIn(with: credential) { (result, error) in
+            completion(result, error)
+        }
+    }
+}
+
+protocol OAuthProviderProtocol {
+    var scopes: [String] { get set }
+    var providerID: String { get set }
+    var provider: OAuthProvider { get set }
+    
+    func getCredentialWith(completion: @escaping (AuthCredential?, Error?) -> Void)
+
+    
+}
+
+class FirebaseOAuthProvider: OAuthProviderProtocol {
+    
+    var scopes: [String] = [""]
+    var providerID: String
+    var provider: OAuthProvider
+    
+    init(providerID: String) {
+        self.providerID = providerID
+        self.provider = OAuthProvider(providerID: providerID)
+    }
+    
+    func getCredentialWith(completion: @escaping (AuthCredential?, Error?) -> Void) {
+        
+        provider.getCredentialWith(nil) { credential, error in
+            completion(credential, error)
+            return
+        }
+
+    }
+
+}
+
+//class AuthDataResult {
+//    var userID: String
+//    var email: String
+//    
+//    init(userID: String, email: String) {
+//        self.userID = userID
+//        self.email = email
+//    }
+//}

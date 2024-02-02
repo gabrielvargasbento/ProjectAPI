@@ -15,12 +15,12 @@ final class AnalyticsServiceTests: QuickSpec {
         describe("Analytics Service Tests") {
             
             var analyticsService: AnalyticsService!
-            var mockFirebaseAnalytics: MockFirebaseAnalytics!
+            var mockFirebaseAnalytics: FirebaseAnalyticsMock!
             
             context("Test with Mock Firebase") {
                 
                 beforeEach {
-                    mockFirebaseAnalytics = MockFirebaseAnalytics()
+                    mockFirebaseAnalytics = FirebaseAnalyticsMock()
                     analyticsService = AnalyticsService(firebaseAnalytics: mockFirebaseAnalytics)
                 }
                 
@@ -48,7 +48,7 @@ final class AnalyticsServiceTests: QuickSpec {
 
 
 
-class MockFirebaseAnalytics: FirebaseAnalytics {
+class FirebaseAnalyticsMock: FirebaseAnalytics {
     var loggedEvent: String?
     var loggedParameters: [String: Any]?
 

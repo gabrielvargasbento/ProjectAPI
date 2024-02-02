@@ -5,8 +5,6 @@
 //  Created by Gabriel Vargas on 15/01/24.
 //
 
-import XCTest
-
 import Quick
 import Nimble
 @testable import ProjectAPI
