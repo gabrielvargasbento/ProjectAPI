@@ -29,7 +29,7 @@ struct ContentView: View {
                 .tag(1)
             NotificationView()
                 .tabItem {
-                    Label("Notificação", systemImage: "bell")
+                    Label("Notification", systemImage: "bell")
                 }
                 .tag(2)
             LoginView()

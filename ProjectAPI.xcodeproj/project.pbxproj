@@ -12,8 +12,10 @@
 		9A6DB9A4E232AC9882460D27 /* Pods_ProjectAPI_ProjectAPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485B9D5DFDDDA365458FDD29 /* Pods_ProjectAPI_ProjectAPIUITests.framework */; };
 		B71896322B601D33009540F0 /* HarryPotterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71896312B601D33009540F0 /* HarryPotterViewModelTests.swift */; };
 		B71896352B602314009540F0 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71896342B602314009540F0 /* RouteTests.swift */; };
-		B71DABCF2B6C822C00C80EEB /* GitHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABCE2B6C822C00C80EEB /* GitHubUITests.swift */; };
-		B71DABD12B6C82AF00C80EEB /* HarryPotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABD02B6C82AF00C80EEB /* HarryPotterUITests.swift */; };
+		B71DABD52B6C839E00C80EEB /* HarryPotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABD42B6C839E00C80EEB /* HarryPotterUITests.swift */; };
+		B71DABD72B6C83BC00C80EEB /* GitHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABD62B6C83BC00C80EEB /* GitHubUITests.swift */; };
+		B71DABD92B6C842E00C80EEB /* NotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABD82B6C842E00C80EEB /* NotificationUITests.swift */; };
+		B71DABDB2B6C845700C80EEB /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABDA2B6C845700C80EEB /* LoginUITests.swift */; };
 		B73F98A22B6C31E90050136B /* (null) in Resources */ = {isa = PBXBuildFile; };
 		B74062012B6C7B7500D02CAF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BEED782B5ECDB800BA2333 /* XCTest.framework */; };
 		B74062042B6C7BAE00D02CAF /* XCTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7BEED782B5ECDB800BA2333 /* XCTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -69,8 +71,6 @@
 		B7C270312B4C399100F448A1 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B7C270302B4C399100F448A1 /* GoogleSignInSwift */; };
 		B7C66D1D2B2BE85300C8580A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C66D1C2B2BE85300C8580A /* Assets.xcassets */; };
 		B7C66D202B2BE85300C8580A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C66D1F2B2BE85300C8580A /* Preview Assets.xcassets */; };
-		B7C66D342B2BE85300C8580A /* ProjectAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C66D332B2BE85300C8580A /* ProjectAPIUITests.swift */; };
-		B7C66D362B2BE85300C8580A /* ProjectAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C66D352B2BE85300C8580A /* ProjectAPIUITestsLaunchTests.swift */; };
 		B7CC0EDA2B602B3100A650BF /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = B7CC0ED92B602B3100A650BF /* ViewInspector */; };
 		B7CC0EDC2B602B4200A650BF /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = B7CC0EDB2B602B4200A650BF /* ViewInspector */; };
 		B7CC0EDE2B6030CD00A650BF /* NavigationRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC0EDD2B6030CC00A650BF /* NavigationRouterTests.swift */; };
@@ -146,8 +146,10 @@
 		B688C357B8661A20D09F570E /* Pods-ProjectAPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectAPITests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectAPITests/Pods-ProjectAPITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B71896312B601D33009540F0 /* HarryPotterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarryPotterViewModelTests.swift; sourceTree = "<group>"; };
 		B71896342B602314009540F0 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
-		B71DABCE2B6C822C00C80EEB /* GitHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUITests.swift; sourceTree = "<group>"; };
-		B71DABD02B6C82AF00C80EEB /* HarryPotterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarryPotterUITests.swift; sourceTree = "<group>"; };
+		B71DABD42B6C839E00C80EEB /* HarryPotterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarryPotterUITests.swift; sourceTree = "<group>"; };
+		B71DABD62B6C83BC00C80EEB /* GitHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUITests.swift; sourceTree = "<group>"; };
+		B71DABD82B6C842E00C80EEB /* NotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUITests.swift; sourceTree = "<group>"; };
+		B71DABDA2B6C845700C80EEB /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 		B73F98A52B6C34F60050136B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7412C552B3B3034006E92A4 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		B7412C582B3B3336006E92A4 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
@@ -175,8 +177,6 @@
 		B7C66D1F2B2BE85300C8580A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B7C66D252B2BE85300C8580A /* ProjectAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C66D2F2B2BE85300C8580A /* ProjectAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7C66D332B2BE85300C8580A /* ProjectAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAPIUITests.swift; sourceTree = "<group>"; };
-		B7C66D352B2BE85300C8580A /* ProjectAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B7C66D432B2BE8D300C8580A /* ListRepositoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepositoriesView.swift; sourceTree = "<group>"; };
 		B7C66D472B2BE91500C8580A /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		B7C66D492B2BE92400C8580A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -398,10 +398,10 @@
 		B7C66D322B2BE85300C8580A /* ProjectAPIUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B71DABCE2B6C822C00C80EEB /* GitHubUITests.swift */,
-				B71DABD02B6C82AF00C80EEB /* HarryPotterUITests.swift */,
-				B7C66D332B2BE85300C8580A /* ProjectAPIUITests.swift */,
-				B7C66D352B2BE85300C8580A /* ProjectAPIUITestsLaunchTests.swift */,
+				B71DABD62B6C83BC00C80EEB /* GitHubUITests.swift */,
+				B71DABD42B6C839E00C80EEB /* HarryPotterUITests.swift */,
+				B71DABD82B6C842E00C80EEB /* NotificationUITests.swift */,
+				B71DABDA2B6C845700C80EEB /* LoginUITests.swift */,
 			);
 			path = ProjectAPIUITests;
 			sourceTree = "<group>";
@@ -840,10 +840,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B71DABD12B6C82AF00C80EEB /* HarryPotterUITests.swift in Sources */,
-				B71DABCF2B6C822C00C80EEB /* GitHubUITests.swift in Sources */,
-				B7C66D342B2BE85300C8580A /* ProjectAPIUITests.swift in Sources */,
-				B7C66D362B2BE85300C8580A /* ProjectAPIUITestsLaunchTests.swift in Sources */,
+				B71DABD92B6C842E00C80EEB /* NotificationUITests.swift in Sources */,
+				B71DABD72B6C83BC00C80EEB /* GitHubUITests.swift in Sources */,
+				B71DABD52B6C839E00C80EEB /* HarryPotterUITests.swift in Sources */,
+				B71DABDB2B6C845700C80EEB /* LoginUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
