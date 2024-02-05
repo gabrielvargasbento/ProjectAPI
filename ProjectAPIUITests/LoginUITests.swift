@@ -15,14 +15,14 @@ final class LoginUITests: QuickSpec {
         describe("Login UI Tests") {
             
             // Instanciar app
-            var app = XCUIApplication()
+            let app = XCUIApplication()
             app.launch()
             
             beforeEach {
                 
-                let loginButtonPage = app.tabBars["Login"]
-                expect(loginButtonPage).toNot(beNil())
-                XCTAssertTrue(loginButtonPage.exists)
+                app.launch()
+                let tabBar = app.tabBars["Tab Bar"]
+                let loginButtonPage = tabBar.buttons["Login"]
                 loginButtonPage.tap()
                 
             }
@@ -30,69 +30,78 @@ final class LoginUITests: QuickSpec {
             context("Verify Title") {
                 
                 it("Login Page Title") {
-                    let titleLogin = app.staticTexts["Login"]
+                    let titleLogin = app.staticTexts["Login Page"]
                     expect(titleLogin).toNot(beNil())
                     XCTAssertTrue(titleLogin.exists)
                 }
             }
             
-            context("Sign Up") {
+            context("Register") {
                 
-                it("Success Sign Up") {
+                it("Success Register") {
                     let emailField = app.textFields["Email"]
                     XCTAssertTrue(emailField.exists)
                     emailField.tap()
                     emailField.typeText("gabriel@email.com")
                     
-                    let passwordField = app.textFields["Password"]
+                    let passwordField = app.secureTextFields["Password"]
                     XCTAssertTrue(passwordField.exists)
                     passwordField.tap()
                     passwordField.typeText("Password123")
                     
-                    let signUpButton = app.buttons["Sign Up"]
+                    let signUpButton = app.buttons["Register"]
                     XCTAssertTrue(signUpButton.exists)
                     signUpButton.tap()
                 }
                 
-                it("Faill Sign Up") {
+                it("Faill Register") {
                 }
             }
             
-            context("Sign Up and Login") {
+            context("Register and Sign In") {
                 
                 it("Success Login") {
                     let emailField = app.textFields["Email"]
                     XCTAssertTrue(emailField.exists)
                     emailField.tap()
-                    emailField.typeText("gabriel@email.com")
+                    emailField.typeText("gabrielvargas@email.com")
                     
-                    let passwordField = app.textFields["Password"]
+                    let passwordField = app.secureTextFields["Password"]
                     XCTAssertTrue(passwordField.exists)
                     passwordField.tap()
                     passwordField.typeText("Password123")
                     
-                    let signUpButton = app.buttons["Sign Up"]
+                    let signUpButton = app.buttons["Register"]
                     XCTAssertTrue(signUpButton.exists)
                     signUpButton.tap()
                     
-                    XCTAssertTrue(emailField.exists)
-                    emailField.tap()
-                    emailField.typeText("gabriel@email.com")
+//                    XCTAssertTrue(emailField.exists)
+//                    emailField.tap()
+////                    emailField.clear()
+////                    emailField.typeText("gabriel@email.com")
+//                    
+//                    XCTAssertTrue(passwordField.exists)
+//                    passwordField.tap()
+////                    passwordField.clear()
+//                    passwordField.typeText("Password123")
                     
-                    XCTAssertTrue(passwordField.exists)
-                    passwordField.tap()
-                    passwordField.typeText("Password123")
-                    
-                    let loginButton = app.buttons["Login"]
+                    let loginButton = app.buttons["Sign In"]
                     XCTAssertTrue(loginButton.exists)
                     loginButton.tap()
                     
-                    let loginLabel = app.staticTexts["You are logged in, gabriel"]
+                    let loginLabel = app.staticTexts["You are logged in, gabrielvargas"]
                     XCTAssertTrue(loginLabel.exists)
+                    
+                    let logoutButton = app.staticTexts["Logout"]
+                    expect(logoutButton).toNot(beNil())
                 }
                 
-                it("Fail Login") {
+                it("Fail Register and Sign In") {
                 }
+            }
+            
+            context("Sign In With Google") {
+                
             }
             
         }

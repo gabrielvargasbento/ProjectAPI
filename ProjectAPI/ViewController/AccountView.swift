@@ -27,6 +27,7 @@ struct AccountView: View {
                         .clipShape(Circle())
                         .overlay(Circle().stroke(Color.white, lineWidth: 2))
                         .shadow(radius: 5)
+                        .accessibilityIdentifier("avatarImage")
                 },
                 placeholder: { ProgressView()}
             )
@@ -41,7 +42,7 @@ struct AccountView: View {
             Text(account.description ?? "")
             
             Link(destination: URL(string: account.owner!.htmlUrl!)!) {
-                Text("Acessar GitHub")
+                Text("Access GitHub")
                     .padding()
                     .background(Color.gray)
                     .foregroundColor(.white)

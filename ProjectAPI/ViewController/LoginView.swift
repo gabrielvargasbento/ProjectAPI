@@ -42,7 +42,7 @@ struct LoginView: View {
                         )
                 }
             } else {
-                Text("Login")
+                Text("Login Page")
                     .font(.system(size: 40, weight: .bold, design: .rounded))
                 TextField("Email", text: $email)
                 SecureField("Password", text: $password)
@@ -50,7 +50,7 @@ struct LoginView: View {
                 Button {
                     loginService.register(email: email, password: password) { result, error in }
                 } label: {
-                    Text("Sign up")
+                    Text("Register")
                         .bold()
                         .foregroundColor(.white)
                         .frame(width: 200, height: 40)
@@ -66,7 +66,7 @@ struct LoginView: View {
                     print("userNameLogged = \(userNameLogged)")
                     
                 } label: {
-                    Text("Login")
+                    Text("Sign In")
                         .bold()
                         .foregroundColor(.white)
                         .frame(width: 200, height: 40)
