@@ -1,0 +1,15 @@
+//
+//  Config.xcconfig
+//  ProjectAPI
+//
+//  Created by Gabriel Vargas on 05/02/24.
+//
+
+LOGIN_EMAIL = ""
+PASSWORD_EMAIL = ""
+LOGIN_GOOGLE = ""
+PASSWORD_GOOGLE = ""
+LOGIN_GITHUB = ""
+PASSWORD_GITHUB = ""
+LOGIN_MICROSOFT = ""
+PASSWORD_MICROSOFT = ""

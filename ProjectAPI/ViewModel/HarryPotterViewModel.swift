@@ -23,6 +23,12 @@ class HarryPotterViewModel: ObservableObject, ViewModelProtocol {
     }
     
     func fetch(completion: @escaping ([T]?, Error?) -> ()) {
+        
+        #if UITEST
+        self.harryPotterList = mockedHarryPotterList
+        completion(mockedHarryPotterList, nil)
+
+        #else
         self.apiService.fetchData(from: url) { (harryPotter, error) in
             
             if let error = error {
@@ -38,6 +44,7 @@ class HarryPotterViewModel: ObservableObject, ViewModelProtocol {
                 }
             }
         }
+        #endif
     }
     
     func fetchItem(identifier: String?, completion: @escaping (HarryPotter?, Error?) -> ()) {

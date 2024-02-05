@@ -188,6 +188,7 @@
 		B7C66D562B2BECE300C8580A /* HarryPotterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarryPotterViewModel.swift; sourceTree = "<group>"; };
 		B7C66D582B2BEF7500C8580A /* ListHarryPotterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHarryPotterView.swift; sourceTree = "<group>"; };
 		B7C66D5A2B2C976C00C8580A /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		B7C69BEC2B719CCA00E5D36B /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		B7CC0EDD2B6030CC00A650BF /* NavigationRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouterTests.swift; sourceTree = "<group>"; };
 		B7CC0EDF2B6032AE00A650BF /* RouteFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFinderTests.swift; sourceTree = "<group>"; };
 		B7CC0EE12B6179E100A650BF /* NotificationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceTests.swift; sourceTree = "<group>"; };
@@ -343,6 +344,7 @@
 		B7C66D0C2B2BE85000C8580A = {
 			isa = PBXGroup;
 			children = (
+				B7C69BEC2B719CCA00E5D36B /* Config.xcconfig */,
 				B7C66D172B2BE85000C8580A /* ProjectAPI */,
 				B7C66D282B2BE85300C8580A /* ProjectAPITests */,
 				B7C66D322B2BE85300C8580A /* ProjectAPIUITests */,
@@ -745,7 +747,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" == \"Debug-prod\" ] || [ \"${CONFIGURATION}\" == \"Release-prod\" ] || [ \"${CONFIGURATION}\" == \"Release\" ]; then\ncp -r \"${PROJECT_DIR}/Firebase/prod/GoogleService-Info.plist\" \"${PROJECT_DIR}/Runner/GoogleService-Info.plist\"\necho \"Production plist copied\"\nelif [ \"${CONFIGURATION}\" == \"Debug-dev\" ] || [ \"${CONFIGURATION}\" == \"Release-dev\" ] || [ \"${CONFIGURATION}\" == \"Debug\" ]; then\ncp -r \"${PROJECT_DIR}/Firebase/dev/GoogleService-Info.plist\" \"${PROJECT_DIR}/Runner/GoogleService-Info.plist\"\necho \"Development plist copied\"\nfi\n";
+			shellScript = "if [ \"${CONFIGURATION}\" == \"Release\" ] || [ \"${CONFIGURATION}\" == \"Debug\" ] || [ \"${CONFIGURATION}\" == \"UITEST\" ]; then\n    cp -r \"${PROJECT_DIR}/Firebase/prod/GoogleService-Info.plist\" \"${PROJECT_DIR}/Runner/GoogleService-Info.plist\"\n    echo \"Production plist copied\"\nelif [ \"${CONFIGURATION}\" == \"Debug-prod\" ] || [ \"${CONFIGURATION}\" == \"Release-prod\" ]; then\n    cp -r \"${PROJECT_DIR}/Firebase/prod/GoogleService-Info.plist\" \"${PROJECT_DIR}/Runner/GoogleService-Info.plist\"\n    echo \"Production plist copied\"\nelif [ \"${CONFIGURATION}\" == \"Debug-dev\" ] || [ \"${CONFIGURATION}\" == \"Release-dev\" ]; then\n    cp -r \"${PROJECT_DIR}/Firebase/dev/GoogleService-Info.plist\" \"${PROJECT_DIR}/Runner/GoogleService-Info.plist\"\n    echo \"Development plist copied\"\nelse\n    echo \"Configuration not recognized. No plist copied.\"\nfi\n";
 		};
 		B8E7E46E13788FB14094997F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
