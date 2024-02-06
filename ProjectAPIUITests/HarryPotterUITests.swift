@@ -9,6 +9,8 @@ import Quick
 import Nimble
 import XCTest
 
+@testable import ProjectAPI
+
 class HarryPotterUITests: QuickSpec {
     
     override class func spec() {

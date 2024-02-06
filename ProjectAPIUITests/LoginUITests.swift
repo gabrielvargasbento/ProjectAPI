@@ -15,18 +15,16 @@ final class LoginUITests: QuickSpec {
     override class func spec() {
         describe("Login UI Tests") {
             
-            let loginEmail = ProcessInfo.processInfo.environment["LOGIN_EMAIL"] ?? ""
-            let passwordEmail = ProcessInfo.processInfo.environment["PASSWORD_EMAIL"] ?? ""
-            let userEmail = ProcessInfo.processInfo.environment["USER_EMAIL"] ?? ""
-            let loginGoogle = ProcessInfo.processInfo.environment["LOGIN_GOOGLE"] ?? ""
-            let passwordGoogle = ProcessInfo.processInfo.environment["PASSWORD_GOOGLE"] ?? ""
-            let loginGitHub = ProcessInfo.processInfo.environment["LOGIN_GITHUB"] ?? ""
-            let passwordGitHub = ProcessInfo.processInfo.environment["PASSWORD_GITHUB"] ?? ""
-            let loginMicrosoft = ProcessInfo.processInfo.environment["LOGIN_MICROSOFT"] ?? ""
-            let passwordMicrosoft = ProcessInfo.processInfo.environment["PASSWORD_MICROSOFT"] ?? ""
-        
-            print("loginEmail: \(loginEmail)")
+            let infoDictionary: [String: Any] = Bundle.main.infoDictionary!
             
+            let loginEmail = infoDictionary["LOGIN_EMAIL"] as? String
+            let passwordEmail = infoDictionary["PASSWORD_EMAIL"] as? String
+            let userEmail = infoDictionary["USER_EMAIL"] as? String
+            let loginGitHub = infoDictionary["LOGIN_GITHUB"] as? String
+            let passwordGitHub = infoDictionary["PASSWORD_GITHUB"] as? String
+            let loginMicrosoft = infoDictionary["LOGIN_MICROSOFT"] as? String
+            let passwordMicrosoft = infoDictionary["PASSWORD_MICROSOFT"] as? String
+                
             // Instanciar app
             let app = XCUIApplication()
             app.launch()
@@ -85,7 +83,7 @@ final class LoginUITests: QuickSpec {
                     let passwordField = app.secureTextFields["PasswordField"]
                     XCTAssertTrue(passwordField.exists)
                     passwordField.tap()
-                    passwordField.typeText("Password123")
+                    passwordField.typeText(passwordEmail)
                     
                     let signUpButton = app.buttons["Register"]
                     XCTAssertTrue(signUpButton.exists)
@@ -114,6 +112,16 @@ final class LoginUITests: QuickSpec {
                 it("Login") {
                     
                     let loginGoogleButton = app/*@START_MENU_TOKEN@*/.buttons["GIDSignInButton"]/*[[".buttons[\"Sign in with Google\"]",".buttons[\"GIDSignInButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+                    XCTAssertTrue(loginGoogleButton.exists)
+                    loginGoogleButton.tap()
+                }
+            }
+            
+            context("Sign In With Apple") {
+                
+                it("Login") {
+                    
+                    let loginGoogleButton = app.buttons["Sign in with Apple"]
                     XCTAssertTrue(loginGoogleButton.exists)
                     loginGoogleButton.tap()
                 }
