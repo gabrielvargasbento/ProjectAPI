@@ -45,7 +45,9 @@ struct LoginView: View {
                 Text("Login Page")
                     .font(.system(size: 40, weight: .bold, design: .rounded))
                 TextField("Email", text: $email)
+                    .accessibilityIdentifier("EmailField")
                 SecureField("Password", text: $password)
+                    .accessibilityIdentifier("PasswordField")
                 
                 Button {
                     loginService.register(email: email, password: password) { result, error in }

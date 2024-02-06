@@ -17,42 +17,22 @@
 //    }
 //
 //    func testExample() throws {
-//        // UI tests must launch the application that they test.
-//        
 //        
 //        let app = app2
-//        let tabBar = app.tabBars["Tab Bar"]
-//        tabBar.buttons["Notification"].tap()
-//        
-//        let loginButton = tabBar.buttons["Login"]
-//        loginButton.tap()
-//        loginButton.tap()
-//        loginButton.tap()
-//        loginButton.tap()
-//        app.buttons["Sign in with GitHub"].tap()
-//        
-//        let textField = app/*@START_MENU_TOKEN@*/.webViews.webViews.webViews.otherElements["main"]/*[[".otherElements[\"BrowserView?IsPageLoaded=true&WebViewProcessID=96750\"].webViews.webViews.webViews",".otherElements[\"Sign in to GitHub · GitHub\"].otherElements[\"main\"]",".otherElements[\"main\"]",".webViews.webViews.webViews"],[[[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/.children(matching: .textField).element
-//        textField.tap()
-//        textField.tap()
-//        textField.tap()
-//        
-//        let app2 = app
-//        app2/*@START_MENU_TOKEN@*/.webViews.webViews.webViews.otherElements["main"]/*[[".otherElements[\"BrowserView?IsPageLoaded=true&WebViewProcessID=96750\"].webViews.webViews.webViews",".otherElements[\"Sign in to GitHub · GitHub\"].otherElements[\"main\"]",".otherElements[\"main\"]",".webViews.webViews.webViews"],[[[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/.children(matching: .secureTextField).element.tap()
-//        app2/*@START_MENU_TOKEN@*/.webViews.webViews.webViews.buttons["Sign in"]/*[[".otherElements[\"BrowserView?IsPageLoaded=true&WebViewProcessID=96750\"].webViews.webViews.webViews",".otherElements[\"Sign in to GitHub · GitHub\"]",".otherElements[\"main\"].buttons[\"Sign in\"]",".buttons[\"Sign in\"]",".webViews.webViews.webViews"],[[[-1,4,1],[-1,0,1]],[[-1,3],[-1,2],[-1,1,2]],[[-1,3],[-1,2]]],[0,0]]@END_MENU_TOKEN@*/.tap()
-//        app2/*@START_MENU_TOKEN@*/.scrollViews/*[[".otherElements[\"Would you like to save this password to use with apps and websites?\"].scrollViews",".scrollViews"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.otherElements.buttons["Not Now"].tap()
-//        app.alerts["Sucesso!"].scrollViews.otherElements.buttons["OK"].tap()
-//        app.buttons["Logout"].tap()
-//        
-//        let gidsigninbuttonButton = app/*@START_MENU_TOKEN@*/.buttons["GIDSignInButton"]/*[[".buttons[\"Sign in with Google\"]",".buttons[\"GIDSignInButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-//        gidsigninbuttonButton.tap()
-//        gidsigninbuttonButton.tap()
+//        app.tabBars["Tab Bar"].buttons["Login"].tap()
 //        
 //        let signInWithMicrosoftButton = app.buttons["Sign in with Microsoft"]
 //        signInWithMicrosoftButton.tap()
 //        signInWithMicrosoftButton.tap()
-//                        
 //        
-//
+//        let app2 = app
+//        app2/*@START_MENU_TOKEN@*/.webViews.webViews.webViews.textFields["Email address, phone number or Skype"]/*[[".otherElements[\"BrowserView?IsPageLoaded=true&WebViewProcessID=5533\"].webViews.webViews.webViews",".otherElements[\"Sign in to your account\"]",".otherElements[\"main\"].textFields[\"Email address, phone number or Skype\"]",".textFields[\"Email address, phone number or Skype\"]",".webViews.webViews.webViews"],[[[-1,4,1],[-1,0,1]],[[-1,3],[-1,2],[-1,1,2]],[[-1,3],[-1,2]]],[0,0]]@END_MENU_TOKEN@*/.tap()
+//        app2.webViews.webViews.webViews.buttons["Next"].tap()
+//        app2/*@START_MENU_TOKEN@*/.webViews.webViews.webViews.buttons["Sign in"]/*[[".otherElements[\"BrowserView?IsPageLoaded=true&WebViewProcessID=5541\"].webViews.webViews.webViews",".otherElements[\"Sign in to your Microsoft account\"]",".otherElements[\"main\"].buttons[\"Sign in\"]",".buttons[\"Sign in\"]",".webViews.webViews.webViews"],[[[-1,4,1],[-1,0,1]],[[-1,3],[-1,2],[-1,1,2]],[[-1,3],[-1,2]]],[0,0]]@END_MENU_TOKEN@*/.tap()
+//        app2/*@START_MENU_TOKEN@*/.webViews.webViews.webViews.staticTexts["Don't show this again"]/*[[".otherElements[\"BrowserView?IsPageLoaded=true&WebViewProcessID=5541\"].webViews.webViews.webViews",".otherElements.matching(identifier: \"Stay signed in?\")",".otherElements[\"main\"].staticTexts[\"Don't show this again\"]",".staticTexts[\"Don't show this again\"]",".webViews.webViews.webViews"],[[[-1,4,1],[-1,0,1]],[[-1,3],[-1,2],[-1,1,2]],[[-1,3],[-1,2]]],[0,0]]@END_MENU_TOKEN@*/.tap()
+//        app2/*@START_MENU_TOKEN@*/.webViews.webViews.webViews.buttons["Stay signed in?"]/*[[".otherElements[\"BrowserView?IsPageLoaded=true&WebViewProcessID=5541\"].webViews.webViews.webViews",".otherElements.matching(identifier: \"Stay signed in?\")",".otherElements[\"main\"].buttons[\"Stay signed in?\"]",".buttons[\"Stay signed in?\"]",".webViews.webViews.webViews"],[[[-1,4,1],[-1,0,1]],[[-1,3],[-1,2],[-1,1,2]],[[-1,3],[-1,2]]],[0,0]]@END_MENU_TOKEN@*/.tap()
+//        app.alerts["Sucesso!"].scrollViews.otherElements.buttons["OK"].tap()
+//                
 //    }
 //
 //
