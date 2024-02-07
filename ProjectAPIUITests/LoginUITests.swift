@@ -7,23 +7,101 @@
 
 import Quick
 import Nimble
+import Foundation
 import XCTest
 import FirebaseAuth
 
 final class LoginUITests: QuickSpec {
     
     override class func spec() {
+        
+        var environmentVariables: [String: AnyObject]? = Bundle.main.infoDictionary?["EnvironmentVariables"] as? [String: AnyObject]
+        let myEmail: String? = environmentVariables?["LOGIN_EMAIL"] as? String
+        
+        // Verificar se myEmail não é nulo antes de usá-lo
+        if let email = myEmail {
+            print("my email: \(email)")
+        } else {
+            print("Email não encontrado.")
+        }
+
+        
         describe("Login UI Tests") {
             
-            let infoDictionary: [String: Any] = Bundle.main.infoDictionary!
+            print("print(ProcessInfo.processInfo.environment):\n\n\n\n\n")
+
             
-            let loginEmail = infoDictionary["LOGIN_EMAIL"] as? String
-            let passwordEmail = infoDictionary["PASSWORD_EMAIL"] as? String
-            let userEmail = infoDictionary["USER_EMAIL"] as? String
-            let loginGitHub = infoDictionary["LOGIN_GITHUB"] as? String
-            let passwordGitHub = infoDictionary["PASSWORD_GITHUB"] as? String
-            let loginMicrosoft = infoDictionary["LOGIN_MICROSOFT"] as? String
-            let passwordMicrosoft = infoDictionary["PASSWORD_MICROSOFT"] as? String
+            for (key, value) in ProcessInfo.processInfo.environment {
+                let padding = max(0, 30 - key.count) // Verifica se a subtração resulta em um número negativo
+                let paddingString = String(repeating: " ", count: padding)
+                print("\(key):\(paddingString) \(value)")
+            }
+
+
+            
+            if let loginEmail = Bundle.main.infoDictionary?["LOGIN_EMAIL"] as? String {
+                print("O valor da variável de ambiente LOGIN_EMAIL é: \(loginEmail)")
+            } else {
+                print("A variável de ambiente LOGIN_EMAIL não está definida.")
+            }
+            
+            if let loginEmail = ProcessInfo.processInfo.environment["LOGIN_EMAIL"] {
+                print("O valor da variável de ambiente LOGIN_EMAIL é: \(loginEmail)")
+            } else {
+                print("A variável de ambiente LOGIN_EMAIL não está definida.")
+            }
+
+
+            
+            // Caminho para o arquivo .plist
+            guard let plistPath = Bundle.main.path(forResource: "Info", ofType: "plist"),
+                let configDictionary = NSDictionary(contentsOfFile: plistPath) else {
+                    fatalError("Info.plist não encontrado.")
+            }
+
+            if let myValue = ProcessInfo.processInfo.environment["MY_VARIABLE"] {
+                print("My value is: \(myValue)")
+            } else {
+                print("MY_VARIABLE não está definida")
+            }
+
+            var loginEmail = ""
+            
+            if let loginEmail = ProcessInfo.processInfo.environment["LOGIN_EMAIL"] {
+                print("login Email is: \(loginEmail)")
+            } else {
+                print("LOGIN_EMAIL não está definida")
+            }
+
+            if let anotherValue = ProcessInfo.processInfo.environment["ANOTHER_VARIABLE"] {
+                print("Another value is: \(anotherValue)")
+            } else {
+                print("ANOTHER_VARIABLE não está definida")
+                
+            }
+            
+
+            
+//            let emailll = Bundle.main.object(forInfoDictionaryKey: "LOGIN_EMAIL") as! String
+//            print(emailll)
+
+            
+            let infoDictionary: [String: Any] = Bundle.main.infoDictionary!
+            let passwordEmail = infoDictionary["LOGIN_EMAIL"] as! String
+            
+//            print("infoDictionary: \(infoDictionary)")
+
+//            let loginEmail = ProcessInfo.processInfo.environment["LOGIN_EMAIL"]!
+            //let loginEmail = infoDictionary["LOGIN_EMAIL"] as! String
+//            let loginEmail2 = Bundle.main.object(forInfoDictionaryKey: "LOGIN_EMAIL")!
+//            print(loginEmail2)
+            
+            
+            let userEmail = infoDictionary["USER_EMAIL"] as! String
+            let loginGitHub = infoDictionary["LOGIN_GITHUB"] as! String
+            let passwordGitHub = infoDictionary["PASSWORD_GITHUB"] as! String
+            let loginMicrosoft = infoDictionary["LOGIN_MICROSOFT"] as! String
+            let passwordMicrosoft = infoDictionary["PASSWORD_MICROSOFT"] as! String
                 
             // Instanciar app
             let app = XCUIApplication()

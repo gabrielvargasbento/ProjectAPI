@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.1058651777105-22gagm1t3dh6nnntok07ckkgrnb5hcpc</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>https://projectapi-dti.firebaseapp.com/__/auth/handler</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>gabrielvargas.ProjectAPI</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>projectapi</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>app-1-1058651777105-ios-a0fd86f70fbb2090c07070</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>1:1058651777105:ios:a0fd86f70fbb2090c07070</string>
+			</array>
+		</dict>
+	</array>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>LOGIN_EMAIL</key>
+		<string>${LOGIN_EMAIL}</string>
+	</dict>
+</dict>
+</plist>

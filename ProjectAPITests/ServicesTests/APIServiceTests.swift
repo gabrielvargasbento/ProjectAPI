@@ -325,6 +325,7 @@ class APIServiceTests: QuickSpec {
             }
         }
     }
+    
 }
 
 // Mock model for testing

@@ -7,6 +7,7 @@
 
 import Quick
 import Nimble
+import XCTest
 @testable import ProjectAPI
 
 final class RepositoryTests: QuickSpec {
@@ -136,4 +137,5 @@ final class RepositoryTests: QuickSpec {
             }
         }
     }
+    
 }
