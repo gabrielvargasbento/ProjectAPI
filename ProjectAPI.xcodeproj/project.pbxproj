@@ -27,6 +27,9 @@
 		B75BB79B2B5AD82F004DDC1E /* URLExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75BB79A2B5AD82F004DDC1E /* URLExtensionsTests.swift */; };
 		B75BB79F2B5B09A3004DDC1E /* AnalyticsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75BB79E2B5B09A3004DDC1E /* AnalyticsServiceTests.swift */; };
 		B75BB7A22B5EBE48004DDC1E /* Mockingbird in Frameworks */ = {isa = PBXBuildFile; productRef = B75BB7A12B5EBE48004DDC1E /* Mockingbird */; };
+		B75DF2F22B743EA300682305 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = B75DF2F12B743EA300682305 /* InlineSnapshotTesting */; };
+		B75DF2F42B743EA300682305 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = B75DF2F32B743EA300682305 /* SnapshotTesting */; };
+		B75DF2F72B743F2000682305 /* LoginUISnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DF2F62B743F2000682305 /* LoginUISnapshotTests.swift */; };
 		B75F12602B729D7A00B5125A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B75F125F2B729D7A00B5125A /* FirebaseMessaging */; };
 		B75F12622B729D8E00B5125A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B75F12612B729D8E00B5125A /* GoogleSignIn */; };
 		B772531A2B62C671005A1BC8 /* Cuckoo in Frameworks */ = {isa = PBXBuildFile; productRef = B77253192B62C671005A1BC8 /* Cuckoo */; };
@@ -166,6 +169,7 @@
 		B75BB7972B5AC0B7004DDC1E /* RepositoriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModelTests.swift; sourceTree = "<group>"; };
 		B75BB79A2B5AD82F004DDC1E /* URLExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionsTests.swift; sourceTree = "<group>"; };
 		B75BB79E2B5B09A3004DDC1E /* AnalyticsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsServiceTests.swift; sourceTree = "<group>"; };
+		B75DF2F62B743F2000682305 /* LoginUISnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUISnapshotTests.swift; sourceTree = "<group>"; };
 		B75F12642B72B31C00B5125A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B77C5FD12B5ED2AD0097ACB7 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		B79D4D862B3217F700ECE644 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
@@ -246,9 +250,11 @@
 			files = (
 				B75F12602B729D7A00B5125A /* FirebaseMessaging in Frameworks */,
 				B74062092B6C7C3100D02CAF /* Quick in Frameworks */,
+				B75DF2F22B743EA300682305 /* InlineSnapshotTesting in Frameworks */,
 				B7C69BEF2B71A19100E5D36B /* FirebaseAuth in Frameworks */,
 				B740620B2B6C7C3E00D02CAF /* Nimble in Frameworks */,
 				B74062072B6C7C1F00D02CAF /* Cuckoo in Frameworks */,
+				B75DF2F42B743EA300682305 /* SnapshotTesting in Frameworks */,
 				9A6DB9A4E232AC9882460D27 /* Pods_ProjectAPI_ProjectAPIUITests.framework in Frameworks */,
 				B75F12622B729D8E00B5125A /* GoogleSignIn in Frameworks */,
 			);
@@ -319,6 +325,14 @@
 				B75BB79A2B5AD82F004DDC1E /* URLExtensionsTests.swift */,
 			);
 			path = ExtensionsTests;
+			sourceTree = "<group>";
+		};
+		B75DF2F52B743ECE00682305 /* SnapshotTesting */ = {
+			isa = PBXGroup;
+			children = (
+				B75DF2F62B743F2000682305 /* LoginUISnapshotTests.swift */,
+			);
+			path = SnapshotTesting;
 			sourceTree = "<group>";
 		};
 		B7B692F92B55B410004D9059 /* ModelTests */ = {
@@ -414,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				B7B26EF62B73F57B00DC32F8 /* Info.plist */,
+				B75DF2F52B743ECE00682305 /* SnapshotTesting */,
 				B71DABD62B6C83BC00C80EEB /* GitHubUITests.swift */,
 				B71DABD42B6C839E00C80EEB /* HarryPotterUITests.swift */,
 				B71DABD82B6C842E00C80EEB /* NotificationUITests.swift */,
@@ -562,6 +577,8 @@
 				B7C69BEE2B71A19100E5D36B /* FirebaseAuth */,
 				B75F125F2B729D7A00B5125A /* FirebaseMessaging */,
 				B75F12612B729D8E00B5125A /* GoogleSignIn */,
+				B75DF2F12B743EA300682305 /* InlineSnapshotTesting */,
+				B75DF2F32B743EA300682305 /* SnapshotTesting */,
 			);
 			productName = ProjectAPIUITests;
 			productReference = B7C66D2F2B2BE85300C8580A /* ProjectAPIUITests.xctest */;
@@ -609,6 +626,7 @@
 				B7CC0ED82B602B3100A650BF /* XCRemoteSwiftPackageReference "ViewInspector" */,
 				B77253182B62C670005A1BC8 /* XCRemoteSwiftPackageReference "Cuckoo" */,
 				B75483592B6C5035002B6C74 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */,
+				B75DF2F02B743EA300682305 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = B7C66D162B2BE85000C8580A /* Products */;
 			projectDirPath = "";
@@ -859,6 +877,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B71DABDD2B6D2F0100C80EEB /* PerformanceUITests.swift in Sources */,
+				B75DF2F72B743F2000682305 /* LoginUISnapshotTests.swift in Sources */,
 				B71DABD92B6C842E00C80EEB /* NotificationUITests.swift in Sources */,
 				B71DABD72B6C83BC00C80EEB /* GitHubUITests.swift in Sources */,
 				B71DABD52B6C839E00C80EEB /* HarryPotterUITests.swift in Sources */,
@@ -1351,6 +1370,14 @@
 				minimumVersion = 0.20.0;
 			};
 		};
+		B75DF2F02B743EA300682305 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.15.3;
+			};
+		};
 		B77253182B62C670005A1BC8 /* XCRemoteSwiftPackageReference "Cuckoo" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Brightify/Cuckoo.git";
@@ -1425,6 +1452,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B75BB7A02B5EBE48004DDC1E /* XCRemoteSwiftPackageReference "mockingbird" */;
 			productName = Mockingbird;
+		};
+		B75DF2F12B743EA300682305 /* InlineSnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B75DF2F02B743EA300682305 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = InlineSnapshotTesting;
+		};
+		B75DF2F32B743EA300682305 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B75DF2F02B743EA300682305 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 		B75F125F2B729D7A00B5125A /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
