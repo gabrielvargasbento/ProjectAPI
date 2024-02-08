@@ -29,9 +29,12 @@
 		B75BB7A22B5EBE48004DDC1E /* Mockingbird in Frameworks */ = {isa = PBXBuildFile; productRef = B75BB7A12B5EBE48004DDC1E /* Mockingbird */; };
 		B75DF2F22B743EA300682305 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = B75DF2F12B743EA300682305 /* InlineSnapshotTesting */; };
 		B75DF2F42B743EA300682305 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = B75DF2F32B743EA300682305 /* SnapshotTesting */; };
-		B75DF2F72B743F2000682305 /* LoginUISnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DF2F62B743F2000682305 /* LoginUISnapshotTests.swift */; };
+		B75DF2FA2B7542C800682305 /* ViewControllerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DF2F92B7542C800682305 /* ViewControllerSnapshotTests.swift */; };
+		B75DF2FD2B7545A900682305 /* Nimble-Snapshots in Frameworks */ = {isa = PBXBuildFile; productRef = B75DF2FC2B7545A900682305 /* Nimble-Snapshots */; };
 		B75F12602B729D7A00B5125A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B75F125F2B729D7A00B5125A /* FirebaseMessaging */; };
 		B75F12622B729D8E00B5125A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B75F12612B729D8E00B5125A /* GoogleSignIn */; };
+		B76581F92B75481100D1AFF1 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = B76581F82B75481100D1AFF1 /* InlineSnapshotTesting */; };
+		B76581FB2B75481100D1AFF1 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = B76581FA2B75481100D1AFF1 /* SnapshotTesting */; };
 		B772531A2B62C671005A1BC8 /* Cuckoo in Frameworks */ = {isa = PBXBuildFile; productRef = B77253192B62C671005A1BC8 /* Cuckoo */; };
 		B77685E32B64150E00B31222 /* Cuckoo in Frameworks */ = {isa = PBXBuildFile; productRef = B77685E22B64150E00B31222 /* Cuckoo */; };
 		B786FEF52B34A8D40023FFC0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B786FEF42B34A8D40023FFC0 /* FirebaseAnalytics */; };
@@ -40,6 +43,11 @@
 		B786FEFB2B34A8D40023FFC0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B786FEFA2B34A8D40023FFC0 /* FirebaseFirestore */; };
 		B786FEFD2B34A8D40023FFC0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B786FEFC2B34A8D40023FFC0 /* FirebaseMessaging */; };
 		B786FEFF2B34A8D40023FFC0 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = B786FEFE2B34A8D40023FFC0 /* FirebasePerformance */; };
+		B78BDC622B754B1A00C96C74 /* CwlCatchException in Frameworks */ = {isa = PBXBuildFile; productRef = B78BDC612B754B1A00C96C74 /* CwlCatchException */; };
+		B78BDC642B754B2600C96C74 /* CwlCatchException in Frameworks */ = {isa = PBXBuildFile; productRef = B78BDC632B754B2600C96C74 /* CwlCatchException */; };
+		B78BDC652B754F3D00C96C74 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B7C69BEC2B719CCA00E5D36B /* Config.xcconfig */; };
+		B78BDC662B754F3E00C96C74 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B7C69BEC2B719CCA00E5D36B /* Config.xcconfig */; };
+		B78BDC672B754F3F00C96C74 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B7C69BEC2B719CCA00E5D36B /* Config.xcconfig */; };
 		B7A262DC2B34A1D1009BF461 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B7A262DB2B34A1D1009BF461 /* FirebaseCrashlytics */; };
 		B7A262DE2B34A1D1009BF461 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B7A262DD2B34A1D1009BF461 /* FirebaseMessaging */; };
 		B7B41BCE2B6B1EAF00A1ABC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74EBD8B2B34E7A800F8F9F1 /* AppDelegate.swift */; };
@@ -169,7 +177,7 @@
 		B75BB7972B5AC0B7004DDC1E /* RepositoriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModelTests.swift; sourceTree = "<group>"; };
 		B75BB79A2B5AD82F004DDC1E /* URLExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionsTests.swift; sourceTree = "<group>"; };
 		B75BB79E2B5B09A3004DDC1E /* AnalyticsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsServiceTests.swift; sourceTree = "<group>"; };
-		B75DF2F62B743F2000682305 /* LoginUISnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUISnapshotTests.swift; sourceTree = "<group>"; };
+		B75DF2F92B7542C800682305 /* ViewControllerSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSnapshotTests.swift; sourceTree = "<group>"; };
 		B75F12642B72B31C00B5125A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B77C5FD12B5ED2AD0097ACB7 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		B79D4D862B3217F700ECE644 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
@@ -197,7 +205,7 @@
 		B7C66D562B2BECE300C8580A /* HarryPotterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarryPotterViewModel.swift; sourceTree = "<group>"; };
 		B7C66D582B2BEF7500C8580A /* ListHarryPotterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHarryPotterView.swift; sourceTree = "<group>"; };
 		B7C66D5A2B2C976C00C8580A /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
-		B7C69BEC2B719CCA00E5D36B /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		B7C69BEC2B719CCA00E5D36B /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Config.xcconfig; path = /Users/dtidigital/Documents/ProjectAPI/ProjectAPIUITests/Config.xcconfig; sourceTree = "<absolute>"; };
 		B7CC0EDD2B6030CC00A650BF /* NavigationRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouterTests.swift; sourceTree = "<group>"; };
 		B7CC0EDF2B6032AE00A650BF /* RouteFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFinderTests.swift; sourceTree = "<group>"; };
 		B7CC0EE12B6179E100A650BF /* NotificationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceTests.swift; sourceTree = "<group>"; };
@@ -215,6 +223,7 @@
 				B786FEFD2B34A8D40023FFC0 /* FirebaseMessaging in Frameworks */,
 				B7C2702C2B4C361E00F448A1 /* FirebaseAuthCombine-Community in Frameworks */,
 				B7CC0EDA2B602B3100A650BF /* ViewInspector in Frameworks */,
+				B78BDC622B754B1A00C96C74 /* CwlCatchException in Frameworks */,
 				B754835B2B6C5035002B6C74 /* AsyncAlgorithms in Frameworks */,
 				B7A262DE2B34A1D1009BF461 /* FirebaseMessaging in Frameworks */,
 				B786FEFF2B34A8D40023FFC0 /* FirebasePerformance in Frameworks */,
@@ -239,8 +248,12 @@
 				B772531A2B62C671005A1BC8 /* Cuckoo in Frameworks */,
 				B7B692F82B55B3E4004D9059 /* Nimble in Frameworks */,
 				B7B692F52B55B3C2004D9059 /* Quick in Frameworks */,
+				B78BDC642B754B2600C96C74 /* CwlCatchException in Frameworks */,
 				B7CC0EDC2B602B4200A650BF /* ViewInspector in Frameworks */,
 				34A3680E49F62DA0721E9321 /* Pods_ProjectAPITests.framework in Frameworks */,
+				B76581FB2B75481100D1AFF1 /* SnapshotTesting in Frameworks */,
+				B76581F92B75481100D1AFF1 /* InlineSnapshotTesting in Frameworks */,
+				B75DF2FD2B7545A900682305 /* Nimble-Snapshots in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,10 +340,10 @@
 			path = ExtensionsTests;
 			sourceTree = "<group>";
 		};
-		B75DF2F52B743ECE00682305 /* SnapshotTesting */ = {
+		B75DF2F82B75428D00682305 /* SnapshotTesting */ = {
 			isa = PBXGroup;
 			children = (
-				B75DF2F62B743F2000682305 /* LoginUISnapshotTests.swift */,
+				B75DF2F92B7542C800682305 /* ViewControllerSnapshotTests.swift */,
 			);
 			path = SnapshotTesting;
 			sourceTree = "<group>";
@@ -367,7 +380,6 @@
 			isa = PBXGroup;
 			children = (
 				B75F12642B72B31C00B5125A /* Info.plist */,
-				B7C69BEC2B719CCA00E5D36B /* Config.xcconfig */,
 				B7C66D172B2BE85000C8580A /* ProjectAPI */,
 				B7C66D282B2BE85300C8580A /* ProjectAPITests */,
 				B7C66D322B2BE85300C8580A /* ProjectAPIUITests */,
@@ -414,6 +426,7 @@
 		B7C66D282B2BE85300C8580A /* ProjectAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				B75DF2F82B75428D00682305 /* SnapshotTesting */,
 				B71896332B6022FE009540F0 /* NavigationTests */,
 				B75BB7992B5AC60E004DDC1E /* ExtensionsTests */,
 				B75BB7962B5AC091004DDC1E /* ViewModelTests */,
@@ -427,8 +440,8 @@
 		B7C66D322B2BE85300C8580A /* ProjectAPIUITests */ = {
 			isa = PBXGroup;
 			children = (
+				B7C69BEC2B719CCA00E5D36B /* Config.xcconfig */,
 				B7B26EF62B73F57B00DC32F8 /* Info.plist */,
-				B75DF2F52B743ECE00682305 /* SnapshotTesting */,
 				B71DABD62B6C83BC00C80EEB /* GitHubUITests.swift */,
 				B71DABD42B6C839E00C80EEB /* HarryPotterUITests.swift */,
 				B71DABD82B6C842E00C80EEB /* NotificationUITests.swift */,
@@ -522,6 +535,7 @@
 				B7CC0ED92B602B3100A650BF /* ViewInspector */,
 				B77685E22B64150E00B31222 /* Cuckoo */,
 				B754835A2B6C5035002B6C74 /* AsyncAlgorithms */,
+				B78BDC612B754B1A00C96C74 /* CwlCatchException */,
 			);
 			productName = ProjectAPI;
 			productReference = B7C66D152B2BE85000C8580A /* ProjectAPI.app */;
@@ -549,6 +563,10 @@
 				B7B692F72B55B3E4004D9059 /* Nimble */,
 				B7CC0EDB2B602B4200A650BF /* ViewInspector */,
 				B77253192B62C671005A1BC8 /* Cuckoo */,
+				B75DF2FC2B7545A900682305 /* Nimble-Snapshots */,
+				B76581F82B75481100D1AFF1 /* InlineSnapshotTesting */,
+				B76581FA2B75481100D1AFF1 /* SnapshotTesting */,
+				B78BDC632B754B2600C96C74 /* CwlCatchException */,
 			);
 			productName = ProjectAPITests;
 			productReference = B7C66D252B2BE85300C8580A /* ProjectAPITests.xctest */;
@@ -627,6 +645,8 @@
 				B77253182B62C670005A1BC8 /* XCRemoteSwiftPackageReference "Cuckoo" */,
 				B75483592B6C5035002B6C74 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */,
 				B75DF2F02B743EA300682305 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				B75DF2FB2B7545A800682305 /* XCRemoteSwiftPackageReference "Nimble-Snapshots" */,
+				B78BDC602B754B1A00C96C74 /* XCRemoteSwiftPackageReference "CwlCatchException" */,
 			);
 			productRefGroup = B7C66D162B2BE85000C8580A /* Products */;
 			projectDirPath = "";
@@ -645,6 +665,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7C66D202B2BE85300C8580A /* Preview Assets.xcassets in Resources */,
+				B78BDC652B754F3D00C96C74 /* Config.xcconfig in Resources */,
 				B7C66D1D2B2BE85300C8580A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,6 +674,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B78BDC662B754F3E00C96C74 /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +682,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B78BDC672B754F3F00C96C74 /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -858,6 +881,7 @@
 			files = (
 				B75BB79B2B5AD82F004DDC1E /* URLExtensionsTests.swift in Sources */,
 				B7CC0EE02B6032AE00A650BF /* RouteFinderTests.swift in Sources */,
+				B75DF2FA2B7542C800682305 /* ViewControllerSnapshotTests.swift in Sources */,
 				B71896322B601D33009540F0 /* HarryPotterViewModelTests.swift in Sources */,
 				B7CC0EE42B62C14100A650BF /* LoginServiceTests.swift in Sources */,
 				B75BB7982B5AC0B7004DDC1E /* RepositoriesViewModelTests.swift in Sources */,
@@ -877,7 +901,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B71DABDD2B6D2F0100C80EEB /* PerformanceUITests.swift in Sources */,
-				B75DF2F72B743F2000682305 /* LoginUISnapshotTests.swift in Sources */,
 				B71DABD92B6C842E00C80EEB /* NotificationUITests.swift in Sources */,
 				B71DABD72B6C83BC00C80EEB /* GitHubUITests.swift in Sources */,
 				B71DABD52B6C839E00C80EEB /* HarryPotterUITests.swift in Sources */,
@@ -1378,6 +1401,14 @@
 				minimumVersion = 1.15.3;
 			};
 		};
+		B75DF2FB2B7545A800682305 /* XCRemoteSwiftPackageReference "Nimble-Snapshots" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashfurrow/Nimble-Snapshots";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.7.0;
+			};
+		};
 		B77253182B62C670005A1BC8 /* XCRemoteSwiftPackageReference "Cuckoo" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Brightify/Cuckoo.git";
@@ -1392,6 +1423,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 10.19.1;
+			};
+		};
+		B78BDC602B754B1A00C96C74 /* XCRemoteSwiftPackageReference "CwlCatchException" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mattgallagher/CwlCatchException.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
 			};
 		};
 		B7B692F32B55B3C2004D9059 /* XCRemoteSwiftPackageReference "Quick" */ = {
@@ -1463,6 +1502,11 @@
 			package = B75DF2F02B743EA300682305 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
 		};
+		B75DF2FC2B7545A900682305 /* Nimble-Snapshots */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B75DF2FB2B7545A800682305 /* XCRemoteSwiftPackageReference "Nimble-Snapshots" */;
+			productName = "Nimble-Snapshots";
+		};
 		B75F125F2B729D7A00B5125A /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FirebaseMessaging;
@@ -1471,6 +1515,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B7C2702D2B4C399100F448A1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
+		};
+		B76581F82B75481100D1AFF1 /* InlineSnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B75DF2F02B743EA300682305 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = InlineSnapshotTesting;
+		};
+		B76581FA2B75481100D1AFF1 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B75DF2F02B743EA300682305 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 		B77253192B62C671005A1BC8 /* Cuckoo */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1511,6 +1565,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B786FEF32B34A8D40023FFC0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebasePerformance;
+		};
+		B78BDC612B754B1A00C96C74 /* CwlCatchException */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B78BDC602B754B1A00C96C74 /* XCRemoteSwiftPackageReference "CwlCatchException" */;
+			productName = CwlCatchException;
+		};
+		B78BDC632B754B2600C96C74 /* CwlCatchException */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B78BDC602B754B1A00C96C74 /* XCRemoteSwiftPackageReference "CwlCatchException" */;
+			productName = CwlCatchException;
 		};
 		B7A262DB2B34A1D1009BF461 /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;

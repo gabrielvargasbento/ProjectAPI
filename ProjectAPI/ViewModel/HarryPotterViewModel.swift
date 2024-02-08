@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CwlCatchException
 
 class HarryPotterViewModel: ObservableObject, ViewModelProtocol {
     

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CwlCatchException
 
 @main
 struct MainView: App {

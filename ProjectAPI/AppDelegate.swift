@@ -12,6 +12,8 @@ import FirebaseAuth
 import GoogleSignIn
 import FirebaseMessaging
 import UserNotifications
+import CwlCatchException
+
 
 class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
 

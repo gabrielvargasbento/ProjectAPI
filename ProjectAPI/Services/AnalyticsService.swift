@@ -6,6 +6,8 @@
 //
 
 import Firebase
+import CwlCatchException
+//import CwlMachBadInstructionHandler
 
 protocol FirebaseAnalytics {
     func logEvent(_ name: String, parameters: [String: Any]?)

@@ -5,6 +5,8 @@
 //  Created by dti Digital on 14/12/23.
 //
 
+//#include "Config.xcconfig"
+
 import Quick
 import Nimble
 import Foundation
@@ -88,15 +90,6 @@ final class LoginUITests: QuickSpec {
             
             let infoDictionary: [String: Any] = Bundle.main.infoDictionary!
             let passwordEmail = infoDictionary["LOGIN_EMAIL"] as! String
-            
-//            print("infoDictionary: \(infoDictionary)")
-
-//            let loginEmail = ProcessInfo.processInfo.environment["LOGIN_EMAIL"]!
-            //let loginEmail = infoDictionary["LOGIN_EMAIL"] as! String
-//            let loginEmail2 = Bundle.main.object(forInfoDictionaryKey: "LOGIN_EMAIL")!
-//            print(loginEmail2)
-            
-            
             let userEmail = infoDictionary["USER_EMAIL"] as! String
             let loginGitHub = infoDictionary["LOGIN_GITHUB"] as! String
             let passwordGitHub = infoDictionary["PASSWORD_GITHUB"] as! String

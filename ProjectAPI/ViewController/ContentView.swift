@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CwlCatchException
 
 //class TabIndexManager: ObservableObject {
 //    @Published var selectedTabIndex: Int = 0

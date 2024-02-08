@@ -7,6 +7,7 @@
 
 import Foundation
 import UserNotifications
+import CwlCatchException
 
 //@MainActor
 class NotificationService: ObservableObject {

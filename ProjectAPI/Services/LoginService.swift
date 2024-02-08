@@ -15,6 +15,8 @@ import FirebaseCore
 import SafariServices
 import WebKit
 import Combine
+import CwlCatchException
+//import CwlMachBadInstructionHandler
 
 class LoginService {
     

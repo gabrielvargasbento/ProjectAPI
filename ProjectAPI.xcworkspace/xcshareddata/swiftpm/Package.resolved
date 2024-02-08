@@ -136,6 +136,15 @@
       }
     },
     {
+      "identity" : "ios-snapshot-test-case",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/uber/ios-snapshot-test-case.git",
+      "state" : {
+        "revision" : "7b10770333a961be6e5a41c9ce04b8c6d3990126",
+        "version" : "8.0.0"
+      }
+    },
+    {
       "identity" : "leveldb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",
@@ -169,6 +178,15 @@
       "state" : {
         "branch" : "main",
         "revision" : "29c8d41ed1c33a90cfb0060686fba6e003417028"
+      }
+    },
+    {
+      "identity" : "nimble-snapshots",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ashfurrow/Nimble-Snapshots",
+      "state" : {
+        "revision" : "b451df00dea23d727472cffda1c5b19fe93dff96",
+        "version" : "9.7.0"
       }
     },
     {

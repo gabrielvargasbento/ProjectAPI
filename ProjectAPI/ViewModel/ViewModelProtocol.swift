@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CwlCatchException
 
 protocol ViewModelProtocol {
     associatedtype T: Decodable

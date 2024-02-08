@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CwlCatchException
 
 protocol HarryPotterItem {
     var id: String { get }
