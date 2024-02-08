@@ -1,10 +1,10 @@
-////
-////  ViewControllerSnapshotTests.swift
-////  ProjectAPITests
-////
-////  Created by Gabriel Vargas on 07/02/24.
-////
 //
+//  ViewControllerSnapshotTests.swift
+//  ProjectAPITests
+//
+//  Created by Gabriel Vargas on 07/02/24.
+//
+
 import XCTest
 import SnapshotTesting
 

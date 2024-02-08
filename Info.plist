@@ -53,6 +53,18 @@
 	<dict>
 		<key>LOGIN_EMAIL</key>
 		<string>${LOGIN_EMAIL}</string>
+		<key>PASSWORD_EMAIL</key>
+		<string>${PASSWORD_EMAIL}</string>
+		<key>USERNAME_EMAIL</key>
+		<string>${USERNAME_EMAIL}</string>
+		<key>LOGIN_GITHUB</key>
+		<string>${LOGIN_GITHUB}</string>
+		<key>PASSWORD_GITHUB</key>
+		<string>${PASSWORD_GITHUB}</string>
+		<key>LOGIN_MICROSOFT</key>
+		<string>${LOGIN_MICROSOFT}</string>
+		<key>PASSWORD_MICROSOFT</key>
+		<string>${PASSWORD_MICROSOFT}</string>
 	</dict>
 </dict>
 </plist>
