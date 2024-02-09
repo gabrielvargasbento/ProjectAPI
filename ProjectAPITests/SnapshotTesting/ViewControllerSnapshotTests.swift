@@ -17,24 +17,3 @@ class ViewControllerSnapshotTests: XCTestCase {
       assertSnapshot(of: sut, as: .image)
   }
 }
-
-//import Quick
-//import Nimble
-//import Nimble_Snapshots
-//
-//
-//class ViewControllerSnapshotTests2: QuickSpec {
-//    
-//    override class func spec() {
-//        describe("Login View Controller Tests") {
-//            
-//            it("has valid snapshot") {
-//                let view = LoginView()
-//                expect(view).to( haveValidSnapshot() )
-//            }
-//            
-//        }
-//    }
-//}
-
-//recordSnapshot(named: "LoginViewSnapshot" )

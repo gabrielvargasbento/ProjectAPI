@@ -13,18 +13,7 @@ import Foundation
 class NavigationRouterTests: QuickSpec {
     
     override class func spec() {
-        
-        var environmentVariables: [String: AnyObject]? = Bundle.main.infoDictionary?["EnvironmentVariables"] as? [String: AnyObject]
-        let loginEmail = environmentVariables?["LOGIN_EMAIL"] as? String ?? ""
-        let passwordEmail = environmentVariables?["PASSWORD_EMAIL"] as? String ?? ""
-        let userEmail = environmentVariables?["USER_EMAIL"] as? String ?? ""
-        let loginGitHub = environmentVariables?["LOGIN_GITHUB"] as? String ?? ""
-        let passwordGitHub = environmentVariables?["PASSWORD_GITHUB"] as? String ?? ""
-        let loginMicrosoft = environmentVariables?["LOGIN_MICROSOFT"] as? String ?? ""
-        let passwordMicrosoft = environmentVariables?["PASSWORD_MICROSOFT"] as? String ?? ""
-        
-        print("loginEmail: \(loginEmail)")
-        
+                
         describe("Navigation Router Tests") {
             
             var sut: NavigationRouter!

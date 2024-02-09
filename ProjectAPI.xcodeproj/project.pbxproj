@@ -15,7 +15,6 @@
 		B71DABD52B6C839E00C80EEB /* HarryPotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABD42B6C839E00C80EEB /* HarryPotterUITests.swift */; };
 		B71DABD72B6C83BC00C80EEB /* GitHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABD62B6C83BC00C80EEB /* GitHubUITests.swift */; };
 		B71DABD92B6C842E00C80EEB /* NotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABD82B6C842E00C80EEB /* NotificationUITests.swift */; };
-		B71DABDB2B6C845700C80EEB /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABDA2B6C845700C80EEB /* LoginUITests.swift */; };
 		B71DABDD2B6D2F0100C80EEB /* PerformanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DABDC2B6D2F0100C80EEB /* PerformanceUITests.swift */; };
 		B74062012B6C7B7500D02CAF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BEED782B5ECDB800BA2333 /* XCTest.framework */; };
 		B74062042B6C7BAE00D02CAF /* XCTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7BEED782B5ECDB800BA2333 /* XCTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -91,6 +90,7 @@
 		B7CC0EE22B6179E100A650BF /* NotificationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC0EE12B6179E100A650BF /* NotificationServiceTests.swift */; };
 		B7CC0EE42B62C14100A650BF /* LoginServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC0EE32B62C14100A650BF /* LoginServiceTests.swift */; };
 		B7F6B7AE2B6C39D800B96547 /* GoogleService-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = B73F98A52B6C34F60050136B /* GoogleService-Info.plist */; };
+		B7FF92CC2B768554008BCE4B /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FF92CB2B768554008BCE4B /* LoginUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -164,7 +164,6 @@
 		B71DABD42B6C839E00C80EEB /* HarryPotterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarryPotterUITests.swift; sourceTree = "<group>"; };
 		B71DABD62B6C83BC00C80EEB /* GitHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUITests.swift; sourceTree = "<group>"; };
 		B71DABD82B6C842E00C80EEB /* NotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUITests.swift; sourceTree = "<group>"; };
-		B71DABDA2B6C845700C80EEB /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 		B71DABDC2B6D2F0100C80EEB /* PerformanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceUITests.swift; sourceTree = "<group>"; };
 		B73F98A52B6C34F60050136B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7412C552B3B3034006E92A4 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -209,6 +208,7 @@
 		B7CC0EDF2B6032AE00A650BF /* RouteFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFinderTests.swift; sourceTree = "<group>"; };
 		B7CC0EE12B6179E100A650BF /* NotificationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceTests.swift; sourceTree = "<group>"; };
 		B7CC0EE32B62C14100A650BF /* LoginServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceTests.swift; sourceTree = "<group>"; };
+		B7FF92CB2B768554008BCE4B /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 		B94E01DED9D48089A389DF89 /* Pods-ProjectAPI-ProjectAPIUITests.uitest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectAPI-ProjectAPIUITests.uitest.xcconfig"; path = "Target Support Files/Pods-ProjectAPI-ProjectAPIUITests/Pods-ProjectAPI-ProjectAPIUITests.uitest.xcconfig"; sourceTree = "<group>"; };
 		DAB35A9A240002917BDDEFE0 /* Pods-ProjectAPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectAPITests.release.xcconfig"; path = "Target Support Files/Pods-ProjectAPITests/Pods-ProjectAPITests.release.xcconfig"; sourceTree = "<group>"; };
 		F304CF6CE6E404E0716F2B92 /* Pods_ProjectAPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectAPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -347,6 +347,14 @@
 			path = SnapshotTesting;
 			sourceTree = "<group>";
 		};
+		B78BDC6A2B76722200C96C74 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				B7FF92CB2B768554008BCE4B /* LoginUITests.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
 		B7B692F92B55B410004D9059 /* ModelTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +433,7 @@
 		B7C66D282B2BE85300C8580A /* ProjectAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				B78BDC6A2B76722200C96C74 /* UITests */,
 				B75DF2F82B75428D00682305 /* SnapshotTesting */,
 				B71896332B6022FE009540F0 /* NavigationTests */,
 				B75BB7992B5AC60E004DDC1E /* ExtensionsTests */,
@@ -443,7 +452,6 @@
 				B71DABD62B6C83BC00C80EEB /* GitHubUITests.swift */,
 				B71DABD42B6C839E00C80EEB /* HarryPotterUITests.swift */,
 				B71DABD82B6C842E00C80EEB /* NotificationUITests.swift */,
-				B71DABDA2B6C845700C80EEB /* LoginUITests.swift */,
 				B71DABDC2B6D2F0100C80EEB /* PerformanceUITests.swift */,
 			);
 			path = ProjectAPIUITests;
@@ -891,6 +899,7 @@
 				B75BB79F2B5B09A3004DDC1E /* AnalyticsServiceTests.swift in Sources */,
 				B7B693102B599A82004D9059 /* APIServiceTests.swift in Sources */,
 				B7CC0EDE2B6030CD00A650BF /* NavigationRouterTests.swift in Sources */,
+				B7FF92CC2B768554008BCE4B /* LoginUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,7 +911,6 @@
 				B71DABD92B6C842E00C80EEB /* NotificationUITests.swift in Sources */,
 				B71DABD72B6C83BC00C80EEB /* GitHubUITests.swift in Sources */,
 				B71DABD52B6C839E00C80EEB /* HarryPotterUITests.swift in Sources */,
-				B71DABDB2B6C845700C80EEB /* LoginUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

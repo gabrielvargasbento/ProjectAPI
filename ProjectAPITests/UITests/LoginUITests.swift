@@ -1,17 +1,17 @@
 //
 //  LoginUITests.swift
-//  ProjectAPIUITests
+//  ProjectAPITests
 //
-//  Created by dti Digital on 14/12/23.
+//  Created by Gabriel Vargas on 14/12/23.
 //
-
-//#include "Config.xcconfig"
 
 import Quick
 import Nimble
 import Foundation
 import XCTest
 import FirebaseAuth
+
+@testable import ProjectAPI
 
 final class LoginUITests: QuickSpec {
     
@@ -25,9 +25,7 @@ final class LoginUITests: QuickSpec {
         let passwordGitHub = environmentVariables?["PASSWORD_GITHUB"] as? String ?? ""
         let loginMicrosoft = environmentVariables?["LOGIN_MICROSOFT"] as? String ?? ""
         let passwordMicrosoft = environmentVariables?["PASSWORD_MICROSOFT"] as? String ?? ""
-        
-        print("loginEmail: \(loginEmail)")
-        
+                
         describe("Login UI Tests") {
                 
             // Instanciar app
