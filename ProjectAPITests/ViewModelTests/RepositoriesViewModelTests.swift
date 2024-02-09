@@ -37,37 +37,6 @@ final class RepositoriesViewModelTests: QuickSpec {
                 }
             }
             
-            //            context("Access Repository List"){
-            //
-            //                let mock0 = MockModel(id: 0, name: "item0")
-            //                let mock1 = MockModel(id: 1, name: "item1")
-            //                let mock2 = MockModel(id: 2, name: "item2")
-            //
-            //                beforeEach {
-            //                    sut.repositoryList = [mock0, mock1, mock2]
-            //                }
-            //
-            //                it("Verify StartIndex API List") {
-            //                    expect(sut.startIndex).to(equal(0))
-            //                }
-            //
-            //                it("Verify EndIndex API List") {
-            //                    expect(sut.endIndex).to(equal(3))
-            //                }
-            //
-            //                it("Verify Index API List") {
-            //                    expect(sut.index(after: 0)).to(equal(1))
-            //                }
-            //
-            //                it("Verify Subscript API List") {
-            //                    expect(sut.repositoryList[0].id).to(equal(mock0.id))
-            //                }
-            //
-            //                afterEach {
-            //                    sut.repositoryList = []
-            //                }
-            //            }
-            
             context("Fetch") {
                 
                 beforeEach {
@@ -250,29 +219,29 @@ final class RepositoriesViewModelTests: QuickSpec {
                     }
                 }
                 
-//                it("Decode selectedRepository with invalid data") {
-//                    let mockURLString = "https://example.com/mock"
-//                    let mockData = """
-//                        [{"error": "item1"}]
-//                    """.data(using: .utf8)!
-//                    
-//                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
-//                    sut = RepositoriesViewModel(url: URL(string:mockURLString)!)
-//                    
-//                    waitUntil { done in
-//                        sut.fetchItem(identifier: nil) { (item, error) in
-//                            
-//                            // Verificar presenca de erro
-//                            expect(error).toNot(beNil())
-//                            expect(error).to(beAKindOf(DecodingError.self))
-//                            
-//                            // Verififcar ausencia de dados
-//                            expect(item).to(beNil())
-//                            
-//                            done()
-//                        }
-//                    }
-//                }
+                //                it("Decode selectedRepository with invalid data") {
+                //                    let mockURLString = "https://example.com/mock"
+                //                    let mockData = """
+                //                        [{"error": "item1"}]
+                //                    """.data(using: .utf8)!
+                //
+                //                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
+                //                    sut = RepositoriesViewModel(url: URL(string:mockURLString)!)
+                //
+                //                    waitUntil { done in
+                //                        sut.fetchItem(identifier: nil) { (item, error) in
+                //
+                //                            // Verificar presenca de erro
+                //                            expect(error).toNot(beNil())
+                //                            expect(error).to(beAKindOf(DecodingError.self))
+                //
+                //                            // Verififcar ausencia de dados
+                //                            expect(item).to(beNil())
+                //
+                //                            done()
+                //                        }
+                //                    }
+                //                }
             }
             
             afterEach {
