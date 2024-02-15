@@ -28,9 +28,14 @@ struct ContentView: View {
                     Label("Harry Potter", systemImage: "eyeglasses")
                 }
                 .tag(1)
-            NotificationView()
+//            NotificationView()
+//                .tabItem {
+//                    Label("Notification", systemImage: "bell")
+//                }
+            ListMarvelView()
                 .tabItem {
-                    Label("Notification", systemImage: "bell")
+                    Image(systemName: "m.circle")
+                    Text("Marvel")
                 }
                 .tag(2)
             LoginView()

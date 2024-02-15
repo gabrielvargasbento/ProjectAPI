@@ -80,6 +80,8 @@
 		B7C2702C2B4C361E00F448A1 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = B7C2702B2B4C361E00F448A1 /* FirebaseAuthCombine-Community */; };
 		B7C2702F2B4C399100F448A1 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B7C2702E2B4C399100F448A1 /* GoogleSignIn */; };
 		B7C270312B4C399100F448A1 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B7C270302B4C399100F448A1 /* GoogleSignInSwift */; };
+		B7C5E0BD2B7E7E5400B4C230 /* MarvelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0BC2B7E7E5400B4C230 /* MarvelViewModel.swift */; };
+		B7C5E0BF2B7E7F3F00B4C230 /* ListMarvelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0BE2B7E7F3F00B4C230 /* ListMarvelView.swift */; };
 		B7C66D1D2B2BE85300C8580A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C66D1C2B2BE85300C8580A /* Assets.xcassets */; };
 		B7C66D202B2BE85300C8580A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C66D1F2B2BE85300C8580A /* Preview Assets.xcassets */; };
 		B7C69BEF2B71A19100E5D36B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B7C69BEE2B71A19100E5D36B /* FirebaseAuth */; };
@@ -188,6 +190,8 @@
 		B7BF58E22B6A9ABB001A77D5 /* GeneratedMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		B7C270342B4C479200F448A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B7C270362B4D6FBB00F448A1 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		B7C5E0BC2B7E7E5400B4C230 /* MarvelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelViewModel.swift; sourceTree = "<group>"; };
+		B7C5E0BE2B7E7F3F00B4C230 /* ListMarvelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMarvelView.swift; sourceTree = "<group>"; };
 		B7C66D152B2BE85000C8580A /* ProjectAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C66D1C2B2BE85300C8580A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7C66D1F2B2BE85300C8580A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -462,6 +466,7 @@
 			children = (
 				B7C66D432B2BE8D300C8580A /* ListRepositoriesView.swift */,
 				B7C66D582B2BEF7500C8580A /* ListHarryPotterView.swift */,
+				B7C5E0BE2B7E7F3F00B4C230 /* ListMarvelView.swift */,
 				B7C66D472B2BE91500C8580A /* AccountView.swift */,
 				B7C66D5A2B2C976C00C8580A /* CharacterView.swift */,
 				B74EBD8F2B36336200F8F9F1 /* NotificationView.swift */,
@@ -479,6 +484,7 @@
 				B77C5FD12B5ED2AD0097ACB7 /* ViewModelProtocol.swift */,
 				B7C66D4C2B2BE97F00C8580A /* RepositoriesViewModel.swift */,
 				B7C66D562B2BECE300C8580A /* HarryPotterViewModel.swift */,
+				B7C5E0BC2B7E7E5400B4C230 /* MarvelViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -865,6 +871,7 @@
 				B7B41BDE2B6B1EDC00A1ABC4 /* AccountView.swift in Sources */,
 				B7B41BDD2B6B1EDA00A1ABC4 /* ListHarryPotterView.swift in Sources */,
 				B7B41BDC2B6B1ED700A1ABC4 /* ListRepositoriesView.swift in Sources */,
+				B7C5E0BF2B7E7F3F00B4C230 /* ListMarvelView.swift in Sources */,
 				B7B41BDB2B6B1ED500A1ABC4 /* HarryPotterViewModel.swift in Sources */,
 				B7B41BDA2B6B1ED200A1ABC4 /* RepositoriesViewModel.swift in Sources */,
 				B7B41BD92B6B1ED000A1ABC4 /* ViewModelProtocol.swift in Sources */,
@@ -877,6 +884,7 @@
 				B7B41BD22B6B1EBD00A1ABC4 /* RouteFinder.swift in Sources */,
 				B7B41BD12B6B1EB900A1ABC4 /* NavigationRouter.swift in Sources */,
 				B7B41BD02B6B1EB600A1ABC4 /* Route.swift in Sources */,
+				B7C5E0BD2B7E7E5400B4C230 /* MarvelViewModel.swift in Sources */,
 				B7B41BCF2B6B1EB300A1ABC4 /* URLExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
