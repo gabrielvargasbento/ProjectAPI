@@ -22,6 +22,7 @@ struct RouteFinder {
     
     var repoViewModel: any ViewModelProtocol
     var harryPotterViewModel: any ViewModelProtocol
+    var marvelViewModel = MarvelViewModel2()
     
     init(repoViewModel: any ViewModelProtocol = RepositoriesViewModel(),
          harryPotterViewModel: any ViewModelProtocol = HarryPotterViewModel()) {
@@ -85,6 +86,27 @@ struct RouteFinder {
                 }
                 print(harryPotter!)
                 completion(.harryPotterItem(item: harryPotter! as! HarryPotter), nil)
+            }
+            
+        case .marvel:
+            let queryParams = url.queryParamaters
+            
+            guard let id = queryParams?["id"] as? String else {
+                let error = NSError(domain: "InvalidURL", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid Query Params"])
+                completion(nil, error)
+                return
+            }
+            
+            marvelViewModel.fetchDataItem(identifier: id)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                
+                if marvelViewModel.hasError {
+                    completion(nil, marvelViewModel.error)
+                } else {
+                    let item = marvelViewModel.marvelCharacterSelected!
+                    completion(.marvelItem(item: item), nil)
+                }
             }
             
         default:

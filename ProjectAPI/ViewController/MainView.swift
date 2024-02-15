@@ -41,24 +41,27 @@ extension MainView {
                 
             case .repositoryItem(let item):
                 routerManager.reset()
-//              tabIndexManager.selectedTabIndex = 0
                 routerManager.push(to: .repositoryItem(item: item))
                 
             case .harryPotterItem(let item):
                 routerManager.reset()
-//              tabIndexManager.selectedTabIndex = 1
                 routerManager.push(to: .harryPotterItem(item: item))
                 
-                
+            case .marvelItem(let item):
+                routerManager.reset()
+                routerManager.push(to: .marvelItem(item: item))
+                                
             case .repositoryMenu:
                 routerManager.reset()
-//              tabIndexManager.selectedTabIndex = 0
                 routerManager.push(to: .repositoryMenu)
                 
             case .harryPotterMenu:
                 routerManager.reset()
-//              tabIndexManager.selectedTabIndex = 1
                 routerManager.push(to: .harryPotterMenu)
+                
+            case .marvelMenu:
+                routerManager.reset()
+                routerManager.push(to: .marvelMenu)
                 
             default:
                 break

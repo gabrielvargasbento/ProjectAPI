@@ -48,9 +48,9 @@ class APIServiceCombine<T: Decodable>: ObservableObject, RandomAccessCollection 
             .map(\.data)
             .tryMap({ data in
                 let decoder = JSONDecoder()
-                let characterDataWrapper = try decoder.decode(T.self, from: data)
+                let dataWrapper = try decoder.decode(T.self, from: data)
                 
-                return characterDataWrapper
+                return dataWrapper
             })
             .sink { res in
                 
@@ -64,11 +64,10 @@ class APIServiceCombine<T: Decodable>: ObservableObject, RandomAccessCollection 
                     break
                 }
                 
-            } receiveValue: { [weak self] marvel in
-                self?.apiListItem = marvel
+            } receiveValue: { [weak self] data in
+                self?.apiListItem = data
             }
             .store(in: &bag)
-        
     }
 }
 

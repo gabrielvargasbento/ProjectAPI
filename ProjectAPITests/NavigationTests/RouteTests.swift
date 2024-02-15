@@ -56,6 +56,26 @@ class RouteTests: QuickSpec {
                     expect(route1).to(equal(route2))
                 }
                 
+                it("should correctly hash and compare marvelItem cases") {
+                    let marvelCharacter = MarvelCharacter(
+                        id: 1,
+                        name: "Iron Man",
+                        description: nil,
+                        comics: Comics(
+                            available: 1,
+                            items: [Item(name: "Iron Man #1")]
+                        )
+                    )
+                    
+                    let item1 = marvelCharacter
+                    let item2 = marvelCharacter
+                    let route1 = Route.marvelItem(item: item1)
+                    let route2 = Route.marvelItem(item: item2)
+                    
+                    expect(route1).to(equal(route2))
+                }
+
+                
                 it("should correctly hash and compare harryPotterMenu cases") {
                     
                     let route1 = Route.harryPotterMenu
@@ -68,6 +88,14 @@ class RouteTests: QuickSpec {
                     
                     let route1 = Route.repositoryMenu
                     let route2 = Route.repositoryMenu
+                    
+                    expect(route1).to(equal(route2))
+                }
+                
+                it("should correctly hash and compare marvelMenu cases") {
+                    
+                    let route1 = Route.marvelMenu
+                    let route2 = Route.marvelMenu
                     
                     expect(route1).to(equal(route2))
                 }
@@ -116,6 +144,22 @@ class RouteTests: QuickSpec {
                     let view = Route.harryPotterItem(item: harryPotter)
                     expect(view).to(beAKindOf(Route.self))
                 }
+
+                it("should display CharacterView for marvelItem case") {
+                    
+                    let marvelCharacter = MarvelCharacter(
+                            id: 1,
+                            name: "Iron Man",
+                            description: "",
+                            comics: Comics(
+                                available: 1,
+                                items: [Item(name: "Iron Man #1")]
+                            )
+                        )
+                    
+                    let view = Route.marvelItem(item: marvelCharacter)
+                    expect(view).to(beAKindOf(Route.self))
+                }
                 
                 it("should display ListHarryPotterView for harryPotterMenu case") {
                     let view = Route.harryPotterMenu
@@ -124,6 +168,11 @@ class RouteTests: QuickSpec {
                 
                 it("should display ListRepositoriesView for repositoryMenu case") {
                     let view = Route.repositoryMenu
+                    expect(view).to(beAKindOf(Route.self))
+                }
+                
+                it("should display ListRepositoriesView for marvelMenu case") {
+                    let view = Route.marvelMenu
                     expect(view).to(beAKindOf(Route.self))
                 }
             }
