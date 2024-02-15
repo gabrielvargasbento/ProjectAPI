@@ -11,9 +11,11 @@ enum DeepLinkURLs: String {
     
     case repositoryMenu
     case harryPotterMenu
+    case marvelMenu
     
     case repository
     case harryPotter
+    case marvel
 }
 
 struct RouteFinder {

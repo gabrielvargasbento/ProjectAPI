@@ -20,8 +20,8 @@ struct ListMarvelView: View {
             
             List {
                 Section("Marvel Characters") {
-                    ForEach(marvelViewModel.apiList) { item in
-                        NavigationLink(value: Route.repositoryItem(item: item)) {
+                    ForEach(marvelViewModel.marvelCharacters) { item in
+                        NavigationLink(value: Route.marvelItem(item: item)) {
                             Text("\(item.id) - \(item.name!)")
                         }
                         .onTapGesture {
@@ -37,6 +37,12 @@ struct ListMarvelView: View {
             marvelViewModel.fetchData()
             firebaseService.analytics(userName: "marvel_menu", className: "marvel")
             routerManager.reset()
+        }
+        .alert(isPresented: $marvelViewModel.hasError,
+               error: marvelViewModel.error) {
+            Button(action: marvelViewModel.fetchData) {
+                Text("Retry")
+            }
         }
     }
 }
