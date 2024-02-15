@@ -10,7 +10,7 @@ import SwiftUI
 struct ListMarvelView: View {
     
     @EnvironmentObject var routerManager: NavigationRouter
-    @ObservedObject var marvelViewModel = MarvelViewModel()
+    @ObservedObject var marvelViewModel = MarvelViewModel2()
     
     let firebaseService = AnalyticsService()
     

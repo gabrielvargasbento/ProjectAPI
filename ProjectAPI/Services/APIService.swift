@@ -7,7 +7,6 @@
 
 import Foundation
 import CwlCatchException
-//import CwlMachBadInstructionHandler
 
 protocol APIServiceProtocol {
     associatedtype T: Decodable

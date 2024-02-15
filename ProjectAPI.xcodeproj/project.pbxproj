@@ -85,6 +85,8 @@
 		B7C5E0C12B7EA03A00B4C230 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0C02B7EA03A00B4C230 /* StringExtensions.swift */; };
 		B7C5E0C32B7EA41000B4C230 /* MarvelCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0C22B7EA41000B4C230 /* MarvelCharacter.swift */; };
 		B7C5E0C52B7EAC0700B4C230 /* MarvelCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0C42B7EAC0700B4C230 /* MarvelCharacterView.swift */; };
+		B7C5E0C72B7EAF0900B4C230 /* APIServiceCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0C62B7EAF0900B4C230 /* APIServiceCombine.swift */; };
+		B7C5E0C92B7EB1E300B4C230 /* MarvelViewModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0C82B7EB1E300B4C230 /* MarvelViewModel2.swift */; };
 		B7C66D1D2B2BE85300C8580A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C66D1C2B2BE85300C8580A /* Assets.xcassets */; };
 		B7C66D202B2BE85300C8580A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C66D1F2B2BE85300C8580A /* Preview Assets.xcassets */; };
 		B7C69BEF2B71A19100E5D36B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B7C69BEE2B71A19100E5D36B /* FirebaseAuth */; };
@@ -198,6 +200,8 @@
 		B7C5E0C02B7EA03A00B4C230 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		B7C5E0C22B7EA41000B4C230 /* MarvelCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacter.swift; sourceTree = "<group>"; };
 		B7C5E0C42B7EAC0700B4C230 /* MarvelCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterView.swift; sourceTree = "<group>"; };
+		B7C5E0C62B7EAF0900B4C230 /* APIServiceCombine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceCombine.swift; sourceTree = "<group>"; };
+		B7C5E0C82B7EB1E300B4C230 /* MarvelViewModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelViewModel2.swift; sourceTree = "<group>"; };
 		B7C66D152B2BE85000C8580A /* ProjectAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C66D1C2B2BE85300C8580A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7C66D1F2B2BE85300C8580A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -493,6 +497,7 @@
 				B7C66D4C2B2BE97F00C8580A /* RepositoriesViewModel.swift */,
 				B7C66D562B2BECE300C8580A /* HarryPotterViewModel.swift */,
 				B7C5E0BC2B7E7E5400B4C230 /* MarvelViewModel.swift */,
+				B7C5E0C82B7EB1E300B4C230 /* MarvelViewModel2.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -511,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				B7C66D542B2BEBFD00C8580A /* APIService.swift */,
+				B7C5E0C62B7EAF0900B4C230 /* APIServiceCombine.swift */,
 				B79D4D862B3217F700ECE644 /* AnalyticsService.swift */,
 				B74EBD8D2B36315600F8F9F1 /* NotificationService.swift */,
 				B7C270362B4D6FBB00F448A1 /* LoginService.swift */,
@@ -871,6 +877,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7F6B7AE2B6C39D800B96547 /* GoogleService-Info.plist in Sources */,
+				B7C5E0C72B7EAF0900B4C230 /* APIServiceCombine.swift in Sources */,
 				B7B41BCE2B6B1EAF00A1ABC4 /* AppDelegate.swift in Sources */,
 				B7C5E0C32B7EA41000B4C230 /* MarvelCharacter.swift in Sources */,
 				B7B41BE32B6B1EE900A1ABC4 /* MainView.swift in Sources */,
@@ -879,6 +886,7 @@
 				B7B41BE02B6B1EE100A1ABC4 /* CharacterView.swift in Sources */,
 				B7B41BDF2B6B1EDE00A1ABC4 /* NotificationView.swift in Sources */,
 				B7B41BDE2B6B1EDC00A1ABC4 /* AccountView.swift in Sources */,
+				B7C5E0C92B7EB1E300B4C230 /* MarvelViewModel2.swift in Sources */,
 				B7B41BDD2B6B1EDA00A1ABC4 /* ListHarryPotterView.swift in Sources */,
 				B7B41BDC2B6B1ED700A1ABC4 /* ListRepositoriesView.swift in Sources */,
 				B7C5E0BF2B7E7F3F00B4C230 /* ListMarvelView.swift in Sources */,

@@ -46,6 +46,9 @@ struct RouteFinder {
         case .harryPotterMenu:
             completion(.harryPotterMenu, nil)
             
+        case .marvelMenu:
+            completion(.marvelMenu, nil)
+            
         case .repository:
             let queryParams = url.queryParamaters
             

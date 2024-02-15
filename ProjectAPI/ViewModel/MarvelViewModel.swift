@@ -26,8 +26,8 @@ class MarvelViewModel: ObservableObject {
     
     func fetchData() {
         
-        isRefreshing = true
-        hasError = false
+        self.isRefreshing = true
+        self.hasError = false
         
         let publicKey = "c907db2303921dd939e0c08de2e497fa"
         let privateKey = "cfee6d1310a9b39c841efccb0bdd6b218698bbd3"
@@ -71,23 +71,5 @@ class MarvelViewModel: ObservableObject {
                 self?.marvelCharacters = marvel
             }
             .store(in: &bag)
-    }
-}
-
-enum UserError: LocalizedError {
-    
-    case custum(erro: Error)
-    case failedToDecode
-    case invalidStatusCode
-    
-    var errorDescription: String? {
-        switch self {
-        case .failedToDecode:
-            return "Failed to decode response"
-        case .custum(let error):
-            return error.localizedDescription
-        case .invalidStatusCode:
-            return "Request falls within an invalid range"
-        }
     }
 }
