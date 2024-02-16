@@ -22,11 +22,11 @@ struct RouteFinder {
     
     var repoViewModel: any ViewModelProtocol
     var harryPotterViewModel: any ViewModelProtocol
-    var marvelViewModel: any ViewModelProtocol2
+    var marvelViewModel: any ViewModelCombineProtocol
     
     init(repoViewModel: any ViewModelProtocol = RepositoriesViewModel(),
          harryPotterViewModel: any ViewModelProtocol = HarryPotterViewModel(),
-         marvelViewModel: any ViewModelProtocol2 = MarvelViewModel2()) {
+         marvelViewModel: any ViewModelCombineProtocol = MarvelCombineViewModel()) {
         
         self.repoViewModel = repoViewModel
         self.harryPotterViewModel = harryPotterViewModel

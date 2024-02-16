@@ -1,5 +1,5 @@
 //
-//  MarvelViewModel2.swift
+//  MarvelCombineViewModel.swift
 //  ProjectAPI
 //
 //  Created by Gabriel Vargas on 15/02/24.
@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import CwlCatchException
 
-class MarvelViewModel2: ObservableObject, ViewModelProtocol2 {
+class MarvelCombineViewModel: ObservableObject, ViewModelCombineProtocol {
     
     typealias T = CharacterDataWrapperMarvel
     

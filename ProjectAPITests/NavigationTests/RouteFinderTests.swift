@@ -524,7 +524,7 @@ class HarryPotterViewModelMock: ObservableObject, ViewModelProtocol {
     }
 }
 
-class MarvelViewModel2Mock: ObservableObject, ViewModelProtocol2 {
+class MarvelViewModel2Mock: ObservableObject, ViewModelCombineProtocol {
     
     typealias T = MarvelCharacter
     

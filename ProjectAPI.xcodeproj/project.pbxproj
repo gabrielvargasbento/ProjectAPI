@@ -86,8 +86,8 @@
 		B7C5E0C32B7EA41000B4C230 /* MarvelCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0C22B7EA41000B4C230 /* MarvelCharacter.swift */; };
 		B7C5E0C52B7EAC0700B4C230 /* MarvelCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0C42B7EAC0700B4C230 /* MarvelCharacterView.swift */; };
 		B7C5E0C72B7EAF0900B4C230 /* APIServiceCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0C62B7EAF0900B4C230 /* APIServiceCombine.swift */; };
-		B7C5E0C92B7EB1E300B4C230 /* MarvelViewModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0C82B7EB1E300B4C230 /* MarvelViewModel2.swift */; };
-		B7C5E0CD2B7FC75200B4C230 /* ViewModelProtocol2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0CC2B7FC75200B4C230 /* ViewModelProtocol2.swift */; };
+		B7C5E0C92B7EB1E300B4C230 /* MarvelCombineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0C82B7EB1E300B4C230 /* MarvelCombineViewModel.swift */; };
+		B7C5E0CD2B7FC75200B4C230 /* ViewModelCombineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0CC2B7FC75200B4C230 /* ViewModelCombineProtocol.swift */; };
 		B7C5E0CF2B7FD94200B4C230 /* MarvelCharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0CE2B7FD94200B4C230 /* MarvelCharacterTests.swift */; };
 		B7C5E0D22B7FD9AB00B4C230 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0D12B7FD9AB00B4C230 /* Mock.swift */; };
 		B7C5E0D42B7FD9E000B4C230 /* APIServiceCombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0D32B7FD9E000B4C230 /* APIServiceCombineTests.swift */; };
@@ -205,8 +205,8 @@
 		B7C5E0C22B7EA41000B4C230 /* MarvelCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacter.swift; sourceTree = "<group>"; };
 		B7C5E0C42B7EAC0700B4C230 /* MarvelCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterView.swift; sourceTree = "<group>"; };
 		B7C5E0C62B7EAF0900B4C230 /* APIServiceCombine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceCombine.swift; sourceTree = "<group>"; };
-		B7C5E0C82B7EB1E300B4C230 /* MarvelViewModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelViewModel2.swift; sourceTree = "<group>"; };
-		B7C5E0CC2B7FC75200B4C230 /* ViewModelProtocol2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol2.swift; sourceTree = "<group>"; };
+		B7C5E0C82B7EB1E300B4C230 /* MarvelCombineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCombineViewModel.swift; sourceTree = "<group>"; };
+		B7C5E0CC2B7FC75200B4C230 /* ViewModelCombineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelCombineProtocol.swift; sourceTree = "<group>"; };
 		B7C5E0CE2B7FD94200B4C230 /* MarvelCharacterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterTests.swift; sourceTree = "<group>"; };
 		B7C5E0D12B7FD9AB00B4C230 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		B7C5E0D32B7FD9E000B4C230 /* APIServiceCombineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceCombineTests.swift; sourceTree = "<group>"; };
@@ -513,11 +513,11 @@
 			isa = PBXGroup;
 			children = (
 				B77C5FD12B5ED2AD0097ACB7 /* ViewModelProtocol.swift */,
-				B7C5E0CC2B7FC75200B4C230 /* ViewModelProtocol2.swift */,
+				B7C5E0CC2B7FC75200B4C230 /* ViewModelCombineProtocol.swift */,
 				B7C66D4C2B2BE97F00C8580A /* RepositoriesViewModel.swift */,
 				B7C66D562B2BECE300C8580A /* HarryPotterViewModel.swift */,
 				B7C5E0BC2B7E7E5400B4C230 /* MarvelViewModel.swift */,
-				B7C5E0C82B7EB1E300B4C230 /* MarvelViewModel2.swift */,
+				B7C5E0C82B7EB1E300B4C230 /* MarvelCombineViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -898,7 +898,7 @@
 			files = (
 				B7F6B7AE2B6C39D800B96547 /* GoogleService-Info.plist in Sources */,
 				B7C5E0C72B7EAF0900B4C230 /* APIServiceCombine.swift in Sources */,
-				B7C5E0CD2B7FC75200B4C230 /* ViewModelProtocol2.swift in Sources */,
+				B7C5E0CD2B7FC75200B4C230 /* ViewModelCombineProtocol.swift in Sources */,
 				B7B41BCE2B6B1EAF00A1ABC4 /* AppDelegate.swift in Sources */,
 				B7C5E0C32B7EA41000B4C230 /* MarvelCharacter.swift in Sources */,
 				B7B41BE32B6B1EE900A1ABC4 /* MainView.swift in Sources */,
@@ -907,7 +907,7 @@
 				B7B41BE02B6B1EE100A1ABC4 /* CharacterView.swift in Sources */,
 				B7B41BDF2B6B1EDE00A1ABC4 /* NotificationView.swift in Sources */,
 				B7B41BDE2B6B1EDC00A1ABC4 /* AccountView.swift in Sources */,
-				B7C5E0C92B7EB1E300B4C230 /* MarvelViewModel2.swift in Sources */,
+				B7C5E0C92B7EB1E300B4C230 /* MarvelCombineViewModel.swift in Sources */,
 				B7B41BDD2B6B1EDA00A1ABC4 /* ListHarryPotterView.swift in Sources */,
 				B7B41BDC2B6B1ED700A1ABC4 /* ListRepositoriesView.swift in Sources */,
 				B7C5E0BF2B7E7F3F00B4C230 /* ListMarvelView.swift in Sources */,

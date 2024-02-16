@@ -10,7 +10,7 @@ import SwiftUI
 struct ListMarvelView: View {
     
     @EnvironmentObject var routerManager: NavigationRouter
-    @ObservedObject var marvelViewModel = MarvelViewModel2()
+    @ObservedObject var marvelViewModel = MarvelCombineViewModel()
     let firebaseService = AnalyticsService()
     
     @State private var isFetchingData: Bool = false
@@ -52,10 +52,10 @@ struct ListMarvelView: View {
                     Text("Retry")
                 }
             }
-           .onReceive(marvelViewModel.apiService.$isRefreshing) { isRefreshing in
-               isFetchingData = isRefreshing
-               marvelCharacters = marvelViewModel.apiService.apiListItem?.data.results ?? []
-           }
+            .onReceive(marvelViewModel.apiService.$isRefreshing) { isRefreshing in
+                isFetchingData = isRefreshing
+                marvelCharacters = marvelViewModel.apiService.apiListItem?.data.results ?? []
+            }
         }
     }
 }
