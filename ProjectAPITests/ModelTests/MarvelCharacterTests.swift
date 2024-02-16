@@ -15,124 +15,101 @@ final class MarvelCharacterTests: QuickSpec {
     override class func spec() {
         describe("Marvel Character Model Tests") {
             
-            var owner: Owner?
-            var repository: Repository?
+            var wrapperMarvel: CharacterDataWrapperMarvel?
+            var data: DataMarvel?
+            var marvelChar: MarvelCharacter?
+            var comics: Comics?
+            var item: Item?
             
-            context("Is A Valid Repository") {
+            context("Is A Valid Marvel Character") {
                 
                 beforeEach {
-                    owner = Owner(
-                        login: "mojombo",
-                        id: 1,
-                        avatarUrl: "https://avatars.githubusercontent.com/u/1?v=4",
-                        htmlUrl: "https://github.com/mojombo")
                     
-                    repository = Repository(
-                        id: 1,
-                        name: "grit",
-                        fullName: "mojombo/grit",
-                        owner: owner,
-                        description: "**Grit is no longer maintained...")
+                    item = Item(name: "Comic1")
+                    comics = Comics(available: 1, items: [item!])
+                    marvelChar = MarvelCharacter(id: 1,
+                                                 name: "name1",
+                                                 description: "description1",
+                                                 comics: comics)
+                    data = DataMarvel(results: [marvelChar!])
+                    wrapperMarvel = CharacterDataWrapperMarvel(data: data!)
                 }
                 
-                it("Get Repository Atributes") {
-                    expect(repository?.id).to(equal(1))
-                    expect(repository?.name).to(equal("grit"))
-                    expect(repository?.fullName).to(equal("mojombo/grit"))
-                    expect(repository?.owner?.login).to(equal("mojombo"))
-                    expect(repository?.owner?.id).to(equal(1))
-                    expect(repository?.owner?.avatarUrl).to(equal("https://avatars.githubusercontent.com/u/1?v=4"))
-                    expect(repository?.owner?.htmlUrl).to(equal("https://github.com/mojombo"))
-                    expect(repository?.description).to(equal("**Grit is no longer maintained..."))
+                it("Get Marvel Character Atributes") {
+                    expect(marvelChar?.id).to(equal(1))
+                    expect(marvelChar?.name).to(equal("name1"))
+                    expect(marvelChar?.description).to(equal("description1"))
+                    expect(marvelChar?.comics?.available).to(equal(1))
+                    expect(marvelChar?.comics?.items?[0].name).to(equal("Comic1"))
                 }
                 
-                it("Codable Repository") {
-                    expect(repository).to(beAKindOf((any Codable).self))
+                it("Decodable Item") {
+                    expect(item).to(beAKindOf((any Decodable).self))
                 }
                 
-                it("Hashable Repository") {
-                    expect(repository).to(beAKindOf((any Hashable).self))
+                it("Decodable Comics") {
+                    expect(comics).to(beAKindOf((any Decodable).self))
                 }
                 
-                it("Identifiable Repository") {
-                    expect(repository).to(beAKindOf((any Identifiable).self))
+                it("Decodable MarvelChar") {
+                    expect(marvelChar).to(beAKindOf((any Decodable).self))
                 }
                 
-                it("RepositoryItem Repository") {
-                    expect(repository).to(beAKindOf((any RepositoryItem).self))
+                it("Identifiable MarvelChar") {
+                    expect(marvelChar).to(beAKindOf((any Identifiable).self))
+                }
+                
+                it("Decodable DataMarvel") {
+                    expect(data).to(beAKindOf((any Decodable).self))
+                }
+                
+                it("Decodable CharacterDataWrapperMarvel") {
+                    expect(wrapperMarvel).to(beAKindOf((any Decodable).self))
                 }
                 
                 afterEach {
-                    owner = nil
-                    repository = nil
+                    item = nil
+                    comics = nil
+                    marvelChar = nil
+                    data = nil
+                    wrapperMarvel = nil
                 }
             }
             
-            context("Is A Valid Repository with null value") {
+            context("Is A Valid Marvel Character with null value") {
                 
                 beforeEach {
-                    repository = Repository(
-                        id: 1,
-                        name: nil,
-                        fullName: nil,
-                        owner: nil,
-                        description: nil)
+                    marvelChar = MarvelCharacter(id: 1,
+                                                 name: nil,
+                                                 description: nil,
+                                                 comics: nil)
                 }
                 
                 it("Get Repository Atributes") {
-                    expect(repository?.id).to(equal(1))
-                    expect(repository?.name).to(beNil())
-                    expect(repository?.fullName).to(beNil())
-                    expect(repository?.owner?.login).to(beNil())
-                    expect(repository?.owner?.id).to(beNil())
-                    expect(repository?.owner?.avatarUrl).to(beNil())
-                    expect(repository?.owner?.htmlUrl).to(beNil())
-                    expect(repository?.description).to(beNil())
-                }
-                
-                it("Codable Repository") {
-                    expect(repository).to(beAKindOf((any Codable).self))
-                }
-                
-                it("Hashable Repository") {
-                    expect(repository).to(beAKindOf((any Hashable).self))
-                }
-                
-                it("Identifiable Repository") {
-                    expect(repository).to(beAKindOf((any Identifiable).self))
-                }
-                
-                it("RepositoryItem Repository") {
-                    expect(repository).to(beAKindOf((any RepositoryItem).self))
+                    expect(marvelChar?.id).to(equal(1))
+                    expect(marvelChar?.name).to(beNil())
+                    expect(marvelChar?.description).to(beNil())
                 }
                 
                 afterEach {
-                    owner = nil
-                    repository = nil
+                    marvelChar = nil
                 }
             }
             
-            context("Is A Invalid Repository") {
+            context("Is A Invalid Marvel Character") {
                 
                 beforeEach {
-                    owner = nil
-                    repository = nil
+                    marvelChar = nil
                 }
                 
                 it("Get Repository Atributes") {
-                    expect(repository?.id).to(beNil())
-                    expect(repository?.name).to(beNil())
-                    expect(repository?.fullName).to(beNil())
-                    expect(repository?.owner?.login).to(beNil())
-                    expect(repository?.owner?.id).to(beNil())
-                    expect(repository?.owner?.avatarUrl).to(beNil())
-                    expect(repository?.owner?.htmlUrl).to(beNil())
-                    expect(repository?.description).to(beNil())
+                    expect(marvelChar?.id).to(beNil())
+                    expect(marvelChar?.name).to(beNil())
+                    expect(marvelChar?.description).to(beNil())
                 }
                 
                 afterEach {
-                    owner = nil
-                    repository = nil
+                    marvelChar = nil
                 }
             }
         }

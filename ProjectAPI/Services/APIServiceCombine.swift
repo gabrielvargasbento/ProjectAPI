@@ -9,6 +9,11 @@ import Foundation
 import CwlCatchException
 import Combine
 
+protocol APIServiceCombineProtocol {
+    associatedtype T: Decodable
+    func fetchData(from url: URL)
+}
+
 class APIServiceCombine<T: Decodable>: ObservableObject, RandomAccessCollection {
     
     @Published var apiList: [T] = []
