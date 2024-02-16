@@ -87,6 +87,10 @@
 		B7C5E0C52B7EAC0700B4C230 /* MarvelCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0C42B7EAC0700B4C230 /* MarvelCharacterView.swift */; };
 		B7C5E0C72B7EAF0900B4C230 /* APIServiceCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0C62B7EAF0900B4C230 /* APIServiceCombine.swift */; };
 		B7C5E0C92B7EB1E300B4C230 /* MarvelViewModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0C82B7EB1E300B4C230 /* MarvelViewModel2.swift */; };
+		B7C5E0CD2B7FC75200B4C230 /* ViewModelProtocol2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0CC2B7FC75200B4C230 /* ViewModelProtocol2.swift */; };
+		B7C5E0CF2B7FD94200B4C230 /* MarvelCharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0CE2B7FD94200B4C230 /* MarvelCharacterTests.swift */; };
+		B7C5E0D22B7FD9AB00B4C230 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0D12B7FD9AB00B4C230 /* Mock.swift */; };
+		B7C5E0D42B7FD9E000B4C230 /* APIServiceCombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5E0D32B7FD9E000B4C230 /* APIServiceCombineTests.swift */; };
 		B7C66D1D2B2BE85300C8580A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C66D1C2B2BE85300C8580A /* Assets.xcassets */; };
 		B7C66D202B2BE85300C8580A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C66D1F2B2BE85300C8580A /* Preview Assets.xcassets */; };
 		B7C69BEF2B71A19100E5D36B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B7C69BEE2B71A19100E5D36B /* FirebaseAuth */; };
@@ -202,6 +206,10 @@
 		B7C5E0C42B7EAC0700B4C230 /* MarvelCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterView.swift; sourceTree = "<group>"; };
 		B7C5E0C62B7EAF0900B4C230 /* APIServiceCombine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceCombine.swift; sourceTree = "<group>"; };
 		B7C5E0C82B7EB1E300B4C230 /* MarvelViewModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelViewModel2.swift; sourceTree = "<group>"; };
+		B7C5E0CC2B7FC75200B4C230 /* ViewModelProtocol2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol2.swift; sourceTree = "<group>"; };
+		B7C5E0CE2B7FD94200B4C230 /* MarvelCharacterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterTests.swift; sourceTree = "<group>"; };
+		B7C5E0D12B7FD9AB00B4C230 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		B7C5E0D32B7FD9E000B4C230 /* APIServiceCombineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceCombineTests.swift; sourceTree = "<group>"; };
 		B7C66D152B2BE85000C8580A /* ProjectAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C66D1C2B2BE85300C8580A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7C66D1F2B2BE85300C8580A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -374,6 +382,7 @@
 			children = (
 				B7B692FA2B55B44D004D9059 /* RepositoryTests.swift */,
 				B7B692FC2B55B47F004D9059 /* HarryPotterTests.swift */,
+				B7C5E0CE2B7FD94200B4C230 /* MarvelCharacterTests.swift */,
 			);
 			path = ModelTests;
 			sourceTree = "<group>";
@@ -381,7 +390,9 @@
 		B7B693022B5848CB004D9059 /* ServicesTests */ = {
 			isa = PBXGroup;
 			children = (
+				B7C5E0D02B7FD99800B4C230 /* Mock */,
 				B7B6930F2B599A82004D9059 /* APIServiceTests.swift */,
+				B7C5E0D32B7FD9E000B4C230 /* APIServiceCombineTests.swift */,
 				B75BB79E2B5B09A3004DDC1E /* AnalyticsServiceTests.swift */,
 				B7CC0EE12B6179E100A650BF /* NotificationServiceTests.swift */,
 				B7CC0EE32B62C14100A650BF /* LoginServiceTests.swift */,
@@ -396,6 +407,14 @@
 				B7C5E0C02B7EA03A00B4C230 /* StringExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B7C5E0D02B7FD99800B4C230 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				B7C5E0D12B7FD9AB00B4C230 /* Mock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		B7C66D0C2B2BE85000C8580A = {
@@ -494,6 +513,7 @@
 			isa = PBXGroup;
 			children = (
 				B77C5FD12B5ED2AD0097ACB7 /* ViewModelProtocol.swift */,
+				B7C5E0CC2B7FC75200B4C230 /* ViewModelProtocol2.swift */,
 				B7C66D4C2B2BE97F00C8580A /* RepositoriesViewModel.swift */,
 				B7C66D562B2BECE300C8580A /* HarryPotterViewModel.swift */,
 				B7C5E0BC2B7E7E5400B4C230 /* MarvelViewModel.swift */,
@@ -878,6 +898,7 @@
 			files = (
 				B7F6B7AE2B6C39D800B96547 /* GoogleService-Info.plist in Sources */,
 				B7C5E0C72B7EAF0900B4C230 /* APIServiceCombine.swift in Sources */,
+				B7C5E0CD2B7FC75200B4C230 /* ViewModelProtocol2.swift in Sources */,
 				B7B41BCE2B6B1EAF00A1ABC4 /* AppDelegate.swift in Sources */,
 				B7C5E0C32B7EA41000B4C230 /* MarvelCharacter.swift in Sources */,
 				B7B41BE32B6B1EE900A1ABC4 /* MainView.swift in Sources */,
@@ -919,12 +940,15 @@
 				B71896322B601D33009540F0 /* HarryPotterViewModelTests.swift in Sources */,
 				B7CC0EE42B62C14100A650BF /* LoginServiceTests.swift in Sources */,
 				B75BB7982B5AC0B7004DDC1E /* RepositoriesViewModelTests.swift in Sources */,
+				B7C5E0D22B7FD9AB00B4C230 /* Mock.swift in Sources */,
 				B7B692FD2B55B47F004D9059 /* HarryPotterTests.swift in Sources */,
 				B7B692FB2B55B44D004D9059 /* RepositoryTests.swift in Sources */,
 				B7BF58E32B6A9ABB001A77D5 /* GeneratedMocks.swift in Sources */,
 				B71896352B602314009540F0 /* RouteTests.swift in Sources */,
 				B7CC0EE22B6179E100A650BF /* NotificationServiceTests.swift in Sources */,
+				B7C5E0D42B7FD9E000B4C230 /* APIServiceCombineTests.swift in Sources */,
 				B75BB79F2B5B09A3004DDC1E /* AnalyticsServiceTests.swift in Sources */,
+				B7C5E0CF2B7FD94200B4C230 /* MarvelCharacterTests.swift in Sources */,
 				B7B693102B599A82004D9059 /* APIServiceTests.swift in Sources */,
 				B7CC0EDE2B6030CD00A650BF /* NavigationRouterTests.swift in Sources */,
 				B7FF92CC2B768554008BCE4B /* LoginUITests.swift in Sources */,

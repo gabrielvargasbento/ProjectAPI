@@ -10,7 +10,7 @@ import Nimble
 import Foundation
 @testable import ProjectAPI
 
-class APIServiceTests: QuickSpec {
+class APIServiceCombineTests: QuickSpec {
     
     override class func spec() {
         describe("API Service Tests") {

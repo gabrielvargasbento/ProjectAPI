@@ -111,6 +111,35 @@ class RouteFinderTests: QuickSpec {
                     }
                 }
                 
+                it("DeepLink case .marvelMenu") {
+                    
+                    let mockURLString = "projectapi://marvelMenu"
+                    let mockData = """
+                    """.data(using: .utf8)!
+                    
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
+                                        
+                    sut = RouteFinder()
+                    
+                    waitUntil { done in
+                        
+                        sut.find(from: URL(string: mockURLString)!) { (route, error) in
+                            
+                            // Verificar ausencia de erro
+                            expect(error).to(beNil())
+                            
+                            // Verififcar presenca da rota
+                            expect(route).toNot(beNil())
+                            
+                            if let route = route {
+                                expect(route).to(equal(ProjectAPI.Route.marvelMenu))
+                            }
+                            
+                            done()
+                        }
+                    }
+                }
+                
                 it("DeepLink case .repository without query params") {
                     
                     let mockURLString = "projectapi://repository"
@@ -136,9 +165,113 @@ class RouteFinderTests: QuickSpec {
                     }
                 }
                 
+                it("DeepLink case .harryPotter without query params") {
+                    
+                    let mockURLString = "projectapi://harryPotter"
+                    let mockData = """
+                    """.data(using: .utf8)!
+                    
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
+                                        
+                    sut = RouteFinder()
+                    
+                    waitUntil { done in
+                        
+                        sut.find(from: URL(string: mockURLString)!) { (route, error) in
+                            
+                            // Verificar presenca de erro
+                            expect(error).toNot(beNil())
+                            
+                            // Verififcar ausencia da rota
+                            expect(route).to(beNil())
+                            
+                            done()
+                        }
+                    }
+                }
+                
+                it("DeepLink case .marvel without query params") {
+                    
+                    let mockURLString = "projectapi://marvel"
+                    let mockData = """
+                    """.data(using: .utf8)!
+                    
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
+                                        
+                    sut = RouteFinder()
+                    
+                    waitUntil { done in
+                        
+                        sut.find(from: URL(string: mockURLString)!) { (route, error) in
+                            
+                            // Verificar presenca de erro
+                            expect(error).toNot(beNil())
+                            
+                            // Verififcar ausencia da rota
+                            expect(route).to(beNil())
+                            
+                            done()
+                        }
+                    }
+                }
+                
                 it("DeepLink case .repository with error") {
                     
                     let mockURLString = "projectapi://repository"
+                    let mockData = """
+                        [{"id": 1, "name": "item1"}, {"id": 2, "name": "item2"}]
+                    """.data(using: .utf8)!
+                    let mockError = NSError(domain: "Project API: RouteFinderTests", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Mock Error"])
+                    
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: mockError)
+                    
+                    sut = RouteFinder()
+                    
+                    waitUntil { done in
+                        
+                        sut.find(from: URL(string: mockURLString)!) { (route, error) in
+                            
+                            // Verificar presenca de erro
+                            expect(error).toNot(beNil())
+                            
+                            // Verififcar ausencia da rota
+                            expect(route).to(beNil())
+
+                            done()
+                        }
+                    }
+                }
+                
+                it("DeepLink case .harryPotter with error") {
+                    
+                    let mockURLString = "projectapi://harryPotter"
+                    let mockData = """
+                        [{"id": "1", "name": "item1"}, {"id": "2", "name": "item2"}]
+                    """.data(using: .utf8)!
+                    let mockError = NSError(domain: "Project API: RouteFinderTests", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Mock Error"])
+                    
+                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: mockError)
+                    
+                    sut = RouteFinder()
+                    
+                    waitUntil { done in
+                        
+                        sut.find(from: URL(string: mockURLString)!) { (route, error) in
+                            
+                            // Verificar presenca de erro
+                            expect(error).toNot(beNil())
+                            
+                            // Verififcar ausencia da rota
+                            expect(route).to(beNil())
+
+                            done()
+                        }
+                    }
+                }
+                
+                it("DeepLink case .marvel with error") {
+                    
+                    let mockURLString = "projectapi://marvel"
                     let mockData = """
                         [{"id": 1, "name": "item1"}, {"id": 2, "name": "item2"}]
                     """.data(using: .utf8)!
@@ -216,58 +349,6 @@ class RouteFinderTests: QuickSpec {
                     }
                 }
                 
-                it("DeepLink case .harryPotter without query params") {
-                    
-                    let mockURLString = "projectapi://harryPotter"
-                    let mockData = """
-                    """.data(using: .utf8)!
-                    
-                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
-                                        
-                    sut = RouteFinder()
-                    
-                    waitUntil { done in
-                        
-                        sut.find(from: URL(string: mockURLString)!) { (route, error) in
-                            
-                            // Verificar presenca de erro
-                            expect(error).toNot(beNil())
-                            
-                            // Verififcar ausencia da rota
-                            expect(route).to(beNil())
-                            
-                            done()
-                        }
-                    }
-                }
-                
-                it("DeepLink case .harryPotter with error") {
-                    
-                    let mockURLString = "projectapi://harryPotter"
-                    let mockData = """
-                        [{"id": "1", "name": "item1"}, {"id": "2", "name": "item2"}]
-                    """.data(using: .utf8)!
-                    let mockError = NSError(domain: "Project API: RouteFinderTests", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Mock Error"])
-                    
-                    URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: mockError)
-                    
-                    sut = RouteFinder()
-                    
-                    waitUntil { done in
-                        
-                        sut.find(from: URL(string: mockURLString)!) { (route, error) in
-                            
-                            // Verificar presenca de erro
-                            expect(error).toNot(beNil())
-                            
-                            // Verififcar ausencia da rota
-                            expect(route).to(beNil())
-
-                            done()
-                        }
-                    }
-                }
-                
                 it("DeepLink case .harryPotter correctly") {
                     
                     let mockURLString = "projectapi://harryPotter?id=9e3f7ce4-b9a7-4244-b709-dae5c1f1d4a8"
@@ -296,7 +377,7 @@ class RouteFinderTests: QuickSpec {
                         let mockData = """
                             \(jsonString)
                         """.data(using: .utf8)!
-                                                
+                                                                        
                         URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
 
                         let harryPotterMock = HarryPotterViewModelMock(url: URL(string: mockURLString)!)
@@ -315,6 +396,57 @@ class RouteFinderTests: QuickSpec {
                                 
                                 if let route = route {
                                     expect(route).to(equal(ProjectAPI.Route.harryPotterItem(item: harryPotter)))
+                                }
+                                
+                                done()
+                            }
+                        }
+                    }
+                }
+                
+                it("DeepLink case .marvel correctly") {
+                    
+                    let mockURLString = "projectapi://marvel?id=1011334"
+                    
+                    let marvelCharacter = MarvelCharacter(
+                        id: 1,
+                        name: "3-D Man",
+                        description: nil,
+                        comics: nil)
+                    
+                    let marvelCharacterDict: [String: Any] = [
+                        "id": marvelCharacter.id,
+                        "name": marvelCharacter.name as Any,
+                        "description": marvelCharacter.description as Any,
+                        "comics": marvelCharacter.comics as Any
+                    ]
+                    
+                    let data = try! JSONSerialization.data(withJSONObject: marvelCharacterDict, options: .prettyPrinted)
+                    
+                    if let jsonString = String(data: data, encoding: .utf8) {
+                        
+                        let mockData = """
+                            \(jsonString)
+                        """.data(using: .utf8)!
+                                                                        
+                        URLProtocolMock.registerMockURL(mockURLString, with: mockData, with: nil)
+
+                        let marvelMock = MarvelViewModel2Mock(url: URL(string: mockURLString)!)
+                        
+                        sut = RouteFinder(marvelViewModel: marvelMock)
+                        
+                        waitUntil { done in
+                            
+                            sut.find(from: URL(string: mockURLString)!) { (route, error) in
+                                
+                                // Verificar ausencia de erro
+                                expect(error).to(beNil())
+                                
+                                // Verififcar presenca da rota
+                                expect(route).toNot(beNil())
+                                
+                                if let route = route {
+                                    expect(route).to(equal(ProjectAPI.Route.marvelItem(item: marvelCharacter)))
                                 }
                                 
                                 done()
@@ -388,6 +520,38 @@ class HarryPotterViewModelMock: ObservableObject, ViewModelProtocol {
                 self.selectedItem = item
                 completion(item, nil)
             }
+        }
+    }
+}
+
+class MarvelViewModel2Mock: ObservableObject, ViewModelProtocol2 {
+    
+    typealias T = MarvelCharacter
+    
+    @Published var apiService = APIServiceCombine<MarvelCharacter>()
+    @Published var selectedItem: MarvelCharacter? = nil
+    
+    @Published var isRefreshing = true
+    @Published var error: UserError? = nil
+    @Published var hasError: Bool = false
+    
+    var url: URL
+    
+    init(url: URL) {
+        self.url = url
+    }
+    
+    func fetchData() {}
+    
+    func fetchDataItem(identifier: String?) {
+        
+        self.apiService.fetchData(from: url)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.selectedItem = (self.apiService.apiListItem)!
+            self.error = self.apiService.error
+            self.hasError = self.apiService.hasError
+            self.isRefreshing = self.apiService.isRefreshing
         }
     }
 }

@@ -18,23 +18,28 @@ class MarvelViewModel: ObservableObject {
     @Published var error: UserError?
     @Published var hasError: Bool
     
+    let environmentVariables: [String: AnyObject]? = Bundle.main.infoDictionary?["EnvironmentVariables"] as? [String: AnyObject]
+    let privateKey: String
+    let publicKey: String
+    
     private var bag = Set<AnyCancellable>()
     
     init() {
         self.isRefreshing = true
         self.hasError = false
+        
+        self.privateKey = environmentVariables?["PRIVATE_API_KEY"] as? String ?? ""
+        self.publicKey = environmentVariables?["PUBLIC_API_KEY"] as? String ?? ""
     }
     
     func fetchData() {
         
         self.isRefreshing = true
         self.hasError = false
-        
-        let publicKey = "c907db2303921dd939e0c08de2e497fa"
-        let privateKey = "cfee6d1310a9b39c841efccb0bdd6b218698bbd3"
+
         let timeStamp = String(Date().timeIntervalSince1970)
         
-        let hash = "\(timeStamp)\(privateKey)\(publicKey)".md5()
+        let hash = "\(timeStamp)\(self.privateKey)\(self.publicKey)".md5()
         let baseURL = "http://gateway.marvel.com/v1/public/characters"
         
         var components = URLComponents(string: baseURL)!
@@ -79,8 +84,6 @@ class MarvelViewModel: ObservableObject {
         self.isRefreshing = true
         self.hasError = false
         
-        let publicKey = "c907db2303921dd939e0c08de2e497fa"
-        let privateKey = "cfee6d1310a9b39c841efccb0bdd6b218698bbd3"
         let timeStamp = String(Date().timeIntervalSince1970)
         
         let hash = "\(timeStamp)\(privateKey)\(publicKey)".md5()

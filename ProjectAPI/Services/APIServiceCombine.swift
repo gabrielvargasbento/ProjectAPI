@@ -14,7 +14,7 @@ class APIServiceCombine<T: Decodable>: ObservableObject, RandomAccessCollection 
     @Published var apiList: [T] = []
     @Published var apiListItem: T? = nil
     @Published var apiItem: T? = nil
-    @Published var isRefreshing = true
+    @Published private(set) var isRefreshing = false
     @Published var error: UserError?
     @Published var hasError: Bool
     
@@ -49,7 +49,7 @@ class APIServiceCombine<T: Decodable>: ObservableObject, RandomAccessCollection 
             .tryMap({ data in
                 let decoder = JSONDecoder()
                 let dataWrapper = try decoder.decode(T.self, from: data)
-                
+                                
                 return dataWrapper
             })
             .sink { res in
@@ -63,7 +63,7 @@ class APIServiceCombine<T: Decodable>: ObservableObject, RandomAccessCollection 
                 default:
                     break
                 }
-                
+            
             } receiveValue: { [weak self] data in
                 self?.apiListItem = data
             }

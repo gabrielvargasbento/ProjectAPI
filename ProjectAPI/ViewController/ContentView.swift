@@ -8,15 +8,10 @@
 import SwiftUI
 import CwlCatchException
 
-//class TabIndexManager: ObservableObject {
-//    @Published var selectedTabIndex: Int = 0
-//}
-
 struct ContentView: View {
-//    @EnvironmentObject private var tabIndexManager: TabIndexManager
 
     var body: some View {
-        TabView{ //(selection: $tabIndexManager.selectedTabIndex) {
+        TabView{
             ListRepositoriesView()
                 .tabItem {
                     Label("GitHub", systemImage: "octagon")
@@ -28,22 +23,22 @@ struct ContentView: View {
                     Label("Harry Potter", systemImage: "eyeglasses")
                 }
                 .tag(1)
-//            NotificationView()
-//                .tabItem {
-//                    Label("Notification", systemImage: "bell")
-//                }
             ListMarvelView()
                 .tabItem {
                     Image(systemName: "m.circle")
                     Text("Marvel")
                 }
                 .tag(2)
+            NotificationView()
+                .tabItem {
+                    Label("Notification", systemImage: "bell")
+                }
+                .tag(3)
             LoginView()
                 .tabItem {
                     Label("Login", systemImage: "person.circle")
                 }
-                .tag(3)
+                .tag(4)
         }
-//        .environmentObject(tabIndexManager)
     }
 }

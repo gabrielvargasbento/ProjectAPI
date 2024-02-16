@@ -22,13 +22,15 @@ struct RouteFinder {
     
     var repoViewModel: any ViewModelProtocol
     var harryPotterViewModel: any ViewModelProtocol
-    var marvelViewModel = MarvelViewModel2()
+    var marvelViewModel: any ViewModelProtocol2
     
     init(repoViewModel: any ViewModelProtocol = RepositoriesViewModel(),
-         harryPotterViewModel: any ViewModelProtocol = HarryPotterViewModel()) {
+         harryPotterViewModel: any ViewModelProtocol = HarryPotterViewModel(),
+         marvelViewModel: any ViewModelProtocol2 = MarvelViewModel2()) {
         
         self.repoViewModel = repoViewModel
         self.harryPotterViewModel = harryPotterViewModel
+        self.marvelViewModel = marvelViewModel
     }
     
     func find(from url: URL, completion: @escaping (Route?, Error?) -> ()) {
@@ -99,15 +101,17 @@ struct RouteFinder {
             
             marvelViewModel.fetchDataItem(identifier: id)
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                
-                if marvelViewModel.hasError {
-                    completion(nil, marvelViewModel.error)
-                } else {
-                    let item = marvelViewModel.marvelCharacterSelected!
-                    completion(.marvelItem(item: item), nil)
-                }
-            }
+            completion(nil, nil)
+            
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+//                
+//                if marvelViewModel.apiService.hasError {
+//                    completion(nil, marvelViewModel.apiService.error)
+//                } else {
+//                    let item = marvelViewModel.selectedItem!
+//                    completion(.marvelItem(item: item), nil)
+//                }
+//            }
             
         default:
             let error = NSError(domain: "InvalidURL", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
