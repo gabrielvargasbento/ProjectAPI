@@ -14,11 +14,9 @@ protocol APIServiceCombineProtocol {
     func fetchData(from url: URL)
 }
 
-class APIServiceCombine<T: Decodable>: ObservableObject, RandomAccessCollection {
+class APIServiceCombine<T: Decodable>: ObservableObject {
     
-    @Published var apiList: [T] = []
     @Published var apiListItem: T? = nil
-    @Published var apiItem: T? = nil
     @Published private(set) var isRefreshing = false
     @Published var error: UserError?
     @Published var hasError: Bool
@@ -30,21 +28,11 @@ class APIServiceCombine<T: Decodable>: ObservableObject, RandomAccessCollection 
         self.hasError = false
     }
     
-    var startIndex: Int { apiList.startIndex }
-    var endIndex: Int { apiList.endIndex }
-    
-    func index(after i: Int) -> Int {
-        return apiList.index(after: i)
-    }
-    
-    subscript(position: Int) -> T {
-        return apiList[position]
-    }
-    
     func fetchData(from url: URL) {
 
         self.isRefreshing = true
         self.hasError = false
+        self.apiListItem = nil
         
         URLSession
             .shared

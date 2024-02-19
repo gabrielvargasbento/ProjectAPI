@@ -39,42 +39,13 @@ class APIServiceCombineTests: QuickSpec {
                 }
             }
             
-            context("Access API List"){
-                
-                let mock0 = MockModel(id: 0, name: "item0")
-                let mock1 = MockModel(id: 1, name: "item1")
-                let mock2 = MockModel(id: 2, name: "item2")
-                
-                beforeEach {
-                    sut.apiList = [mock0, mock1, mock2]
-                }
-                
-                it("Verify StartIndex API List") {
-                    expect(sut.startIndex).to(equal(0))
-                }
-                
-                it("Verify EndIndex API List") {
-                    expect(sut.endIndex).to(equal(3))
-                }
-                
-                it("Verify Index API List") {
-                    expect(sut.index(after: 0)).to(equal(1))
-                }
-                
-                it("Verify Subscript API List") {
-                    expect(sut.apiList[0].id).to(equal(mock0.id))
-                }
-                
-                afterEach {
-                    sut.apiList = []
-                }
-            }
-            
             context("Fetch Data") {
                 
                 beforeEach {
                     URLProtocolMock.unregisterMockURL()
                 }
+                
+                //limit=20&offset=50
                 
                 it("Decode apiList correctly with valid data") {
                     let mockURLString = "https://example.com/mock"

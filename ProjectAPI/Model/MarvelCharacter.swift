@@ -16,7 +16,12 @@ struct DataMarvel: Decodable {
     let results: [MarvelCharacter]
 }
 
-struct MarvelCharacter: Identifiable, Decodable {
+struct MarvelCharacter: Identifiable, Decodable, Equatable {
+    
+    static func == (lhs: MarvelCharacter, rhs: MarvelCharacter) -> Bool {
+        return lhs.id == rhs.id && lhs.name == rhs.name
+    }
+    
     let id: Int
     let name: String?
     let description: String?

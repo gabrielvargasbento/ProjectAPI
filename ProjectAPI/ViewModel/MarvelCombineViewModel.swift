@@ -19,6 +19,8 @@ class MarvelCombineViewModel: ObservableObject, ViewModelCombineProtocol {
     let privateKey: String
     let publicKey: String
     
+    private static var offset = 0
+    
     init() {
         self.privateKey = environmentVariables?["PRIVATE_API_KEY"] as? String ?? ""
         self.publicKey = environmentVariables?["PUBLIC_API_KEY"] as? String ?? ""
@@ -39,12 +41,15 @@ class MarvelCombineViewModel: ObservableObject, ViewModelCombineProtocol {
         components.queryItems = [
             URLQueryItem(name: "apikey", value: publicKey),
             URLQueryItem(name: "ts", value: timeStamp),
-            URLQueryItem(name: "hash", value: hash)
+            URLQueryItem(name: "hash", value: hash),
+            URLQueryItem(name: "offset", value: "\(MarvelCombineViewModel.offset)"),
+            URLQueryItem(name: "limit", value: "2")
         ]
         self.url = components.url ?? URL(string: baseURL)!
         
         self.apiService.fetchData(from: url)
         
+        MarvelCombineViewModel.offset += 20
     }
     
     func fetchDataItem(identifier: String?) {

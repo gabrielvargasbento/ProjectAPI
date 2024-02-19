@@ -13,16 +13,24 @@ struct ListMarvelView: View {
     @ObservedObject var marvelViewModel = MarvelCombineViewModel()
     let firebaseService = AnalyticsService()
     
-    @State private var isFetchingData: Bool = false
+    @State private var isFetchingData = false
+    @State private var isFetchingDataAgain = false
     @State private var marvelCharacters: [MarvelCharacter] = []
-        
+    
+    var test = true
+    
     var body: some View {
         
         NavigationStack(path: $routerManager.routes) {
             
             ZStack {
                 if (isFetchingData && marvelCharacters.isEmpty) {
-                    ProgressView()
+                    
+                    VStack {
+                        Text("Please, wait while we load the Marvel Characters...")
+                            .padding()
+                        ProgressView()
+                    }
                     
                 } else {
                     List {
@@ -34,11 +42,21 @@ struct ListMarvelView: View {
                                 .onTapGesture {
                                     firebaseService.buttonEvent(buttonName: item.name ?? "")
                                 }
+                                .onAppear {
+                                    if item == marvelCharacters.last {
+                                        isFetchingDataAgain = true
+                                    }
+                                }
                             }
                         }
                     }
                     .navigationTitle("Marvel")
                     .navigationDestination(for: Route.self) { $0 }
+                    
+                    if isFetchingDataAgain {
+                        ProgressView()
+                    }
+                    
                 }
             }
             .onAppear() {
@@ -52,10 +70,17 @@ struct ListMarvelView: View {
                     Text("Retry")
                 }
             }
-            .onReceive(marvelViewModel.apiService.$isRefreshing) { isRefreshing in
-                isFetchingData = isRefreshing
-                marvelCharacters = marvelViewModel.apiService.apiListItem?.data.results ?? []
-            }
+           .onReceive(marvelViewModel.apiService.$isRefreshing) { isRefreshing in
+               isFetchingData = isRefreshing
+               marvelCharacters += marvelViewModel.apiService.apiListItem?.data.results ?? []
+           }
+           .onChange(of: isFetchingDataAgain) { _, _ in
+               if isFetchingDataAgain {
+                   marvelViewModel.fetchData()
+                   isFetchingDataAgain = false
+               }
+           }
+            
         }
     }
 }
