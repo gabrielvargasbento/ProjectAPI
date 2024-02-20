@@ -29,7 +29,8 @@ class MarvelCombineViewModel: ObservableObject, ViewModelCombineProtocol {
     var url = URL(string: "http://gateway.marvel.com/v1/public/characters")!
     
     /**
-     Função para
+     Fetches data Marvel array from Marvel API, using Combine framework.
+     Upon successful retrieval, the decoded data will be stored in `apiService.apiListItem`.
      */
     func fetchData() {
         
@@ -43,7 +44,7 @@ class MarvelCombineViewModel: ObservableObject, ViewModelCombineProtocol {
             URLQueryItem(name: "ts", value: timeStamp),
             URLQueryItem(name: "hash", value: hash),
             URLQueryItem(name: "offset", value: "\(MarvelCombineViewModel.offset)"),
-            URLQueryItem(name: "limit", value: "2")
+            URLQueryItem(name: "limit", value: "20")
         ]
         self.url = components.url ?? URL(string: baseURL)!
         
@@ -52,6 +53,13 @@ class MarvelCombineViewModel: ObservableObject, ViewModelCombineProtocol {
         MarvelCombineViewModel.offset += 20
     }
     
+    /**
+     Fetches data Marvel array from Marvel API, using Combine framework.
+     Upon successful retrieval, the decoded data will be stored in `apiService.apiListItem`.
+     
+     - Parameters:
+        - identifier: An optional string with the Repository name.
+     */
     func fetchDataItem(identifier: String?) {
         
         if let identifier = identifier {

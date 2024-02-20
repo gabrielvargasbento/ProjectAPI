@@ -23,6 +23,14 @@ class RepositoriesViewModel: ObservableObject, ViewModelProtocol {
         self.url = url
     }
     
+    /**
+     Fetches data Repository array from the self.url.
+
+     - Parameters:
+        - completion: A closure to be called when the fetch operation completes. It takes an optional `Repository` array and an optional `Error` as parameters.
+        - Parameter data: The fetched Repository array, if successful, otherwise nil.
+        - Parameter error: An error that occurred during the fetch operation, otherwise nil.
+     */
     func fetch(completion: @escaping ([T]?, Error?) -> ()) {
         
         #if UITEST
@@ -48,6 +56,15 @@ class RepositoriesViewModel: ObservableObject, ViewModelProtocol {
         #endif
     }
     
+    /**
+     Fetches an specific Repository from the self.url.
+
+     - Parameters:
+        - identifier: An optional string with the Repository name.
+        - completion: A closure to be called when the fetch operation completes. It takes an optional `Repository` and an optional `Error` as parameters.
+        - Parameter data: The fetched Repository, if successful, otherwise nil.
+        - Parameter error: An error that occurred during the fetch operation, otherwise nil.
+     */
     func fetchItem(identifier: String?, completion: @escaping (T?, Error?) -> ()) {
         
         if let identifier = identifier {

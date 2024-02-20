@@ -28,6 +28,12 @@ class APIServiceCombine<T: Decodable>: ObservableObject {
         self.hasError = false
     }
     
+    /**
+     Fetches data of an associated type `T` from the specified URL using Combine framework.
+     Upon successful retrieval, the decoded data will be stored in `apiListItem`.
+     - Parameters:
+        - url: The URL from which to fetch the data.
+     */
     func fetchData(from url: URL) {
 
         self.isRefreshing = true
@@ -64,7 +70,9 @@ class APIServiceCombine<T: Decodable>: ObservableObject {
     }
 }
 
-
+/**
+ Enum to describe the errors while fetching data.
+ */
 enum UserError: LocalizedError {
     
     case custum(erro: Error)

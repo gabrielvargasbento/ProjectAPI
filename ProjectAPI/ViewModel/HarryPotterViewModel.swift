@@ -23,6 +23,14 @@ class HarryPotterViewModel: ObservableObject, ViewModelProtocol {
         self.url = url
     }
     
+    /**
+     Fetches data HarryPotter array from the self.url.
+
+     - Parameters:
+        - completion: A closure to be called when the fetch operation completes. It takes an optional `HarryPotter` array and an optional `Error` as parameters.
+        - Parameter data: The fetched HarryPotter array, if successful, otherwise nil.
+        - Parameter error: An error that occurred during the fetch operation, otherwise nil.
+     */
     func fetch(completion: @escaping ([T]?, Error?) -> ()) {
         
         #if UITEST
@@ -48,6 +56,15 @@ class HarryPotterViewModel: ObservableObject, ViewModelProtocol {
         #endif
     }
     
+    /**
+     Fetches an specific HarryPotter from the self.url.
+
+     - Parameters:
+        - identifier: An optional string with the HarryPotter id.
+        - completion: A closure to be called when the fetch operation completes. It takes an optional `HarryPotter` and an optional `Error` as parameters.
+        - Parameter data: The fetched HarryPotter, if successful, otherwise nil.
+        - Parameter error: An error that occurred during the fetch operation, otherwise nil.
+     */
     func fetchItem(identifier: String?, completion: @escaping (HarryPotter?, Error?) -> ()) {
         
         if let identifier = identifier {

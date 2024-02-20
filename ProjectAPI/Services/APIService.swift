@@ -29,7 +29,15 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection, APISer
         return apiList[position]
     }
     
-    // Recuperar dados de uma API, retornando um array generico ou erro
+    /**
+     Fetches data array from the specified URL.
+
+     - Parameters:
+        - url: The URL from which to fetch the data array.
+        - completion: A closure to be called when the fetch operation completes. It takes an optional array of the associated type `T` and an optional `Error` as parameters.
+        - Parameter data: The fetched data array, if successful, otherwise nil.
+        - Parameter error: An error that occurred during the fetch operation, otherwise nil.
+     */
     func fetchData(from url: URL, completion: @escaping ([T]?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -50,6 +58,15 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection, APISer
         }.resume()
     }
     
+    /**
+     Fetches unique data from the specified URL.
+
+     - Parameters:
+        - url: The URL from which to fetch the data.
+        - completion: A closure to be called when the fetch operation completes. It takes an optional associated type `T` and an optional `Error` as parameters.
+        - Parameter data: The fetched data, if successful, otherwise nil.
+        - Parameter error: An error that occurred during the fetch operation, otherwise nil.
+     */
     func fetchDataItem(from url: URL, completion: @escaping (T?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -57,7 +74,7 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection, APISer
                 completion(nil, error)
             } else if let data = data {
                 
-                // Tentar decodificar uma struct
+                // Try to decode as an struct
                 do {
                     let decodedData = try JSONDecoder().decode(T.self, from: data)
                     DispatchQueue.main.async {
@@ -66,7 +83,7 @@ class APIService<T: Decodable>: ObservableObject, RandomAccessCollection, APISer
                     }
                 } catch {
                     
-                    // Tentar decodififcar um array com uma unica struct contida nele
+                    // Try to decode as an array with an unique struct on it.
                     do {
                         let decodedData = try JSONDecoder().decode([T].self, from: data)
                         

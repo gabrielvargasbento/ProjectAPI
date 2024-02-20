@@ -32,6 +32,10 @@ class MarvelViewModel: ObservableObject {
         self.publicKey = environmentVariables?["PUBLIC_API_KEY"] as? String ?? ""
     }
     
+    /**
+     Fetches data of `MarvelCharacter`array  from Marvel API, using Combine framework.
+     Upon successful retrieval, the decoded data will be stored in `marvelCharacters`.
+     */
     func fetchData() {
         
         self.isRefreshing = true
@@ -79,6 +83,10 @@ class MarvelViewModel: ObservableObject {
             .store(in: &bag)
     }
     
+    /**
+     Fetches data of `MarvelCharacter` from Marvel API, using Combine framework.
+     Upon successful retrieval, the decoded data will be stored in `marvelCharacter`.
+     */
     func fetchDataItem(identifier: String) {
         
         self.isRefreshing = true
